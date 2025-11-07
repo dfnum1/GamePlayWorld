@@ -57,8 +57,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\WarWorld\EditorRuntime\WarWorldEditor.cs" />
-    <Compile Include="Assets\Scripts\WarWorld\Runtime\WarWorld.cs" />
     <Compile Include="Assets\Scripts\WarWorld\EditorRuntime\AWarWorldLogic.cs" />
+    <Compile Include="Assets\Scripts\WarWorld\Runtime\WarWorld.cs" />
+    <Compile Include="Assets\Scripts\WarWorld\EditorRuntime\Logics\InspectorDrawLogic.cs" />
+    <Compile Include="Assets\Scripts\WarWorld\EditorRuntime\Logics\AssetDrawLogic.cs" />
+    <Compile Include="Assets\Scripts\WarWorld\EditorRuntime\Logics\PreviewLogic.cs" />
+    <Compile Include="Assets\Scripts\WarWorld\EditorRuntime\Logics\AIDrawLogic.cs" />
+    <Compile Include="Assets\Scripts\WarWorld\EditorRuntime\Logics\ToolBarDrawLogic.cs" />
+    <Compile Include="Assets\Scripts\WarWorld\EditorRuntime\Logics\Draw\AILogicDrawView.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Scripts\WarWorld\WarWorld.asmdef" />
