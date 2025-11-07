@@ -1,0 +1,20 @@
+1.拿到 .p12文件  和 .mobileprovision  然后有.p12 的安装密码和 bundle ID
+2.到mac机子上安装.p12文件
+3.修改 PublishPostProcess.cs 里面设置xcode参数
+
+//对应 .mobileprovision里面的 <key>UUID</key>
+proj.SetBuildProperty(targetGUID, "PROVISIONING_PROFILE_APP", "8dafadca-b1a2-49b8-885a-ad1340eaddb7");
+//对应 .mobileprovision里面的 <key>Name</key>
+proj.SetBuildProperty(targetGUID, "PROVISIONING_PROFILE_SPECIFIER","dev");
+//对应 .mobileprovision里面的 <key>TeamIdentifier</key>
+proj.SetBuildProperty(targetGUID, "DEVELOPMENT_TEAM", "M82ZPB9A5F");
+
+4.修改mac上JSJ同路径下的ExportOption.plist,修改里面的 <key>provisioningProfiles</key> 为bundle ID 
+修改 <key>teamID</key> 为 证书里面的 teamID
+
+5.修改unity 编辑器里面的发布设置的包名为 bundle ID
+
+6.如果打出来的ipa名称有修改,那么对应的Jenkins里面的shell脚本也要修改对应的包名
+
+
+7.如果只是向证书里面更新设备id,那么执行步骤3即可?

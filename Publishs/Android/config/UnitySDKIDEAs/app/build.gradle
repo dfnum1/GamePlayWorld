@@ -1,0 +1,133 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    compileSdkVersion 30
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionCode 202303201
+        versionName "1.202303201"
+        multiDexEnabled true
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    signingConfigs {
+        release {
+            keyAlias 'adsuyidemo'
+            keyPassword '123123'
+            storeFile file('..//ADSuyiDemo.jks')
+            storePassword '123123'
+        }
+        debug {
+            keyAlias 'adsuyidemo'
+            keyPassword '123123'
+            storeFile file('..//ADSuyiDemo.jks')
+            storePassword '123123'
+        }
+    }
+
+    repositories {
+
+        flatDir {
+            dirs 'libs'
+        }
+    }
+
+    android.applicationVariants.all {
+        variant ->
+            variant.outputs.all {
+                //这里修改apk文件名
+                outputFileName = "ADSuyiSdkDemo-V${variant.versionName}.apk"
+            }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:multidex:1.0.3'
+    implementation 'com.tencent.bugly:crashreport:3.2.3'
+    implementation 'com.tencent.bugly:nativecrashreport:3.7.3'
+
+    // 以下都是用于demo演示加入的三方依赖
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.2'
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+    implementation 'com.makeramen:roundedimageview:2.3.0'
+    implementation 'com.github.LillteZheng.ViewPagerHelper:viewpagerlib:v2.9'
+    // 以上都是用于demo演示加入的三方依赖
+
+    // ADSuyiSdk、common和OAID库是必须导入的
+    implementation 'cn.admobiletop.adsuyi.ad:core:3.7.2.02221'
+
+    // OAID库1.0.25华为渠道请参考文档5.2
+   // implementation(name: 'oaid_sdk_1.0.25', ext: 'aar')
+    // OAID1.0.25版本适配器不支持其它版本，ADSuyi获取oaid使用
+    implementation 'cn.admobiletop.adsuyi.ad:oaid:1.0.25.08023'
+
+    // 天目AdapterSdk，必选的
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:tianmu:2.0.2.02222'
+
+    // 优量汇（广点通）AdapterSdk，可选的
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.512.1382.02221'
+
+    // 头条AdapterSdk，可选的
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:5.1.0.2.02061'
+
+    // 百度增强版AdapterSdk，可选的
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-enhanced:9.27.02221'
+
+    // 汇量AdapterSdk，可选的
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:16.3.77.02221'
+
+    // 快手AdapterSdk，可选的
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.40.02221'
+
+    // InmobiAdapterSdk，可选的
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:inmobi:7.5.4.11152'
+    implementation 'com.squareup.picasso:picasso:2.5.2'
+
+    // 米盟AdapterSdk，可选的
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:mimo:5.2.2.12211'
+    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
+
+    // 华为广告联盟AdadapterSdk，可选的
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:hwpps:13.4.61.300.02061'
+
+    // gromoreAdapterSdk，可选的。如果要使用gromore的其他渠道，请联系开发者。
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:gromore:4.0.0.1.02061'
+    implementation "by.gm_mediation.com:gdt-adapter:4.510.1380.0" //广点通 adapter
+    implementation "by.gm_mediation.com:pangle-adapter:5.1.0.2.0" //穿山甲 adapter
+    // 有gromore其他渠道需求，请联系开发者。
+
+    // 菜谱内容SDK（还需要gson和recyclerview支持）
+    implementation 'cn.admobiletop.adsuyi.ad:cookbook:1.0.3.02091'
+    implementation 'com.google.code.gson:gson:2.8.5'
+
+    // 华为
+    implementation 'com.huawei.hms:hwid:6.9.0.301'
+   // implementation 'com.huawei.hms:iap:6.9.0.301'
+    implementation 'com.huawei.hms:game:6.8.0.300'
+
+
+    //oppo
+    implementation 'com.heytap.msp.sdk:msp-sdk:1.10.1.2'
+    implementation 'com.heytap.msp.sdk:msp-oauth-sdk:1.10.1.2'
+}

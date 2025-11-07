@@ -1,0 +1,1318 @@
+﻿{
+    "legacyFlagSets": [],
+    "particleSets": [
+        "Assets/Datas/FX",
+        "Assets/DatasRef/FX"
+    ],
+    "subPathDirs": [
+        "Assets/Datas/Characters",
+        "Assets/Datas/Audios",
+        "Assets/Datas/Environments",
+        "Assets/Datas/Scenes",
+        "Assets/Datas/UIs"
+    ],
+    "buildDirs": [
+        "Assets/DatasRef/Objects/Soliders/xxx/animations",
+        "Assets/DatasRef/Objects/Roles/xxx/animations"
+    ],
+    "unbuildDirs": [
+        "Assets/DatasRef/UI/Prefabs",
+        "Assets/DatasRef/UI/Widgets"
+    ],
+    "buildDllPakDirs": [],
+    "copyToStreamDirs": [
+        {
+            "srcDir": "Assets/DatasRef/Config/RunDatas/EleThemes",
+            "toDir": "Config/RunDatas/EleThemes",
+            "pakTag": ""
+        },
+        {
+            "srcDir": "Assets/../Binarys",
+            "toDir": "Binarys",
+            "pakTag": ""
+        },
+        {
+            "srcDir": "Assets/DatasRef/DIY/BlockTerrains",
+            "toDir": "Binarys/BlockTerrains/",
+            "pakTag": ""
+        }
+    ],
+    "buildSingleAbs": [
+        "Assets/Datas/Texture/loading",
+        "Assets/Datas/Scenes",
+        "Assets/Datas/UIs",
+        "Assets/Datas/SpriteAtlas"
+    ],
+    "spriteUnPak": [
+        "Assets/Datas/Texture",
+        "Assets/DatasRef/UIs/Textures/title_bg",
+        "Assets/DatasRef/UIs/Textures/frames_bg",
+        "Assets/DatasRef/UIs/Textures/bg"
+    ],
+    "includeShaders": [
+        "",
+        "",
+        "",
+        ""
+    ],
+    "buildFileRootPathAbs": [
+        "Assets/Datas/Texture"
+    ],
+    "buildCombineAbsGroup": [
+        {
+            "strAbName": "allshaders",
+            "pathFile": "Assets/Shaders"
+        }
+    ],
+    "debug": false,
+    "profiler": false,
+    "depthPrifiling": false,
+    "scriptDebug": false,
+    "waitForManagerDebuger": false,
+    "autoConnectProfiler": false,
+    "offline": false,
+    "delPrePackageDir": false,
+    "bIL2CPP": true,
+    "armv64": true,
+    "armv7": true,
+    "androidSdkVersion": 23,
+    "obb": false,
+    "dateName": true,
+    "portait": false,
+    "versionCheck": false,
+    "useEncrptyPak": false,
+    "convertTextureType": 2,
+    "sceneStreamAb": false,
+    "streamingMipmaps": true,
+    "globalMetaDataEncrypt": false,
+    "popPrivacy": false,
+    "channelLabel": "",
+    "useVR": false,
+    "marcoDatas": [
+        {
+            "marco": "USE_REPORTVIEW",
+            "pluginDatas": "/../Publishs/SDK/StompyRobot"
+        }
+    ],
+    "hotType": 0,
+    "showFps": true,
+    "reportView": true,
+    "gmPanel": true,
+    "antiAddiction": false,
+    "spritePacker": 0,
+    "incrementalAb": false,
+    "abUseIndex": false,
+    "dependMarkAB": true,
+    "singleFileAB": false,
+    "serverUrlList": [
+        {
+            "name": "内网请求地址",
+            "sreverUrl": "http://192.168.100.210:35520/",
+            "uploadUrl": "http://192.168.100.210:35560/versions/",
+            "bUsed": true
+        },
+        {
+            "name": "外网请求地址",
+            "sreverUrl": "https://login192.boyihuyu.com/",
+            "uploadUrl": "http://192.168.100.210:35560/versions/",
+            "bUsed": false
+        },
+        {
+            "name": "1-外网请求地址",
+            "sreverUrl": "https://login43.boyihuyu.com/",
+            "uploadUrl": "http://192.168.100.210:35560/versions/",
+            "bUsed": false
+        },
+        {
+            "name": "2-外网请求地址",
+            "sreverUrl": "http://152.136.32.16:35520/",
+            "uploadUrl": "http://192.168.100.210:35560/versions/",
+            "bUsed": false
+        },
+        {
+            "name": "版署请求地址",
+            "sreverUrl": "http://117.50.36.139:35520/",
+            "uploadUrl": "http://192.168.100.210:35560/versions/",
+            "bUsed": false
+        },
+        {
+            "name": "华盛顿",
+            "sreverUrl": "http://128.1.41.131:35520/",
+            "uploadUrl": "http://192.168.100.210:35560/versions/",
+            "bUsed": false
+        }
+    ],
+    "versionServerAddress": "http://106.75.26.116:8085/versions/",
+    "strEncryptKey": "jsj123^*456{][sd",
+    "buildTarget": 19,
+    "buildOptions": 256,
+    "bundleExportDir": "/../Publishs/Packages",
+    "copyToStreamAsset": false,
+    "buildAutoRun": false,
+    "platforms": [
+        {
+            "target": 13,
+            "projectName": "魔法与家园",
+            "projectExportName": "HappyLand",
+            "bundleName": "com.happyland.running.android",
+            "version": "1.0.0",
+            "versionCode": 6,
+            "provisioning_profiler_appkey": "94afe52f-4af0-4b3f-9135-49f689e7a2dd",
+            "provisioning_profiler_name": "happyland_run_dev",
+            "development_teamKey": "8J9G7947T9",
+            "defaultLanguage": -1,
+            "package_size_kb": 1048576,
+            "ignore_path": [],
+            "ignore_suffix": [
+                "manifest",
+                "meta"
+            ],
+            "ignore_file": [
+                "dep_mapping.txt"
+            ],
+            "copySdks": [
+                {
+                    "sdkMarco": "USE_BUGLY",
+                    "pluginDatas": "/../Publishs/SDK/Bugly",
+                    "bUsed": true,
+                    "needExternalDependency": false,
+                    "needUnitySDK": false,
+                    "keyValues": []
+                },
+                {
+                    "sdkMarco": "USE_GOOGLE_ADMOB",
+                    "pluginDatas": "/../Publishs/SDK/AdMob",
+                    "bUsed": false,
+                    "needExternalDependency": false,
+                    "needUnitySDK": false,
+                    "keyValues": []
+                },
+                {
+                    "sdkMarco": "USE_APPSFLYER",
+                    "pluginDatas": "/../Publishs/SDK/AppsFlyer",
+                    "bUsed": false,
+                    "needExternalDependency": false,
+                    "needUnitySDK": false,
+                    "keyValues": []
+                },
+                {
+                    "sdkMarco": "USE_TALKINGDATA",
+                    "pluginDatas": "/../Publishs/SDK/TalkingData",
+                    "bUsed": true,
+                    "needExternalDependency": false,
+                    "needUnitySDK": false,
+                    "keyValues": [
+                        {
+                            "key": "TALKING_APPID",
+                            "value": "502E37026C6B43D1A5FFD26AAB6B476F",
+                            "desc": ""
+                        },
+                        {
+                            "key": "TALKING_CHANNEL",
+                            "value": "",
+                            "desc": ""
+                        }
+                    ]
+                },
+                {
+                    "sdkMarco": "USE_GAMEANALYTICS",
+                    "pluginDatas": "/../Publishs/SDK/GA",
+                    "bUsed": false,
+                    "needExternalDependency": true,
+                    "needUnitySDK": false,
+                    "keyValues": [
+                        {
+                            "key": "user",
+                            "value": "",
+                            "desc": ""
+                        },
+                        {
+                            "key": "password",
+                            "value": "",
+                            "desc": ""
+                        }
+                    ]
+                },
+                {
+                    "sdkMarco": "USE_FIREBASE",
+                    "pluginDatas": "/../Publishs/SDK/FireBase",
+                    "bUsed": false,
+                    "needExternalDependency": false,
+                    "needUnitySDK": false,
+                    "keyValues": []
+                },
+                {
+                    "sdkMarco": "USE_INNER_QUICKSDK",
+                    "pluginDatas": "/../Publishs/SDK/InnerQuickSDK",
+                    "bUsed": false,
+                    "needExternalDependency": false,
+                    "needUnitySDK": false,
+                    "keyValues": [
+                        {
+                            "key": "QUICK_PRODUCT_CODE",
+                            "value": "25812195033624539889787045042415",
+                            "desc": ""
+                        },
+                        {
+                            "key": "QUICK_PRODUCT_KEY",
+                            "value": "90611672",
+                            "desc": ""
+                        }
+                    ]
+                },
+                {
+                    "sdkMarco": "USE_QUICKSDK",
+                    "pluginDatas": "/../Publishs/SDK/QuickSDK",
+                    "bUsed": false,
+                    "needExternalDependency": false,
+                    "needUnitySDK": false,
+                    "keyValues": [
+                        {
+                            "key": "QUICK_PRODUCT_CODE",
+                            "value": "25812195033624539889787045042415",
+                            "desc": ""
+                        },
+                        {
+                            "key": "QUICK_PRODUCT_KEY",
+                            "value": "90611672",
+                            "desc": ""
+                        },
+                        {
+                            "key": "FACEBOOK_APP_ID",
+                            "value": "460378189446292",
+                            "desc": ""
+                        },
+                        {
+                            "key": "FACEBOOK_CLIENT_TOKEN",
+                            "value": "111111",
+                            "desc": ""
+                        },
+                        {
+                            "key": "FACEBOOK_LOGIN_PROTOCAL_SCHEME",
+                            "value": "111111",
+                            "desc": "facebook追加AppID"
+                        },
+                        {
+                            "key": "FACEBOOK_DISPLAY_NAME",
+                            "value": "MagicalTerra",
+                            "desc": "facebook应用名"
+                        },
+                        {
+                            "key": "GOOGLE_SIGNIN_CLIENT_ID",
+                            "value": "111111",
+                            "desc": ""
+                        },
+                        {
+                            "key": "APPSFLYER_KEYCODE",
+                            "value": "wG5oRwNpsNVQtiSCJqK9bK",
+                            "desc": ""
+                        }
+                    ]
+                },
+                {
+                    "sdkMarco": "USE_PICO",
+                    "pluginDatas": "/../Publishs/SDK/PICO",
+                    "bUsed": false,
+                    "needExternalDependency": false,
+                    "needUnitySDK": false,
+                    "keyValues": [
+                        {
+                            "key": "APPID",
+                            "value": "eda9cc1f2eaa5d7733c8884620d5cb1f",
+                            "desc": ""
+                        },
+                        {
+                            "key": "TESTDEVICE",
+                            "value": "PA8110MGGC131704G",
+                            "desc": ""
+                        }
+                    ]
+                },
+                {
+                    "sdkMarco": "USE_TAPTAP",
+                    "pluginDatas": "/../Publishs/SDK/Taptap",
+                    "bUsed": false,
+                    "needExternalDependency": false,
+                    "needUnitySDK": false,
+                    "keyValues": [
+                        {
+                            "key": "ClientID",
+                            "value": "bf5xgp66eeahojjzpq",
+                            "desc": ""
+                        },
+                        {
+                            "key": "ClientToken",
+                            "value": "Wguer1Eqb1AXdUhowK4qbi0OPIskpsDgAqqoT76e",
+                            "desc": ""
+                        },
+                        {
+                            "key": "ServerUrl",
+                            "value": "https://bf5xgp66.cloud.tds1.tapapis.cn",
+                            "desc": ""
+                        },
+                        {
+                            "key": "TestQualification",
+                            "value": "1",
+                            "desc": ""
+                        }
+                    ]
+                },
+                {
+                    "sdkMarco": "USE_OPPO",
+                    "pluginDatas": "/../Publishs/SDK/Oppo",
+                    "bUsed": false,
+                    "needExternalDependency": false,
+                    "needUnitySDK": true,
+                    "keyValues": [
+                        {
+                            "key": "APPKEY",
+                            "value": "5hHDqypivkW0c4K4SWS88Sw08",
+                            "desc": ""
+                        },
+                        {
+                            "key": "APPSECRET",
+                            "value": "xxx",
+                            "desc": ""
+                        },
+                        {
+                            "key": "DEBUG",
+                            "value": "false",
+                            "desc": ""
+                        },
+                        {
+                            "key": "OFFLINE",
+                            "value": "true",
+                            "desc": ""
+                        }
+                    ]
+                },
+                {
+                    "sdkMarco": "USE_VIVO",
+                    "pluginDatas": "/../Publishs/SDK/Vivo",
+                    "bUsed": false,
+                    "needExternalDependency": false,
+                    "needUnitySDK": true,
+                    "keyValues": [
+                        {
+                            "key": "appId",
+                            "value": "",
+                            "desc": ""
+                        },
+                        {
+                            "key": "appKey",
+                            "value": "",
+                            "desc": ""
+                        },
+                        {
+                            "key": "cpId",
+                            "value": "",
+                            "desc": ""
+                        },
+                        {
+                            "key": "passPrivacy",
+                            "value": "0",
+                            "desc": ""
+                        }
+                    ]
+                },
+                {
+                    "sdkMarco": "USE_XIAOMI",
+                    "pluginDatas": "/../Publishs/SDK/Xiaomi",
+                    "bUsed": false,
+                    "needExternalDependency": false,
+                    "needUnitySDK": true,
+                    "keyValues": [
+                        {
+                            "key": "mi_game_appid",
+                            "value": "mi_2882303761517543214",
+                            "desc": ""
+                        },
+                        {
+                            "key": "mi_game_appkey",
+                            "value": "mi_5751754320214",
+                            "desc": ""
+                        }
+                    ]
+                },
+                {
+                    "sdkMarco": "USE_HUAWEI",
+                    "pluginDatas": "/../Publishs/SDK/Huawei",
+                    "bUsed": false,
+                    "needExternalDependency": false,
+                    "needUnitySDK": true,
+                    "keyValues": []
+                },
+                {
+                    "sdkMarco": "USE_YINGYONGBAO",
+                    "pluginDatas": "/../Publishs/SDK/Yingyongbao",
+                    "bUsed": false,
+                    "needExternalDependency": false,
+                    "needUnitySDK": true,
+                    "keyValues": [
+                        {
+                            "key": "QQ_APP_ID",
+                            "value": "1104936059",
+                            "desc": ""
+                        },
+                        {
+                            "key": "WX_APP_ID",
+                            "value": "wxfcefed3f366fa606",
+                            "desc": ""
+                        },
+                        {
+                            "key": "OFFER_ID",
+                            "value": "1104936059",
+                            "desc": ""
+                        },
+                        {
+                            "key": "YSDK_URL",
+                            "value": "https://ysdk.qq.com",
+                            "desc": "https://ysdk.qq.com"
+                        },
+                        {
+                            "key": "YSDK_AUTH_KEY",
+                            "value": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAsKX4kg6T32qn8uHc6j9AwMeQzpUW3hh6o8WiBJi9wlx0pWWRLoqdQuhoUPGpfrdVyt/iEnlvF4fmCkk82bJxXv4x2QRqR4tq3Li5YODzk/xLlQsa3F9nPb+iadqdQJfm6n53ts3uxkApl3gMURuw8SfoFuzuB3mpYHFO+DXQ7BSU2N/+Sdjb6xuOPWHrk9kXSo+h2VTkCwYcpEVC505T0MoA4PtX3GwsO7+lSJrRwuwzXi0eBi5evV57g9WhNnsZLfHTYqC43EGfbj0+/rNXQgz2AfJ78y5jW0am2WMBaO4Sao/acYHu/e+PSqr+fvolmbB1cFLCkCFnF6jBMuk8AQIDAQAB",
+                            "desc": ""
+                        }
+                    ]
+                },
+                {
+                    "sdkMarco": "USE_TOBID",
+                    "pluginDatas": "/../Publishs/SDK/ToBid",
+                    "bUsed": false,
+                    "needExternalDependency": false,
+                    "needUnitySDK": true,
+                    "keyValues": [
+                        {
+                            "key": "TOBID_APPID",
+                            "value": "29210",
+                            "desc": ""
+                        },
+                        {
+                            "key": "TOBID_APPKEY",
+                            "value": "de5c126aa45573c2",
+                            "desc": ""
+                        }
+                    ]
+                },
+                {
+                    "sdkMarco": "USE_ADMOBILE",
+                    "pluginDatas": "/../Publishs/SDK/Admobile",
+                    "bUsed": false,
+                    "needExternalDependency": false,
+                    "needUnitySDK": true,
+                    "keyValues": [
+                        {
+                            "key": "WIFI",
+                            "value": "true",
+                            "desc": ""
+                        },
+                        {
+                            "key": "LOCATION",
+                            "value": "true",
+                            "desc": ""
+                        },
+                        {
+                            "key": "IMEI",
+                            "value": "true",
+                            "desc": ""
+                        },
+                        {
+                            "key": "APPID",
+                            "value": "XXX",
+                            "desc": ""
+                        },
+                        {
+                            "key": "PERSONALIZED",
+                            "value": "",
+                            "desc": ""
+                        }
+                    ]
+                },
+                {
+                    "sdkMarco": "USE_OPERATE",
+                    "pluginDatas": "/../Publishs/SDK/Operate",
+                    "bUsed": false,
+                    "needExternalDependency": false,
+                    "needUnitySDK": false,
+                    "keyValues": [
+                        {
+                            "key": "appKey",
+                            "value": "30904",
+                            "desc": ""
+                        }
+                    ]
+                },
+                {
+                    "sdkMarco": "USE_LZT",
+                    "pluginDatas": "/../Publishs/SDK/LZT",
+                    "bUsed": false,
+                    "needExternalDependency": false,
+                    "needUnitySDK": false,
+                    "keyValues": [
+                        {
+                            "key": "AppKey",
+                            "value": "AJoOF79ilNkt2m0MqaepjDyVbUC5gBdz",
+                            "desc": ""
+                        },
+                        {
+                            "key": "AppId",
+                            "value": "70090",
+                            "desc": ""
+                        }
+                    ]
+                },
+                {
+                    "sdkMarco": "USE_ZSSDK",
+                    "pluginDatas": "/../Publishs/SDK/Zs",
+                    "bUsed": false,
+                    "needExternalDependency": false,
+                    "needUnitySDK": true,
+                    "keyValues": [
+                        {
+                            "key": "AppKey",
+                            "value": "vjAIcxQMnu1PKL0oymd2sBHNW7qOlakz",
+                            "desc": ""
+                        },
+                        {
+                            "key": "AppId",
+                            "value": "54000",
+                            "desc": ""
+                        },
+                        {
+                            "key": "YUNDING_CHANNEL",
+                            "value": "1",
+                            "desc": ""
+                        }
+                    ]
+                },
+                {
+                    "sdkMarco": "USE_233SDK",
+                    "pluginDatas": "/../Publishs/SDK/Sdk233",
+                    "bUsed": false,
+                    "needExternalDependency": false,
+                    "needUnitySDK": true,
+                    "keyValues": [
+                        {
+                            "key": "AppKey",
+                            "value": "111",
+                            "desc": ""
+                        }
+                    ]
+                }
+            ],
+            "shadervariants": [
+                "Assets/DatasRef/shadervariants/shaders_warmups.shadervariants",
+                "Assets/DatasRef/shadervariants/collect.shadervariants"
+            ]
+        },
+        {
+            "target": 9,
+            "projectName": "HappyLand:Running",
+            "projectExportName": "HappyLand",
+            "bundleName": "com.happy.running.ios",
+            "version": "1.0.0",
+            "versionCode": 0,
+            "provisioning_profiler_appkey": "ae262779-dfd2-4379-97a5-fada7d3a2c96",
+            "provisioning_profiler_name": "hrun_dev",
+            "development_teamKey": "SCAVMJZN3E",
+            "defaultLanguage": -1,
+            "package_size_kb": 1048576,
+            "ignore_path": [],
+            "ignore_suffix": [
+                "manifest",
+                "meta"
+            ],
+            "ignore_file": [
+                "dep_mapping.txt"
+            ],
+            "copySdks": [
+                {
+                    "sdkMarco": "USE_BUGLY",
+                    "pluginDatas": "/../Publishs/SDK/Bugly",
+                    "bUsed": true,
+                    "needExternalDependency": false,
+                    "needUnitySDK": false,
+                    "keyValues": []
+                },
+                {
+                    "sdkMarco": "USE_GOOGLE_ADMOB",
+                    "pluginDatas": "/../Publishs/SDK/AdMob",
+                    "bUsed": false,
+                    "needExternalDependency": false,
+                    "needUnitySDK": false,
+                    "keyValues": []
+                },
+                {
+                    "sdkMarco": "USE_APPSFLYER",
+                    "pluginDatas": "/../Publishs/SDK/AppsFlyer",
+                    "bUsed": false,
+                    "needExternalDependency": false,
+                    "needUnitySDK": false,
+                    "keyValues": []
+                },
+                {
+                    "sdkMarco": "USE_TALKINGDATA",
+                    "pluginDatas": "/../Publishs/SDK/TalkingData",
+                    "bUsed": true,
+                    "needExternalDependency": false,
+                    "needUnitySDK": false,
+                    "keyValues": [
+                        {
+                            "key": "TALKING_APPID",
+                            "value": "502E37026C6B43D1A5FFD26AAB6B476F",
+                            "desc": ""
+                        },
+                        {
+                            "key": "TALKING_CHANNEL",
+                            "value": "",
+                            "desc": ""
+                        }
+                    ]
+                },
+                {
+                    "sdkMarco": "USE_GAMEANALYTICS",
+                    "pluginDatas": "/../Publishs/SDK/GA",
+                    "bUsed": false,
+                    "needExternalDependency": true,
+                    "needUnitySDK": false,
+                    "keyValues": [
+                        {
+                            "key": "user",
+                            "value": "",
+                            "desc": ""
+                        },
+                        {
+                            "key": "password",
+                            "value": "",
+                            "desc": ""
+                        }
+                    ]
+                },
+                {
+                    "sdkMarco": "USE_FIREBASE",
+                    "pluginDatas": "/../Publishs/SDK/FireBase",
+                    "bUsed": false,
+                    "needExternalDependency": false,
+                    "needUnitySDK": false,
+                    "keyValues": []
+                },
+                {
+                    "sdkMarco": "USE_INNER_QUICKSDK",
+                    "pluginDatas": "/../Publishs/SDK/InnerQuickSDK",
+                    "bUsed": false,
+                    "needExternalDependency": false,
+                    "needUnitySDK": false,
+                    "keyValues": [
+                        {
+                            "key": "QUICK_PRODUCT_CODE",
+                            "value": "25812195033624539889787045042415",
+                            "desc": ""
+                        },
+                        {
+                            "key": "QUICK_PRODUCT_KEY",
+                            "value": "90611672",
+                            "desc": ""
+                        }
+                    ]
+                },
+                {
+                    "sdkMarco": "USE_QUICKSDK",
+                    "pluginDatas": "/../Publishs/SDK/QuickSDK",
+                    "bUsed": false,
+                    "needExternalDependency": false,
+                    "needUnitySDK": false,
+                    "keyValues": [
+                        {
+                            "key": "QUICK_PRODUCT_CODE",
+                            "value": "25812195033624539889787045042415",
+                            "desc": ""
+                        },
+                        {
+                            "key": "QUICK_PRODUCT_KEY",
+                            "value": "90611672",
+                            "desc": ""
+                        },
+                        {
+                            "key": "FACEBOOK_APP_ID",
+                            "value": "460378189446292",
+                            "desc": ""
+                        },
+                        {
+                            "key": "FACEBOOK_CLIENT_TOKEN",
+                            "value": "111111",
+                            "desc": ""
+                        },
+                        {
+                            "key": "FACEBOOK_LOGIN_PROTOCAL_SCHEME",
+                            "value": "111111",
+                            "desc": "facebook追加AppID"
+                        },
+                        {
+                            "key": "FACEBOOK_DISPLAY_NAME",
+                            "value": "MagicalTerra",
+                            "desc": "facebook应用名"
+                        },
+                        {
+                            "key": "GOOGLE_SIGNIN_CLIENT_ID",
+                            "value": "111111",
+                            "desc": ""
+                        },
+                        {
+                            "key": "APPSFLYER_KEYCODE",
+                            "value": "wG5oRwNpsNVQtiSCJqK9bK",
+                            "desc": ""
+                        }
+                    ]
+                },
+                {
+                    "sdkMarco": "USE_TAPTAP",
+                    "pluginDatas": "/../Publishs/SDK/Taptap",
+                    "bUsed": false,
+                    "needExternalDependency": false,
+                    "needUnitySDK": false,
+                    "keyValues": [
+                        {
+                            "key": "ClientID",
+                            "value": "bf5xgp66eeahojjzpq",
+                            "desc": ""
+                        },
+                        {
+                            "key": "ClientToken",
+                            "value": "Wguer1Eqb1AXdUhowK4qbi0OPIskpsDgAqqoT76e",
+                            "desc": ""
+                        },
+                        {
+                            "key": "ServerUrl",
+                            "value": "https://bf5xgp66.cloud.tds1.tapapis.cn",
+                            "desc": ""
+                        }
+                    ]
+                },
+                {
+                    "sdkMarco": "USE_OPPO",
+                    "pluginDatas": "/../Publishs/SDK/Oppo",
+                    "bUsed": false,
+                    "needExternalDependency": false,
+                    "needUnitySDK": true,
+                    "keyValues": [
+                        {
+                            "key": "APPKEY",
+                            "value": "5hHDqypivkW0c4K4SWS88Sw08",
+                            "desc": ""
+                        },
+                        {
+                            "key": "APPSECRET",
+                            "value": "xxx",
+                            "desc": ""
+                        },
+                        {
+                            "key": "DEBUG",
+                            "value": "false",
+                            "desc": ""
+                        },
+                        {
+                            "key": "OFFLINE",
+                            "value": "true",
+                            "desc": ""
+                        }
+                    ]
+                },
+                {
+                    "sdkMarco": "USE_VIVO",
+                    "pluginDatas": "/../Publishs/SDK/Vivo",
+                    "bUsed": false,
+                    "needExternalDependency": false,
+                    "needUnitySDK": false,
+                    "keyValues": []
+                },
+                {
+                    "sdkMarco": "USE_XIAOMI",
+                    "pluginDatas": "/../Publishs/SDK/Xiaomi",
+                    "bUsed": false,
+                    "needExternalDependency": false,
+                    "needUnitySDK": false,
+                    "keyValues": []
+                },
+                {
+                    "sdkMarco": "USE_HUAWEI",
+                    "pluginDatas": "/../Publishs/SDK/Huawei",
+                    "bUsed": false,
+                    "needExternalDependency": false,
+                    "needUnitySDK": false,
+                    "keyValues": []
+                },
+                {
+                    "sdkMarco": "USE_YINGYONGBAO",
+                    "pluginDatas": "/../Publishs/SDK/Yingyongbao",
+                    "bUsed": false,
+                    "needExternalDependency": false,
+                    "needUnitySDK": false,
+                    "keyValues": []
+                },
+                {
+                    "sdkMarco": "USE_APPLE",
+                    "pluginDatas": "/../Publishs/SDK/Apple",
+                    "bUsed": false,
+                    "needExternalDependency": false,
+                    "needUnitySDK": false,
+                    "keyValues": []
+                },
+                {
+                    "sdkMarco": "USE_TOBID",
+                    "pluginDatas": "/../Publishs/SDK/ToBid",
+                    "bUsed": false,
+                    "needExternalDependency": false,
+                    "needUnitySDK": true,
+                    "keyValues": [
+                        {
+                            "key": "TOBID_APPID",
+                            "value": "29210",
+                            "desc": ""
+                        },
+                        {
+                            "key": "TOBID_APPKEY",
+                            "value": "de5c126aa45573c2",
+                            "desc": ""
+                        }
+                    ]
+                },
+                {
+                    "sdkMarco": "USE_ADMOBILE",
+                    "pluginDatas": "/../Publishs/SDK/Admobile",
+                    "bUsed": false,
+                    "needExternalDependency": false,
+                    "needUnitySDK": true,
+                    "keyValues": [
+                        {
+                            "key": "WIFI",
+                            "value": "true",
+                            "desc": ""
+                        },
+                        {
+                            "key": "LOCATION",
+                            "value": "true",
+                            "desc": ""
+                        },
+                        {
+                            "key": "IMEI",
+                            "value": "true",
+                            "desc": ""
+                        },
+                        {
+                            "key": "APPID",
+                            "value": "XXX",
+                            "desc": ""
+                        },
+                        {
+                            "key": "PERSONALIZED",
+                            "value": "",
+                            "desc": ""
+                        }
+                    ]
+                },
+                {
+                    "sdkMarco": "USE_OPERATE",
+                    "pluginDatas": "/../Publishs/SDK/Operate",
+                    "bUsed": false,
+                    "needExternalDependency": false,
+                    "needUnitySDK": false,
+                    "keyValues": [
+                        {
+                            "key": "appKey",
+                            "value": "30904",
+                            "desc": ""
+                        }
+                    ]
+                },
+                {
+                    "sdkMarco": "USE_LZT",
+                    "pluginDatas": "/../Publishs/SDK/LZT",
+                    "bUsed": false,
+                    "needExternalDependency": false,
+                    "needUnitySDK": false,
+                    "keyValues": [
+                        {
+                            "key": "AppKey",
+                            "value": "AJoOF79ilNkt2m0MqaepjDyVbUC5gBdz",
+                            "desc": ""
+                        },
+                        {
+                            "key": "AppId",
+                            "value": "70090",
+                            "desc": ""
+                        }
+                    ]
+                },
+                {
+                    "sdkMarco": "USE_ZSSDK",
+                    "pluginDatas": "/../Publishs/SDK/Zs",
+                    "bUsed": false,
+                    "needExternalDependency": false,
+                    "needUnitySDK": true,
+                    "keyValues": [
+                        {
+                            "key": "AppKey",
+                            "value": "vjAIcxQMnu1PKL0oymd2sBHNW7qOlakz",
+                            "desc": ""
+                        },
+                        {
+                            "key": "AppId",
+                            "value": "54000",
+                            "desc": ""
+                        }
+                    ]
+                },
+                {
+                    "sdkMarco": "USE_233SDK",
+                    "pluginDatas": "/../Publishs/SDK/Sdk233",
+                    "bUsed": false,
+                    "needExternalDependency": false,
+                    "needUnitySDK": true,
+                    "keyValues": [
+                        {
+                            "key": "AppKey",
+                            "value": "111",
+                            "desc": ""
+                        }
+                    ]
+                }
+            ],
+            "shadervariants": [
+                "Assets/DatasRef/shadervariants/shaders_warmups.shadervariants",
+                "Assets/DatasRef/shadervariants/collect.shadervariants"
+            ]
+        },
+        {
+            "target": 19,
+            "projectName": "HappyLand",
+            "projectExportName": "HappyLand",
+            "bundleName": "com.stupiddog.studio.jsj",
+            "version": "1.0.0",
+            "versionCode": 1,
+            "provisioning_profiler_appkey": "94afe52f-4af0-4b3f-9135-49f689e7a2dd",
+            "provisioning_profiler_name": "stupiddog_run_dev",
+            "development_teamKey": "8J9G7947T9",
+            "defaultLanguage": -1,
+            "package_size_kb": 52428840,
+            "ignore_path": [],
+            "ignore_suffix": [
+                "manifest",
+                "meta"
+            ],
+            "ignore_file": [
+                "dep_mapping.txt"
+            ],
+            "copySdks": [
+                {
+                    "sdkMarco": "USE_BUGLY",
+                    "pluginDatas": "/../Publishs/SDK/Bugly",
+                    "bUsed": true,
+                    "needExternalDependency": false,
+                    "needUnitySDK": false,
+                    "keyValues": []
+                },
+                {
+                    "sdkMarco": "USE_GOOGLE_ADMOB",
+                    "pluginDatas": "/../Publishs/SDK/AdMob",
+                    "bUsed": false,
+                    "needExternalDependency": false,
+                    "needUnitySDK": false,
+                    "keyValues": []
+                },
+                {
+                    "sdkMarco": "USE_APPSFLYER",
+                    "pluginDatas": "/../Publishs/SDK/AppsFlyer",
+                    "bUsed": false,
+                    "needExternalDependency": false,
+                    "needUnitySDK": false,
+                    "keyValues": []
+                },
+                {
+                    "sdkMarco": "USE_APPSFLYER",
+                    "pluginDatas": "/../Publishs/SDK/AppsFlyer",
+                    "bUsed": false,
+                    "needExternalDependency": false,
+                    "needUnitySDK": false,
+                    "keyValues": []
+                },
+                {
+                    "sdkMarco": "USE_TALKINGDATA",
+                    "pluginDatas": "/../Publishs/SDK/TalkingData",
+                    "bUsed": false,
+                    "needExternalDependency": false,
+                    "needUnitySDK": false,
+                    "keyValues": [
+                        {
+                            "key": "TALKING_APPID",
+                            "value": "502E37026C6B43D1A5FFD26AAB6B476F",
+                            "desc": ""
+                        },
+                        {
+                            "key": "TALKING_CHANNEL",
+                            "value": "",
+                            "desc": ""
+                        }
+                    ]
+                },
+                {
+                    "sdkMarco": "USE_GAMEANALYTICS",
+                    "pluginDatas": "/../Publishs/SDK/GA",
+                    "bUsed": false,
+                    "needExternalDependency": true,
+                    "needUnitySDK": false,
+                    "keyValues": [
+                        {
+                            "key": "user",
+                            "value": "",
+                            "desc": ""
+                        },
+                        {
+                            "key": "password",
+                            "value": "",
+                            "desc": ""
+                        }
+                    ]
+                },
+                {
+                    "sdkMarco": "USE_FIREBASE",
+                    "pluginDatas": "/../Publishs/SDK/FireBase",
+                    "bUsed": false,
+                    "needExternalDependency": false,
+                    "needUnitySDK": false,
+                    "keyValues": []
+                },
+                {
+                    "sdkMarco": "USE_TAPTAP",
+                    "pluginDatas": "/../Publishs/SDK/Taptap",
+                    "bUsed": false,
+                    "needExternalDependency": false,
+                    "needUnitySDK": false,
+                    "keyValues": [
+                        {
+                            "key": "ClientID",
+                            "value": "xxxxx",
+                            "desc": ""
+                        },
+                        {
+                            "key": "ClientToken",
+                            "value": "xxxx",
+                            "desc": ""
+                        }
+                    ]
+                },
+                {
+                    "sdkMarco": "USE_OPPO",
+                    "pluginDatas": "/../Publishs/SDK/Oppo",
+                    "bUsed": false,
+                    "needExternalDependency": false,
+                    "needUnitySDK": true,
+                    "keyValues": [
+                        {
+                            "key": "APPKEY",
+                            "value": "5hHDqypivkW0c4K4SWS88Sw08",
+                            "desc": ""
+                        },
+                        {
+                            "key": "APPSECRET",
+                            "value": "xxx",
+                            "desc": ""
+                        },
+                        {
+                            "key": "DEBUG",
+                            "value": "false",
+                            "desc": ""
+                        },
+                        {
+                            "key": "OFFLINE",
+                            "value": "true",
+                            "desc": ""
+                        }
+                    ]
+                },
+                {
+                    "sdkMarco": "USE_VIVO",
+                    "pluginDatas": "/../Publishs/SDK/Vivo",
+                    "bUsed": false,
+                    "needExternalDependency": false,
+                    "needUnitySDK": false,
+                    "keyValues": []
+                },
+                {
+                    "sdkMarco": "USE_XIAOMI",
+                    "pluginDatas": "/../Publishs/SDK/Xiaomi",
+                    "bUsed": false,
+                    "needExternalDependency": false,
+                    "needUnitySDK": false,
+                    "keyValues": []
+                },
+                {
+                    "sdkMarco": "USE_HUAWEI",
+                    "pluginDatas": "/../Publishs/SDK/Huawei",
+                    "bUsed": false,
+                    "needExternalDependency": false,
+                    "needUnitySDK": false,
+                    "keyValues": []
+                },
+                {
+                    "sdkMarco": "USE_YINGYONGBAO",
+                    "pluginDatas": "/../Publishs/SDK/Yingyongbao",
+                    "bUsed": false,
+                    "needExternalDependency": false,
+                    "needUnitySDK": false,
+                    "keyValues": []
+                },
+                {
+                    "sdkMarco": "USE_TOBID",
+                    "pluginDatas": "/../Publishs/SDK/ToBid",
+                    "bUsed": false,
+                    "needExternalDependency": false,
+                    "needUnitySDK": true,
+                    "keyValues": [
+                        {
+                            "key": "TOBID_APPID",
+                            "value": "29210",
+                            "desc": ""
+                        },
+                        {
+                            "key": "TOBID_APPKEY",
+                            "value": "de5c126aa45573c2",
+                            "desc": ""
+                        }
+                    ]
+                },
+                {
+                    "sdkMarco": "USE_ADMOBILE",
+                    "pluginDatas": "/../Publishs/SDK/Admobile",
+                    "bUsed": false,
+                    "needExternalDependency": false,
+                    "needUnitySDK": true,
+                    "keyValues": [
+                        {
+                            "key": "WIFI",
+                            "value": "true",
+                            "desc": ""
+                        },
+                        {
+                            "key": "LOCATION",
+                            "value": "true",
+                            "desc": ""
+                        },
+                        {
+                            "key": "IMEI",
+                            "value": "true",
+                            "desc": ""
+                        },
+                        {
+                            "key": "APPID",
+                            "value": "XXX",
+                            "desc": ""
+                        },
+                        {
+                            "key": "PERSONALIZED",
+                            "value": "",
+                            "desc": ""
+                        }
+                    ]
+                },
+                {
+                    "sdkMarco": "USE_OPERATE",
+                    "pluginDatas": "/../Publishs/SDK/Operate",
+                    "bUsed": false,
+                    "needExternalDependency": false,
+                    "needUnitySDK": false,
+                    "keyValues": [
+                        {
+                            "key": "appKey",
+                            "value": "30904",
+                            "desc": ""
+                        }
+                    ]
+                },
+                {
+                    "sdkMarco": "USE_LZT",
+                    "pluginDatas": "/../Publishs/SDK/LZT",
+                    "bUsed": false,
+                    "needExternalDependency": false,
+                    "needUnitySDK": false,
+                    "keyValues": [
+                        {
+                            "key": "AppKey",
+                            "value": "AJoOF79ilNkt2m0MqaepjDyVbUC5gBdz",
+                            "desc": ""
+                        },
+                        {
+                            "key": "AppId",
+                            "value": "70090",
+                            "desc": ""
+                        }
+                    ]
+                },
+                {
+                    "sdkMarco": "USE_ZSSDK",
+                    "pluginDatas": "/../Publishs/SDK/Zs",
+                    "bUsed": false,
+                    "needExternalDependency": false,
+                    "needUnitySDK": true,
+                    "keyValues": [
+                        {
+                            "key": "AppKey",
+                            "value": "vjAIcxQMnu1PKL0oymd2sBHNW7qOlakz",
+                            "desc": ""
+                        },
+                        {
+                            "key": "AppId",
+                            "value": "54000",
+                            "desc": ""
+                        }
+                    ]
+                },
+                {
+                    "sdkMarco": "USE_233SDK",
+                    "pluginDatas": "/../Publishs/SDK/Sdk233",
+                    "bUsed": false,
+                    "needExternalDependency": false,
+                    "needUnitySDK": true,
+                    "keyValues": [
+                        {
+                            "key": "AppKey",
+                            "value": "111",
+                            "desc": ""
+                        }
+                    ]
+                }
+            ],
+            "shadervariants": []
+        },
+        {
+            "target": 20,
+            "projectName": "JSJ",
+            "projectExportName": "JSJ",
+            "bundleName": "com.stupiddog.studio.jsj",
+            "version": "1.0.0",
+            "versionCode": 32,
+            "provisioning_profiler_appkey": "94afe52f-4af0-4b3f-9135-49f689e7a2dd",
+            "provisioning_profiler_name": "stupiddog_run_dev",
+            "development_teamKey": "8J9G7947T9",
+            "defaultLanguage": 42,
+            "package_size_kb": 16384,
+            "ignore_path": [],
+            "ignore_suffix": [],
+            "ignore_file": [],
+            "copySdks": [],
+            "shadervariants": []
+        }
+    ],
+    "pak_encrtpys": [
+        10,
+        20,
+        50,
+        40
+    ],
+    "unEncryptSuffix": [],
+    "A_BAssets": [
+        {
+            "name": "Please ReName"
+        }
+    ]
+}

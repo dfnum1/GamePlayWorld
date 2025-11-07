@@ -1,0 +1,75 @@
+buildscript {
+    repositories {
+        jcenter()
+		maven {url 'https://developer.huawei.com/repo/'}
+
+        //admobile--begin
+        maven { url "https://maven.admobile.top/repository/maven-releases/" }
+        maven { url "https://jitpack.io" }
+        // 如果添加了汇量广告，需要添加汇量的远程仓库依赖
+        maven { url "https://dl-maven-android.mintegral.com/repository/mbridge_android_sdk_support/" }
+        // 如果添加了华为联盟广告，需要添加华为联盟的远程仓库依赖
+    //    maven { url 'https://developer.huawei.com/repo/' }
+        // 如果添加了gromore广告，需要添加gromore的远程仓库依赖
+        maven { url "https://artifact.bytedance.com/repository/pangle" }
+        //admobile--end     
+        
+        //oppo
+        maven {
+            url 'https://maven.columbus.heytapmobi.com/repository/maven-public/'
+            credentials {
+                username 'cmuser'
+                password 'c0b08da17ery566c3870fed67789bcb36abc2e32'
+            }
+        }   
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:0.12.+'
+    }
+}
+apply plugin: 'com.android.application'
+
+dependencies {
+    compile fileTree(dir: 'libs', include: '*.jar')
+        // 华为
+    implementation 'com.huawei.hms:hwid:6.9.0.301'
+  //  implementation 'com.huawei.hms:iap:6.9.0.301'
+    implementation 'com.huawei.hms:game:6.8.0.300'
+    
+     // ADSuyiSdk、common和OAID库是必须导入的
+    implementation 'cn.admobiletop.adsuyi.ad:core:3.7.2.02221'
+    implementation 'cn.admobiletop.adsuyi.ad:oaid:1.0.25.08023'
+    
+        //oppo
+    implementation 'com.heytap.msp.sdk:msp-sdk:1.10.1.2'
+    implementation 'com.heytap.msp.sdk:msp-oauth-sdk:1.10.1.2'
+}
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.2"
+
+    sourceSets {
+        main {
+            manifest.srcFile 'AndroidManifest.xml'
+            java.srcDirs = ['src']
+            resources.srcDirs = ['src']
+            aidl.srcDirs = ['src']
+            renderscript.srcDirs = ['src']
+            res.srcDirs = ['res']
+            assets.srcDirs = ['assets']
+        }
+
+        // Move the tests to tests/java, tests/res, etc...
+        instrumentTest.setRoot('tests')
+
+        // Move the build types to build-types/<type>
+        // For instance, build-types/debug/java, build-types/debug/AndroidManifest.xml, ...
+        // This moves them out of them default location under src/<type>/... which would
+        // conflict with src/ being used by the main source set.
+        // Adding new build types or product flavors should be accompanied
+        // by a similar customization.
+        debug.setRoot('build-types/debug')
+        release.setRoot('build-types/release')
+    }
+}

@@ -62,8 +62,8 @@ PlayerSettings:
   androidShowActivityIndicatorOnLoading: -1
   iosUseCustomAppBackgroundBehavior: 0
   iosAllowHTTPDownload: 1
-  allowedAutorotateToPortrait: 1
-  allowedAutorotateToPortraitUpsideDown: 1
+  allowedAutorotateToPortrait: 0
+  allowedAutorotateToPortraitUpsideDown: 0
   allowedAutorotateToLandscapeRight: 1
   allowedAutorotateToLandscapeLeft: 1
   useOSAutorotation: 1
@@ -718,7 +718,10 @@ PlayerSettings:
   webGLThreadsSupport: 0
   webGLDecompressionFallback: 0
   webGLPowerPreference: 2
-  scriptingDefineSymbols: {}
+  scriptingDefineSymbols:
+    Android: USE_TIMELINE;USE_URP;USE_UNITY_JOB;USE_REPORTVIEW;USE_TMPRO;USE_SKILLSYSTEM;USE_ACTORSYSTEM;USE_GUIDESYSTEM;USE_CUTSCENE;USE_VIDEOSYSTEM
+    Standalone: USE_TIMELINE;USE_URP;USE_UNITY_JOB;USE_REPORTVIEW;USE_TMPRO;USE_SKILLSYSTEM;USE_ACTORSYSTEM;USE_GUIDESYSTEM;USE_CUTSCENE;USE_VIDEOSYSTEM
+    iPhone: USE_TIMELINE;USE_URP;USE_UNITY_JOB;USE_REPORTVIEW;USE_TMPRO;USE_SKILLSYSTEM;USE_ACTORSYSTEM;USE_GUIDESYSTEM;USE_CUTSCENE;USE_VIDEOSYSTEM
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend: {}

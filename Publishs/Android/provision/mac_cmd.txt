@@ -1,0 +1,2 @@
+1：添加android 版本,到unity 的android tools bin 目录下
+./sdkmanager "platforms;android-26"

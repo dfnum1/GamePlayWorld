@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="gen"/>
+	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
+	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
+	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.DEPENDENCIES"/>
+	<classpathentry kind="lib" path="libs/admobile/oaid_sdk_1.0.25.jar"/>
+	<classpathentry kind="lib" path="libs/oppo/core-1.1.0.aar"/>
+	<classpathentry kind="lib" path="libs/oppo/gamesdk-20220915.jar"/>
+	<classpathentry kind="lib" path="libs/oppo/gamesdk-common-20220915.jar"/>
+	<classpathentry kind="lib" path="libs/vivo/vivo_sdk.jar"/>
+	<classpathentry kind="lib" path="libs/vivo/vivounionsdk_v4.7.4.1.jar"/>
+	<classpathentry kind="lib" path="libs/yingyongbao/YSDK_Android_1.8.20.jar"/>
+	<classpathentry kind="lib" path="libs/yingyongbao/ysdkshell.jar"/>
+	<classpathentry kind="lib" path="libs/classes.jar"/>
+	<classpathentry kind="lib" path="libs/huawei/agconnect-apms-plugin-1.5.2.302.jar"/>
+	<classpathentry kind="lib" path="libs/huawei/agconnect-core-1.7.3.302.jar"/>
+	<classpathentry kind="lib" path="libs/huawei/agconnect-crash-symbol-lib-1.6.0.300.jar"/>
+	<classpathentry kind="lib" path="libs/huawei/agcp-1.6.0.300.jar"/>
+	<classpathentry kind="lib" path="libs/huawei/ads-base-13.4.61.300.jar"/>
+	<classpathentry kind="lib" path="libs/huawei/game-6.8.0.300.jar"/>
+	<classpathentry kind="lib" path="libs/huawei/tasks-1.5.2.206.jar"/>
+	<classpathentry kind="lib" path="libs/huawei/hwid-6.9.0.301.jar"/>
+	<classpathentry kind="lib" path="libs/huawei/base-6.9.0.301.jar"/>
+	<classpathentry kind="lib" path="libs/huawei/ui-6.9.0.301.jar"/>
+	<classpathentry kind="lib" path="libs/admobile/core-3.7.2.02221.jar"/>
+	<classpathentry kind="lib" path="libs/admobile/oaid-1.0.25.08023.jar"/>
+	<classpathentry kind="lib" path="libs/admobile/syid-1.0.0.05171.jar"/>
+	<classpathentry kind="lib" path="libs/admobile/support-fragment-28.0.0.jar"/>
+	<classpathentry kind="lib" path="libs/tobid/wind-common-1.4.7.jar"/>
+	<classpathentry kind="lib" path="libs/tobid/wind-sdk-4.12.2.jar"/>
+	<classpathentry kind="lib" path="libs/huawei/hmssdk-iap-4.0.4.300.jar"/>
+	<classpathentry kind="lib" path="libs/Zs/zssdk-release.jar"/>
+	<classpathentry kind="lib" path="libs/233/mpg-cm-v1.0.6.jar"/>
+	<classpathentry kind="lib" path="libs/233/mpg-pay-v3.1.6.jar"/>
+	<classpathentry kind="output" path="bin/classes"/>
+</classpath>

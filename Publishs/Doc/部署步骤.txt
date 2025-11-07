@@ -1,0 +1,25 @@
+﻿1:Sample commands:
+Install the latest LTS version: brew install jenkins-lts
+Install a specific LTS version: brew install jenkins-lts@YOUR_VERSION
+Start the Jenkins service: brew services start jenkins-lts
+Restart the Jenkins service: brew services restart jenkins-lts
+Update the Jenkins version: brew upgrade jenkins-lts
+
+2:安装subversion svn 插件
+3:安装xcode 插件 Xcode integration
+
+4:operation not permitted
+重启，过程中按住 command+R，进入保护模式
+打开terminal终端，输入
+csrutil disable
+
+再次重启，即可对 usr/bin 目录下文件进行修改
+
+xattr -d com.apple.quarantine ./* 或目录
+
+
+$ sudo chown -R userName /Users/Shared/Jenkins
+$ sudo chown -R userName /var/log/jenkins
+
+#重启Jenkins
+$ sudo launchctl load /Library/LaunchDaemons/org.jenkins-ci.plist

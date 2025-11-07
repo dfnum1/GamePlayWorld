@@ -1,0 +1,84 @@
+{
+    "plugins": [
+        {
+            "name": "SkillSystem",
+            "displayName": "技能系统",
+            "version": "1.0.0",
+            "banner": "SkillSystem/banner.png",
+            "marcoWord": "USE_SKILLSYSTEM",
+            "description": "",
+            "installDir": "Scripts/Thirdpartys",
+            "toggle": true
+        },
+        {
+            "name": "ActorSystem",
+            "displayName": "角色系统",
+            "version": "1.0.0",
+            "banner": "ActorSystem/banner.png",
+            "marcoWord": "USE_ACTORSYSTEM",
+            "description": "",
+            "installDir": "",
+            "toggle": true
+        },
+        {
+            "name": "FixedMath",
+            "displayName": "定点数",
+            "version": "1.0.0",
+            "banner": "FixedMath/banner.png",
+            "marcoWord": "USE_FIXEDMATH",
+            "description": "",
+            "installDir": "",
+            "toggle": false
+        },
+        {
+            "name": "GuideSystem",
+            "displayName": "引导系统",
+            "version": "1.0.0",
+            "banner": "GuideSystem/banner.png",
+            "marcoWord": "USE_GUIDESYSTEM",
+            "description": "",
+            "installDir": "",
+            "toggle": true
+        },
+        {
+            "name": "Cutscene",
+            "displayName": "过场系统",
+            "version": "1.0.0",
+            "banner": "Cutscene/banner.png",
+            "marcoWord": "USE_CUTSCENE",
+            "description": "",
+            "installDir": "",
+            "toggle": true
+        },
+        {
+            "name": "VideoSystem",
+            "displayName": "视频系统",
+            "version": "1.0.0",
+            "banner": "VideoSystem/banner.png",
+            "marcoWord": "USE_VIDEOSYSTEM",
+            "description": "",
+            "installDir": "",
+            "toggle": true
+        },
+        {
+            "name": "AVProVideo",
+            "displayName": "AVProVideo",
+            "version": "2.4.1",
+            "banner": "AVProVideo/banner.png",
+            "marcoWord": "USE_AVPRO",
+            "description": "",
+            "installDir": "Scripts/Thirdpartys",
+            "toggle": false
+        },
+        {
+            "name": "HybridCLR",
+            "displayName": "华佗热更",
+            "version": "1.0.0",
+            "banner": "banner.png",
+            "marcoWord": "USE_HYBRIDCLR",
+            "description": "",
+            "installDir": "",
+            "toggle": false
+        }
+    ]
+}
