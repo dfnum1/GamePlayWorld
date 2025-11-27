@@ -19,7 +19,7 @@ namespace Framework.Cutscene.Editor
         //--------------------------------------------------------
         public bool IsRuntimePlayingCutscene()
         {
-            CutsceneEditor pEdit = GetOwner<CutsceneEditor>();
+            ACutsceneEditor pEdit = GetOwner<ACutsceneEditor>();
             if (pEdit == null) return false;
             return pEdit.IsRuntimeOpenPlayingCutscene();
         }

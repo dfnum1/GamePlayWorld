@@ -13,7 +13,7 @@ using Framework.Cutscene.Runtime;
 
 namespace Framework.Cutscene.Editor
 {
-    public class CutsceneEditor : EditorWindowBase
+    public class CutsceneEditor : ACutsceneEditor
     {
         private const float EDGE_SNAP_OFFSET = 1;
         enum EDragEdge
@@ -84,7 +84,7 @@ namespace Framework.Cutscene.Editor
             window.OnChangeSelect(pObject);
         }
         //--------------------------------------------------------
-        internal void OnSetTime(float time)
+        public override void OnSetTime(float time)
         {
             TimelineDrawLogic logic = GetLogic<TimelineDrawLogic>();
             if (logic == null)
@@ -194,7 +194,7 @@ namespace Framework.Cutscene.Editor
             return m_CutsceneManager;
         }
         //--------------------------------------------------------
-        public CutsceneInstance GetCutsceneInstance()
+        public override CutsceneInstance GetCutsceneInstance()
         {
             return m_pCutscene;
         }
@@ -219,7 +219,7 @@ namespace Framework.Cutscene.Editor
             get { return m_TileStyle; }
         }
         //--------------------------------------------------------
-        public void OpenAgentTreeEdit()
+        public override void OpenAgentTreeEdit()
         {
             if (m_pAgentTreeEdit == null || m_pCurrentObj !=null && m_pCurrentObj is CutsceneObject)
             {
@@ -228,17 +228,17 @@ namespace Framework.Cutscene.Editor
             if (m_pAgentTreeEdit) m_pAgentTreeEdit.Focus();
         }
         //--------------------------------------------------------
-        public AgentTreeWindow GetAgentTreeWindow()
+        public override AgentTreeWindow GetAgentTreeWindow()
         {
             return m_pAgentTreeEdit;
         }
         //--------------------------------------------------------
-        public bool IsRuntimeOpenPlayingCutscene()
+        public override bool IsRuntimeOpenPlayingCutscene()
         {
             return m_bRuntimeOpenPlayingCutscene;
         }
         //--------------------------------------------------------
-        public void OpenRuntimePlayingCutscene(CutsceneInstance pInstance)
+        public override void OpenRuntimePlayingCutscene(CutsceneInstance pInstance)
         {
             var cutsceneGraphData = pInstance.GetCutsceneData();
             if (cutsceneGraphData == null)
@@ -310,7 +310,7 @@ namespace Framework.Cutscene.Editor
             }
         }
         //--------------------------------------------------------
-        public void SaveAgentTreeData()
+        public override void SaveAgentTreeData()
         {
             if (m_bRuntimeOpenPlayingCutscene)
                 return;

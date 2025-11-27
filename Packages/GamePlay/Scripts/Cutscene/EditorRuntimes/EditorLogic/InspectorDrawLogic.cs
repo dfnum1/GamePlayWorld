@@ -89,7 +89,7 @@ namespace Framework.Cutscene.Editor
         protected override void OnGUI()
         {
             EditorGUI.BeginDisabledGroup(IsRuntimePlayingCutscene());
-            var window = GetOwner<CutsceneEditor>();
+            var window = GetOwner<ACutsceneEditor>();
             Rect rect = GetRect();
             GUILayout.BeginArea(new Rect(rect.x, rect.y + 20, rect.width, rect.height - 20));
 
@@ -157,7 +157,7 @@ namespace Framework.Cutscene.Editor
             string clipName = pEvt.clip.GetName();
             clipName += "[" + pEvt.GetBegin().ToString("F2") + "]";
             pEvt.expandProp = EditorGUILayout.Foldout(pEvt.expandProp, clipName);
-            var cutsceneInstance = GetOwner<CutsceneEditor>().GetCutsceneInstance();
+            var cutsceneInstance = GetOwner<ACutsceneEditor>().GetCutsceneInstance();
             CutsceneTrack pSubObj = null;
             if(cutsceneInstance!=null && cutsceneInstance.GetPlayable()!=null)
             {
@@ -239,7 +239,7 @@ namespace Framework.Cutscene.Editor
             clipName += "[" + clip.GetBegin().ToString("F2") + "-" + clip.GetEnd().ToString("F2") + "]["+clip.clip.GetType()+"]";
             clip.expandProp = EditorGUILayout.Foldout(clip.expandProp, clipName);
             CutsceneTrack pSubObj = null;
-            var cutsceneInstance = GetOwner<CutsceneEditor>().GetCutsceneInstance();
+            var cutsceneInstance = GetOwner<ACutsceneEditor>().GetCutsceneInstance();
             if (cutsceneInstance != null && cutsceneInstance.GetPlayable() != null)
             {
                 pSubObj = cutsceneInstance.GetPlayable().GetTrack(clip.ownerTrack.track);

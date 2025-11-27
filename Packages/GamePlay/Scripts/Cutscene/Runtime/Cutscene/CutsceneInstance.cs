@@ -269,9 +269,9 @@ namespace Framework.Cutscene.Runtime
             if (m_pPlayable == null) return;
             m_pPlayable.SetTime(time, bForceUpdate);
 #if UNITY_EDITOR
-            if (m_pOwnerEditor != null && m_pOwnerEditor is Editor.CutsceneEditor)
+            if (m_pOwnerEditor != null && m_pOwnerEditor is Editor.ACutsceneEditor)
             {
-                ((Editor.CutsceneEditor)m_pOwnerEditor).OnSetTime(time);
+                ((Editor.ACutsceneEditor)m_pOwnerEditor).OnSetTime(time);
             }
 #endif
         }

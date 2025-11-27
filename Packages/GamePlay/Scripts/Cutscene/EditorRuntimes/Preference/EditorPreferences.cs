@@ -316,7 +316,7 @@ namespace Framework.Cutscene.Editor
 
         static void RepaintAll()
         {
-            var editors = Resources.FindObjectsOfTypeAll<CutsceneEditor>();
+            var editors = Resources.FindObjectsOfTypeAll<ACutsceneEditor>();
             if (editors != null)
             {
                 for (int i = 0; i < editors.Length; ++i)

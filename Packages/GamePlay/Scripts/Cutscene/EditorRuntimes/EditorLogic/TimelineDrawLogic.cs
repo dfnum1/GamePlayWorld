@@ -209,7 +209,7 @@ namespace Framework.Cutscene.Editor
             if(m_EndCursor.style!=null)
                 m_EndCursor.lineColor = m_EndCursor.style.normal.textColor;
             m_EndCursor.lineColor = new Color(m_EndCursor.lineColor.r, m_EndCursor.lineColor.g, m_EndCursor.lineColor.b,0.5f);
-            m_pCutscene = GetOwner<CutsceneEditor>().GetCutsceneInstance();
+            m_pCutscene = GetOwner<ACutsceneEditor>().GetCutsceneInstance();
             m_pTimelineTree = new TreeAssetView(new string[] { "Track", "" });
             var colomn0 = m_pTimelineTree.GetColumn(0);
             colomn0.width = colomn0.minWidth = 200;
@@ -329,7 +329,7 @@ namespace Framework.Cutscene.Editor
             }
             if(IsRuntimePlayingCutscene())
             {
-                m_pCutscene = GetOwner<CutsceneEditor>().GetCutsceneInstance();
+                m_pCutscene = GetOwner<ACutsceneEditor>().GetCutsceneInstance();
                 if(m_pCutscene!=null) m_fPlayTime = m_pCutscene.GetTime();
             }
         }
@@ -759,7 +759,7 @@ namespace Framework.Cutscene.Editor
             if (assetData == null) assetData = GetAsset();
             m_pCutscene.Stop(true);
             m_pCutscene.Destroy();
-            GetOwner<CutsceneEditor>().SaveAgentTreeData();
+            GetOwner<ACutsceneEditor>().SaveAgentTreeData();
             m_pCutscene.SetEditorMode(true, GetOwner());
             m_pCutscene.Create(GetCutsceneGraph(), null, assetData!=null? assetData.id:-1);
             m_pCutscene.SetGUID(DataUtils.EDITOR_INSTANCE_ID);
@@ -779,7 +779,7 @@ namespace Framework.Cutscene.Editor
         {
             if (IsRuntimePlayingCutscene())
             {
-                m_pCutscene = GetOwner<CutsceneEditor>().GetCutsceneInstance();
+                m_pCutscene = GetOwner<ACutsceneEditor>().GetCutsceneInstance();
                 if(m_pCutscene!=null)
                     m_fPlayTime = m_pCutscene.GetTime();
                 return;
@@ -791,7 +791,7 @@ namespace Framework.Cutscene.Editor
                 return;
             m_pCutscene.Stop(true);
             m_pCutscene.Destroy();
-            GetOwner<CutsceneEditor>().SaveAgentTreeData();
+            GetOwner<ACutsceneEditor>().SaveAgentTreeData();
             m_pCutscene.SetEditorMode(true, GetOwner());
             m_pCutscene.Create(GetCutsceneGraph(), null, assetData != null ? assetData.id : -1);
             m_pCutscene.SetGUID(DataUtils.EDITOR_INSTANCE_ID);
@@ -2236,7 +2236,7 @@ namespace Framework.Cutscene.Editor
             {
                 db.OnEnableCutscene(pCutscene,bEnable);
             }
-            var agentWindow = GetOwner<CutsceneEditor>().GetAgentTreeWindow();
+            var agentWindow = GetOwner<ACutsceneEditor>().GetAgentTreeWindow();
             if(agentWindow!=null)
             {
                 agentWindow.GetLogics().ForEach((logic) => {

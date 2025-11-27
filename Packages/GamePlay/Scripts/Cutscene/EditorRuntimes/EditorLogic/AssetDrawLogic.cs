@@ -169,7 +169,7 @@ namespace Framework.Cutscene.Editor
         //-----------------------------------------------------
         void DrawDebugPanel()
         {
-            CutsceneEditor pEditor = GetOwner<CutsceneEditor>();
+            ACutsceneEditor pEditor = GetOwner<ACutsceneEditor>();
             var cutsceneInstance = pEditor.GetCutsceneInstance();
             EditorGUI.BeginDisabledGroup(cutsceneInstance == null);
             EditorGUILayout.LabelField("剪辑:");

@@ -32,7 +32,7 @@ namespace Framework.Cutscene.Editor
                     AssetDatabase.CreateAsset(cutscene, saveFile);
                     AssetDatabase.SaveAssets();
 
-                    GetOwner<CutsceneEditor>().OnChangeSelect(cutscene);
+                    GetOwner<ACutsceneEditor>().OnChangeSelect(cutscene);
                 }
             }
             if(GUILayout.Button("保存", new GUILayoutOption[] { GUILayout.Width(80) }))
@@ -45,7 +45,7 @@ namespace Framework.Cutscene.Editor
             }
             if (GUILayout.Button("行为树", new GUILayoutOption[] { GUILayout.Width(120) }))
             {
-                GetOwner<CutsceneEditor>().OpenAgentTreeEdit();
+                GetOwner<ACutsceneEditor>().OpenAgentTreeEdit();
             }
             if (Application.isPlaying && GUILayout.Button("打开游戏运行时正在播放", new GUILayoutOption[] { GUILayout.Width(150) }))
             {
@@ -81,7 +81,7 @@ namespace Framework.Cutscene.Editor
                     menu.AddItem(new GUIContent(cutsceneObj.name + "-" + subName), false, (obj) => {
                         var cso = obj as CutsceneInstance;
                         if(cso!=null)
-                            GetOwner<CutsceneEditor>().OpenRuntimePlayingCutscene(cso);
+                            GetOwner<ACutsceneEditor>().OpenRuntimePlayingCutscene(cso);
                     }, cs.Value);
                 }
                 menu.ShowAsContext();
