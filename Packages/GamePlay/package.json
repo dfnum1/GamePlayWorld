@@ -8,6 +8,11 @@
    "unity",
    "gameplay"
   ],
+  "author": {
+    "name": "RD1",
+    "email": "qigui.li@igg.com",
+    "url": "https://www.unity3d.com"
+  },
   "category": "GamePlay",
   "dependencies": {
   }
