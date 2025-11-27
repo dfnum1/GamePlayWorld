@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 7722591633097839137}
   - component: {fileID: 8053031340871227781}
   - component: {fileID: 9174028531879138758}
-  - component: {fileID: -6801659194446943933}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -98,63 +97,3 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &-6801659194446943933
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6091440270385297255}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 764054c92192692449d24a0f7e9ab01e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  allowChangeLayer: 1
-  commonActions: []
-  avatarMasks: []
-  ActionGraphData: {fileID: 0}
-  ATData:
-    bEnable: 0
-    Locals:
-      varVariableBool: []
-      varVariableBoolList: []
-      varVariableByte: []
-      varVariableByteList: []
-      varVariableColor: []
-      varVariableColorList: []
-      varVariableCurve: []
-      varVariableCurveList: []
-      varVariableDelegate: []
-      varVariableFloat: []
-      varVariableFloatList: []
-      varVariableInt: []
-      varVariableIntList: []
-      varVariableLong: []
-      varVariableLongList: []
-      varVariableMonoScript: []
-      varVariableMonoScriptList: []
-      varVariableObject: []
-      varVariableObjectList: []
-      varVariableQuaternion: []
-      varVariableQuaternionList: []
-      varVariableString: []
-      varVariableStringList: []
-      varVariableUser: []
-      varVariableUserList: []
-      varVariableVector2: []
-      varVariableVector2List: []
-      varVariableVector2Int: []
-      varVariableVector2IntList: []
-      varVariableVector3: []
-      varVariableVector3List: []
-      varVariableVector3Int: []
-      varVariableVector3IntList: []
-      varVariableVector4: []
-      varVariableVector4List: []
-    vNodes: []
-    vATApis: []
-    Tasks: []
-    StructDatas: []
-    RefPorts: []
-    transferDots: []
