@@ -29,74 +29,74 @@ namespace Framework.Cutscene.Runtime
     //-----------------------------------------------------
     public class CutsceneTrack
     {
-		//-----------------------------------------------------
-		//! Clip 数据
-		//-----------------------------------------------------
-		struct ClipData
-		{
+        //-----------------------------------------------------
+        //! Clip 数据
+        //-----------------------------------------------------
+        struct ClipData
+        {
             public CutsceneData.Group ownerGroup;
-			public EDriverStatus eStatus;
-			public IBaseClip clipData;
-			public ACutsceneDriver pDriver;
+            public EDriverStatus eStatus;
+            public IBaseClip clipData;
+            public ACutsceneDriver pDriver;
         }
         //-----------------------------------------------------
         //! Event 数据
         //-----------------------------------------------------
         struct EventData
-		{
+        {
             public CutsceneData.Group ownerGroup;
             public bool bTriggered;
-			public IBaseEvent eventData;
+            public IBaseEvent eventData;
             public ACutsceneDriver pDriver;
         }
         //-----------------------------------------------------
-        private string                          m_strName = null;
-        private List<ClipData>                  m_vClips = null;
-		private List<EventData>                 m_vEvents = null;
-		CutscenePlayable                        m_pOwner = null;
-        CutsceneData.Group                      m_pOwnerGroup = null;
-        CutsceneData.Track                      m_pOwnerTrack = null;
+        private string m_strName = null;
+        private List<ClipData> m_vClips = null;
+        private List<EventData> m_vEvents = null;
+        CutscenePlayable m_pOwner = null;
+        CutsceneData.Group m_pOwnerGroup = null;
+        CutsceneData.Track m_pOwnerTrack = null;
         //-----------------------------------------------------
         internal CutsceneTrack()
         {
         }
         //-----------------------------------------------------
         public bool Create(CutscenePlayable playeable, CutsceneData.Group pGroup, CutsceneData.Track pData)
-		{
-			Clear();
-			m_pOwner = playeable;
+        {
+            Clear();
+            m_pOwner = playeable;
             m_pOwnerGroup = pGroup;
             m_pOwnerTrack = pData;
             if (pData == null)
-				return false;
+                return false;
             m_strName = pData.trackName;
 
             if (pData.clips != null)
-			{
-				m_vClips = new List<ClipData>(pData.clips.Count);
-				for(int i =0; i < pData.clips.Count; ++i)
-				{
+            {
+                m_vClips = new List<ClipData>(pData.clips.Count);
+                for (int i = 0; i < pData.clips.Count; ++i)
+                {
                     AddClipData(pGroup, pData, pData.clips[i], false);
                 }
                 m_vClips.Sort((clip1, clip2) =>
                 {
-                    return clip1.clipData.GetTime() < clip2.clipData.GetTime() ? -1:1;
+                    return clip1.clipData.GetTime() < clip2.clipData.GetTime() ? -1 : 1;
                 });
             }
-			if(pData.events != null)
-			{
-				m_vEvents = new List<EventData>(pData.events.Count);
-				for(int i =0; i < pData.events.Count; ++i)
-				{
+            if (pData.events != null)
+            {
+                m_vEvents = new List<EventData>(pData.events.Count);
+                for (int i = 0; i < pData.events.Count; ++i)
+                {
                     AddEventData(pGroup, pData, pData.events[i]);
                 }
-			}
-            if(m_pOwnerGroup!=null && m_pOwnerGroup.binderId!=0)
+            }
+            if (m_pOwnerGroup != null && m_pOwnerGroup.binderId != 0)
             {
                 BindTrackData(new ObjId(m_pOwnerGroup.binderId), ObjectBinderUtils.GetBinder(m_pOwnerGroup.binderId));
             }
-			return (m_vClips !=null && m_vClips.Count > 0) ||
-				   (m_vEvents != null && m_vEvents.Count > 0);
+            return (m_vClips != null && m_vClips.Count > 0) ||
+                   (m_vEvents != null && m_vEvents.Count > 0);
         }
         //-----------------------------------------------------
         internal bool AddEventData(CutsceneData.Group pGroup, CutsceneData.Track pTrack, IBaseEvent pDater)
@@ -155,10 +155,10 @@ namespace Framework.Cutscene.Runtime
             if (pTrack != m_pOwnerTrack)
                 return false;
 
-            if(pDater is IBaseEvent)
+            if (pDater is IBaseEvent)
             {
                 if (m_vEvents == null) return false;
-                for(int i =0; i < m_vEvents.Count; ++i)
+                for (int i = 0; i < m_vEvents.Count; ++i)
                 {
                     //! value ref ,check failed
                     if (m_vEvents[i].eventData == pDater)
@@ -235,8 +235,8 @@ namespace Framework.Cutscene.Runtime
                 {
                     var clip = m_vClips[i];
                     if (clip.pDriver == null) continue;
-                    if(driverType != null && clip.pDriver.GetType() == driverType)
-                        vLists.Add(new CacheTrackDriver() { pTrack = this, pDriver =  clip.pDriver, pDater = clip.clipData });
+                    if (driverType != null && clip.pDriver.GetType() == driverType)
+                        vLists.Add(new CacheTrackDriver() { pTrack = this, pDriver = clip.pDriver, pDater = clip.clipData });
                     else if (pDater != null && clip.clipData == pDater)
                         vLists.Add(new CacheTrackDriver() { pTrack = this, pDriver = clip.pDriver, pDater = clip.clipData });
                     else if (driverType == null && pDater == null)
@@ -281,13 +281,13 @@ namespace Framework.Cutscene.Runtime
 
             var drivers = CutscenePool.CacheDrivers;
 
-            if (m_vClips!=null)
+            if (m_vClips != null)
             {
                 for (int i = 0; i < m_vClips.Count; ++i)
                 {
                     var clip = m_vClips[i];
                     if (clip.pDriver == null) continue;
-                    if(pDataer == null || clip.clipData == pDataer)
+                    if (pDataer == null || clip.clipData == pDataer)
                     {
                         drivers.Add(clip.pDriver);
                     }
@@ -417,8 +417,8 @@ namespace Framework.Cutscene.Runtime
         }
         //-----------------------------------------------------
         internal bool Update(ref FrameData frameData)
-		{
-			bool bOver = true;
+        {
+            bool bOver = true;
             frameData.isBlending = false;
             frameData.blendFactor = 0.0f;
             frameData.blendTime = 0.0f;
@@ -444,46 +444,63 @@ namespace Framework.Cutscene.Runtime
                         eventData.bTriggered = true;
                         if (eventData.pDriver == null || !eventData.pDriver.OnEventTrigger(this, eventData.eventData))
                             OnEventTrigger(eventData.eventData);
-                        if(m_pOwner!=null)
+                        if (m_pOwner != null)
                             m_pOwner.BindEventTrackData(m_pOwnerGroup, eventData.eventData);
                         m_vEvents[i] = eventData;
                     }
                 }
             }
             if (m_vClips != null)
-			{
+            {
                 var cacheIndexs = CutscenePool.GetCacheIndexs();
                 for (int i = 0; i < m_vClips.Count; ++i)
-				{
-					ClipData clipData = m_vClips[i];
-					if (clipData.clipData == null)
-						continue;
+                {
+                    ClipData clipData = m_vClips[i];
+                    if (clipData.clipData == null)
+                        continue;
 
                     if (!m_pOwner.CanPlayable(EDataType.eClip, clipData.clipData))
                         continue;
 
                     if (clipData.eStatus != EDriverStatus.Leave)
-						bOver = false;
+                        bOver = false;
 
                     bool bAddCacheIndex = false;
                     frameData.clip = clipData.clipData;
                     frameData.clipStatus = clipData.eStatus;
                     float beginTime = clipData.clipData.GetTime();
-					float endTime = beginTime + clipData.clipData.GetDuration();
+                    float endTime = beginTime + clipData.clipData.GetDuration();
                     switch (clipData.eStatus)
-					{
-						case EDriverStatus.None:
-							{
-								if(frameData.curTime >= beginTime && frameData.curTime <= endTime)
-								{
-									clipData.eStatus = EDriverStatus.Enter;
-                                    frameData.clipStatus = clipData.eStatus;
-                                    CalculateClipBlend(i-1,i,i+1,ref frameData);
-                                    if (clipData.pDriver == null || !clipData.pDriver.OnClipEnter(this, frameData))
-                                        OnFrameClipEnter(ref frameData);
+                    {
+                        case EDriverStatus.None:
+                            {
+                                if (frameData.curTime >= beginTime)
+                                {
+                                    if (clipData.clipData.GetEndEdgeType() == EClipEdgeType.KeepClamp || frameData.curTime <= endTime)
+                                    {
+                                        clipData.eStatus = EDriverStatus.Enter;
+                                        frameData.clipStatus = clipData.eStatus;
+                                        CalculateClipBlend(i - 1, i, i + 1, ref frameData);
+                                        if (clipData.pDriver == null || !clipData.pDriver.OnClipEnter(this, frameData))
+                                            OnFrameClipEnter(ref frameData);
+                                    }
+                                    else if (clipData.clipData.GetEndEdgeType() == EClipEdgeType.KeepState)
+                                    {
+                                        clipData.eStatus = EDriverStatus.Enter;
+                                        if (clipData.pDriver == null || !clipData.pDriver.OnClipEnter(this, frameData))
+                                            OnFrameClipEnter(ref frameData);
+                                        clipData.eStatus = EDriverStatus.Framing;
+                                        UpdateFreming(ref frameData, ref clipData, i);
+                                        if (frameData.curTime >= endTime)
+                                        {
+                                            clipData.eStatus = EDriverStatus.Leave;
+                                            if (clipData.pDriver == null || !clipData.pDriver.OnClipLeave(this, frameData))
+                                                OnFrameClipLeave(ref frameData);
+                                        }
+                                    }
                                 }
                             }
-							break;
+                            break;
                         case EDriverStatus.Enter:
                             {
                                 clipData.eStatus = EDriverStatus.Framing;
@@ -494,7 +511,7 @@ namespace Framework.Cutscene.Runtime
                         case EDriverStatus.Framing:
                             {
                                 UpdateFreming(ref frameData, ref clipData, i);
-                                if (!frameData.isBlending && clipData.eStatus == EDriverStatus.Framing && 
+                                if (!frameData.isBlending && clipData.eStatus == EDriverStatus.Framing &&
                                     (clipData.clipData.GetEndEdgeType() == EClipEdgeType.KeepClamp || clipData.clipData.GetEndEdgeType() == EClipEdgeType.KeepState))
                                     bAddCacheIndex = true;
                             }
@@ -512,7 +529,7 @@ namespace Framework.Cutscene.Runtime
                             }
                             break;
                     }
-                    if(clipData.eStatus == EDriverStatus.Framing && cacheIndexs.Count>0)
+                    if (clipData.eStatus == EDriverStatus.Framing && cacheIndexs.Count > 0)
                     {
                         long curKey = CutscenePool.GetDaterKey(EDataType.eClip, clipData.clipData);
                         for (int j = 0; j < cacheIndexs.Count;)
@@ -546,13 +563,13 @@ namespace Framework.Cutscene.Runtime
             return bOver;
         }
         //-----------------------------------------------------
-		void UpdateFreming(ref FrameData frameData, ref ClipData clipData, int index)
-		{
+        void UpdateFreming(ref FrameData frameData, ref ClipData clipData, int index)
+        {
             float beginTime = clipData.clipData.GetTime();
             float endTime = beginTime + clipData.clipData.GetDuration();
             float duration = clipData.clipData.GetDuration();
             frameData.clipStatus = clipData.eStatus;
-            CalculateClipBlend(index-1,index, index+1, ref frameData);
+            CalculateClipBlend(index - 1, index, index + 1, ref frameData);
             if (clipData.clipData.GetEndEdgeType() == EClipEdgeType.KeepClamp)
             {
                 frameData.clip = clipData.clipData;
@@ -761,16 +778,16 @@ namespace Framework.Cutscene.Runtime
         }
         //-----------------------------------------------------
         internal void Clear()
-		{
-			if (m_vClips != null)
-			{
+        {
+            if (m_vClips != null)
+            {
                 for (int i = 0; i < m_vClips.Count; ++i)
-				{
-					var clipData = m_vClips[i];
+                {
+                    var clipData = m_vClips[i];
                     DestroyClip(ref clipData);
                 }
                 m_vClips.Clear();
-			}
+            }
             if (m_vEvents != null)
             {
                 for (int i = 0; i < m_vEvents.Count; ++i)
@@ -822,38 +839,38 @@ namespace Framework.Cutscene.Runtime
         }
         //-----------------------------------------------------
         public void Destroy()
-		{
-			Clear();
-			m_pOwner = null;
+        {
+            Clear();
+            m_pOwner = null;
         }
         //-----------------------------------------------------
         protected virtual void OnCreateClip(IBaseClip clip)
-		{
-			if (m_pOwner == null)
-				return;
-			m_pOwner.OnCreateClip(this, clip);
+        {
+            if (m_pOwner == null)
+                return;
+            m_pOwner.OnCreateClip(this, clip);
         }
         //-----------------------------------------------------
         protected virtual void OnDestroyClip(IBaseClip clip)
-		{
+        {
             if (m_pOwner == null)
                 return;
             m_pOwner.OnDestroyClip(this, clip);
         }
         //-----------------------------------------------------
         protected virtual void OnFrameClip(ref FrameData frameData)
-		{
+        {
             if (m_pOwner == null)
                 return;
-			frameData.ownerTrack = this;
+            frameData.ownerTrack = this;
             m_pOwner.OnFrameClip(frameData);
         }
         //-----------------------------------------------------
         protected virtual void OnFrameClipEnter(ref FrameData frameData)
-		{
+        {
             if (m_pOwner == null)
                 return;
-            m_pOwner.OnFrameClipEnter(this,frameData);
+            m_pOwner.OnFrameClipEnter(this, frameData);
         }
         //-----------------------------------------------------
         protected virtual void OnUpdateClip(ref FrameData frameData)
@@ -864,14 +881,14 @@ namespace Framework.Cutscene.Runtime
         }
         //-----------------------------------------------------
         protected virtual void OnFrameClipLeave(ref FrameData frameData)
-		{
+        {
             if (m_pOwner == null)
                 return;
             m_pOwner.OnFrameClipLeave(this, frameData);
         }
         //-----------------------------------------------------
         protected virtual void OnEventTrigger(IBaseEvent pEvt)
-		{
+        {
             if (m_pOwner == null)
                 return;
             m_pOwner.OnEventTrigger(this, pEvt);

@@ -68,6 +68,7 @@ namespace Framework.Cutscene.Editor
     }
     public static class DataUtils
     {
+        internal static int EDITOR_INSTANCE_ID = -10000;
         private static Dictionary<int, ClipAttriData> ms_ClipAttrs = null;
         private static List<ClipAttriData> ms_vClipsLists = new List<ClipAttriData>();
         private static List<string> ms_vClipsPops = new List<string>();
@@ -1023,6 +1024,22 @@ namespace Framework.Cutscene.Editor
                 }
             }
             return pObj;
+        }
+        //-----------------------------------------------------
+        public static void AddRuntimeCutsceneInstance(CutsceneInstance pInstance)
+        {
+            var cutsceneMgr = GetRuntimeCutsceneManger();
+            if (cutsceneMgr == null) return;
+            cutsceneMgr.AddCutsceneInstance(pInstance);
+        }
+        //-----------------------------------------------------
+        public static void RemoveRuntimeCutsceneInstance(CutsceneInstance pInstance)
+        {
+            var cutsceneMgr = GetRuntimeCutsceneManger();
+            if (cutsceneMgr == null) return;
+            var cutsceneDatas = cutsceneMgr.GetAllCutscenes();
+            if (cutsceneDatas == null) return;
+            cutsceneDatas.Remove(pInstance.GetGUID());
         }
         //-----------------------------------------------------
         public static CutsceneManager GetRuntimeCutsceneManger()

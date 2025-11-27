@@ -12,7 +12,7 @@ namespace Framework.Cutscene.Editor
     public interface IDraw
     {
         bool IsDragging();
-        float GetBegin();
+        float GetBegin(bool bIncludeDragOffset = true);
         float GetEnd();
         void Draw(Rect rect, TimelineDrawLogic statLogic);
         void DragEnd();

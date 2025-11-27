@@ -48,7 +48,7 @@ namespace Framework.War.Editor
             GUILayout.EndArea();
             UIDrawUtils.DrawColorLine(new Vector2(rect.xMin, rect.y + 20), new Vector2(rect.xMax, rect.y + 20), new Color(1,1,1,0.5f));
             GUILayout.BeginArea(new Rect(rect.x, rect.y, rect.width, 20));
-            GUILayout.Label("属性面板");
+            GUILayout.Label("属性面板", WarEditorUtil.panelTitleStyle);
             GUILayout.EndArea();
         }
     }

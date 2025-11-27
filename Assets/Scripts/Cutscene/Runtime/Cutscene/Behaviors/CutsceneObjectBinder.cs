@@ -172,7 +172,6 @@ namespace Framework.Cutscene.Runtime
         }
     }
     //-----------------------------------------------------
-    [DrawProps.Inspector(typeof(BinderUnityObject), "DrawBinderInspector")]
     internal static class ObjectBinderUtils
     {
         internal static System.Action<int, BinderUnityObject, bool> OnBinderCutsceneObject;

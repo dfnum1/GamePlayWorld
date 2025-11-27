@@ -30,6 +30,7 @@ namespace Framework.Cutscene.Editor
         public TimelineDrawLogic.TimelineTrack ownerTrack { get { return m_pTrack; }}
         public TimelineDrawLogic.TimelineTrack GetOwnerTrack() { return m_pTrack; }
         public bool expandProp { get; set; }
+        float m_fSeachingShowTime = 0;
         public IBaseEvent clip { get; set; }
         private ACutsceneCustomEditor m_pEditor = null;
         //--------------------------------------------------------
@@ -134,9 +135,9 @@ namespace Framework.Cutscene.Editor
             return (point.x - linePoint2.x) * (linePoint1.y - linePoint2.y) - (linePoint1.x - linePoint2.x) * (point.y - linePoint2.y);
         }
         //--------------------------------------------------------
-        public float GetBegin()
+        public float GetBegin(bool bIncludeDragOffset = true)
         {
-            return clip.GetTime() + m_fDragOfffsetTime;
+            return clip.GetTime() + (bIncludeDragOffset?m_fDragOfffsetTime:0);
         }
         //--------------------------------------------------------
         public float GetEnd()
@@ -271,7 +272,11 @@ namespace Framework.Cutscene.Editor
             if (Event.current.type != EventType.Repaint)
                 return;
 
-            float clipWidth = treeViewRect.width;
+            m_fSeachingShowTime -= state.GetOwner().GetDeltaTime();
+            if (m_fSeachingShowTime < -0.5f)
+                m_fSeachingShowTime = 0.5f;
+
+            float clipWidth = Mathf.Max(20, treeViewRect.width);
             GUI.BeginClip(new Rect(treeViewRect.position, new Vector2(clipWidth, treeViewRect.height)));
 
             if (Event.current.type == EventType.Repaint)
@@ -303,6 +308,12 @@ namespace Framework.Cutscene.Editor
                 if (selected)
                 {
                     var selectionBorder = ClipBorder.Selection();
+                    ClipDrawUtil.DrawClipSelectionBorder(m_ClipCenterSection, selectionBorder, ClipBlends.kNone);
+                }
+
+                if(state.IsSearchDrawing(this.clip.GetName()) && m_fSeachingShowTime <= 0)
+                {
+                    var selectionBorder = ClipBorder.Searching();
                     ClipDrawUtil.DrawClipSelectionBorder(m_ClipCenterSection, selectionBorder, ClipBlends.kNone);
                 }
             }
@@ -347,7 +358,7 @@ namespace Framework.Cutscene.Editor
             m_ClipCenterSection.y = treeViewRect.height/2;
 
             m_ClipCenterSection.xMin = mixInRect.xMax;
-            m_ClipCenterSection.width = Mathf.Round(treeViewRect.width - mixInRect.width - mixOutRect.width);
+            m_ClipCenterSection.width = Mathf.Min(Mathf.Max(16, Mathf.Round(treeViewRect.width - mixInRect.width - mixOutRect.width)),32);
             m_ClipCenterSection.height = treeViewRect.height / 2;
             m_ClipCenterSection.xMax = m_ClipCenterSection.xMin + m_ClipCenterSection.width;
         }

@@ -207,7 +207,7 @@ namespace Framework.Cutscene.Runtime
             }
         }
         //-----------------------------------------------------
-        public void SetTime(float time)
+        public void SetTime(float time, bool bForceUpdate = false)
         {
             if (m_eStatus < EPlayableStatus.Create)
             {
@@ -220,6 +220,13 @@ namespace Framework.Cutscene.Runtime
             if(time >= m_fDuration)
             {
                 Stop(true);
+            }
+            else
+            {
+                if (bForceUpdate && m_pCutscene!=null && m_eStatus > EPlayableStatus.Create && m_CutsceneData != null)
+                {
+                    UpdateFrame(0);
+                }
             }
         }
         //-----------------------------------------------------

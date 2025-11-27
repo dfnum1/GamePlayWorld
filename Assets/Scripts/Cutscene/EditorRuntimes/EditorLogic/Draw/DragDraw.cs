@@ -9,6 +9,7 @@ using Framework.Cutscene.Runtime;
 using Framework.ED;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks.Sources;
 using UnityEditor;
 using UnityEditor.VersionControl;
 using UnityEngine;
@@ -31,6 +32,8 @@ namespace Framework.Cutscene.Editor
 
         List<object> m_vTempCaches = new List<object>();
         List<IDraw> m_vSelectClips = new List<IDraw>();
+        List<IDraw> m_vDragClips = new List<IDraw>();
+        List<TimelineTrackGroup> m_vSelectGroups = new List<TimelineTrackGroup>();
         List<ClipDraw> m_vSortedTemp = new List<ClipDraw>();
         public DragDraw(TimelineDrawLogic pLogic, TreeAssetView treeView)
         {
@@ -58,36 +61,24 @@ namespace Framework.Cutscene.Editor
                 bool bDirtySelect = false;
                 if (m_pLogic.timeZoomRect.Contains(evt.mousePosition - m_pLogic.GetRect().position))
                 {
-                    var datas = m_pTreeView.GetDatas();
-                    int lastCnt = m_vSelectClips.Count;
-                    if(!evt.control)
+                    if(m_vSelectGroups.Count>0 && evt.control)
                     {
-                        m_vSelectClips.Clear();
+                        m_nStarDrag = 1;
                     }
-                    foreach (var db in datas)
+                    else
                     {
-                        if (db is TimelineTrack)
+                        var datas = m_pTreeView.GetDatas();
+                        int lastCnt = m_vSelectClips.Count;
+                        if (!evt.control)
                         {
-                            TimelineTrack timelineTrack = db as TimelineTrack;
-                            foreach (var clip in timelineTrack.eventDraws)
+                            m_vSelectClips.Clear();
+                        }
+                        foreach (var db in datas)
+                        {
+                            if (db is TimelineTrack)
                             {
-                                if (clip.CanSelect(evt, m_pLogic))
-                                {
-                                    if (!m_vSelectClips.Contains(clip))
-                                    {
-                                        m_vSelectClips.Add(clip);
-                                        bDirtySelect = true;
-                                    }
-                                    else
-                                    {
-                                        bDirtySelect = true;
-                                    }
-                                    break;
-                                }
-                            }
-                            if(!bDirtySelect)
-                            {
-                                foreach (var clip in timelineTrack.clipDraws)
+                                TimelineTrack timelineTrack = db as TimelineTrack;
+                                foreach (var clip in timelineTrack.eventDraws)
                                 {
                                     if (clip.CanSelect(evt, m_pLogic))
                                     {
@@ -96,19 +87,38 @@ namespace Framework.Cutscene.Editor
                                             m_vSelectClips.Add(clip);
                                             bDirtySelect = true;
                                         }
+                                        else
+                                        {
+                                            bDirtySelect = true;
+                                        }
                                         break;
                                     }
                                 }
-                            }
+                                if (!bDirtySelect)
+                                {
+                                    foreach (var clip in timelineTrack.clipDraws)
+                                    {
+                                        if (clip.CanSelect(evt, m_pLogic))
+                                        {
+                                            if (!m_vSelectClips.Contains(clip))
+                                            {
+                                                m_vSelectClips.Add(clip);
+                                                bDirtySelect = true;
+                                            }
+                                            break;
+                                        }
+                                    }
+                                }
 
+                            }
                         }
+                        if (lastCnt != m_vSelectClips.Count)
+                        {
+                            bDirtySelect = true;
+                        }
+                        if (bDirtySelect)
+                            SelectClips(m_vSelectClips);
                     }
-                    if (lastCnt != m_vSelectClips.Count)
-                    {
-                        bDirtySelect = true;
-                    }
-                    if (bDirtySelect)
-                        SelectClips(m_vSelectClips);
                 }
                 else
                 {
@@ -163,14 +173,19 @@ namespace Framework.Cutscene.Editor
                 if (m_pLogic.timeZoomRect.Contains(evt.mousePosition - m_pLogic.GetRect().position) &&
                     !m_pLogic.IsMouseInTimeAreaHeadAndScrollBar(evt))
                 {
-                    foreach (var db in m_vSelectClips)
+                    foreach (var db in m_vDragClips)
                         m_vTempCaches.Add(db);
                     if (m_nStarDrag == 1)
                     {
                         Rect right = new Rect(m_pLogic.rightRect.position + m_pLogic.GetRect().position, new Vector2(m_pLogic.rightRect.width, m_pLogic.rightRect.height - 30));
                         if (right.Contains(evt.mousePosition))
                         {
+                            m_vDragClips.Clear();
                             m_fDragGrabTime = m_pLogic.GetSnappedTimeAtMousePosition(evt.mousePosition);
+                            if (!DragGroups(evt))
+                            {
+                                m_vDragClips.AddRange(m_vSelectClips);
+                            }
                             m_nStarDrag = 2;
                         }
                     }
@@ -178,7 +193,7 @@ namespace Framework.Cutscene.Editor
                     {
                         float grab = m_pLogic.GetSnappedTimeAtMousePosition(evt.mousePosition);
                         m_fDragOfffsetTime = grab - m_fDragGrabTime;
-                        foreach (var db in m_vSelectClips)
+                        foreach (var db in m_vDragClips)
                         {
                             db.DragOffset(m_fDragOfffsetTime, false, false, m_bDragDuration);
                         }
@@ -269,35 +284,79 @@ Math.Abs(c1.GetBegin() - c2.GetBegin()) < ClipDrawUtil.kTimeEpsilon ? c1.GetDura
             }
         }
         //-----------------------------------------------------
+        bool DragGroups(Event evt)
+        {
+            if (evt == null || !evt.control) return false;
+            if (m_vSelectGroups.Count <= 0) return false;
+            m_vDragClips.Clear();
+            foreach (var group in m_vSelectGroups)
+            {
+                if (group.group.tracks != null)
+                {
+                    foreach (var trackData in group.group.tracks)
+                    {
+                        // 查找TreeView中的TimelineTrack对象
+                        foreach (var item in m_pTreeView.GetDatas())
+                        {
+                            if (item is TimelineTrack track && track.track == trackData)
+                            {
+                                m_vDragClips.AddRange(track.clipDraws);
+                                m_vDragClips.AddRange(track.eventDraws);
+                            }
+                        }
+                    }
+                }
+            }
+            return true;
+        }
+        //-----------------------------------------------------
         public void DragEnd()
         {
             if(m_nStarDrag == 2)
             {
                 m_nStarDrag = 0;
                 bool bDirty = false;
-                foreach (var db in m_vSelectClips)
+                bool bDragValid = true;
+                foreach (var db in m_vDragClips)
                 {
+                    float beginTime = db.GetBegin(false) + m_fDragOfffsetTime;
+                    if(beginTime<0)
+                    {
+                        bDragValid = false;
+                        m_fDragOfffsetTime = Mathf.Max(m_fDragOfffsetTime, -db.GetBegin());
+                    }
                     if (db.DragOffset(m_fDragOfffsetTime, false, false, m_bDragDuration))
                         bDirty = true;
                 }
-                if (bDirty)
+                if(bDragValid)
                 {
-                    m_pLogic.RegisterUndoData();
+                    if (bDirty)
+                    {
+                        m_pLogic.RegisterUndoData();
+                    }
+                    foreach (var db in m_vDragClips)
+                    {
+                        float beginTime = db.GetBegin(false) + m_fDragOfffsetTime;
+                        if (beginTime < 0)
+                            continue;
+                        if (db.DragOffset(m_fDragOfffsetTime, true, false, m_bDragDuration))
+                            bDirty = true;
+                    }
                 }
-                foreach (var db in m_vSelectClips)
+                else
                 {
-                    if (db.DragOffset(m_fDragOfffsetTime, true, false, m_bDragDuration))
-                        bDirty = true;
+                    m_pLogic.GetOwner().ShowNotification(new GUIContent("本次拖动无效，有剪辑、事件开始时间小于0了"), 0.5f);
                 }
             }
 
-            for (int i = 0; i < m_vSelectClips.Count; ++i)
+            for (int i = 0; i < m_vDragClips.Count; ++i)
             {
-                m_vSelectClips[i].DragEnd();
+                m_vDragClips[i].DragEnd();
             }
             m_fDragGrabTime = 0;
             m_fDragOfffsetTime = 0;
             m_nStarDrag = 0;
+            m_vDragClips.Clear();
             m_bDragDuration = false;
         }
         //-----------------------------------------------------
@@ -343,6 +402,7 @@ Math.Abs(c1.GetBegin() - c2.GetBegin()) < ClipDrawUtil.kTimeEpsilon ? c1.GetDura
         internal void ClearSelected()
         {
             m_vSelectClips.Clear();
+            m_vSelectGroups.Clear();
         }
         //--------------------------------------------------------
         internal void AddSelected(IDraw draw)
@@ -350,6 +410,7 @@ Math.Abs(c1.GetBegin() - c2.GetBegin()) < ClipDrawUtil.kTimeEpsilon ? c1.GetDura
             if (m_vSelectClips.Contains(draw))
                 return;
             m_vSelectClips.Add(draw);
+            m_vSelectGroups.Clear();
         }
         //--------------------------------------------------------
         internal void SelectClips(List<IDraw> vSelectClips)
@@ -364,6 +425,18 @@ Math.Abs(c1.GetBegin() - c2.GetBegin()) < ClipDrawUtil.kTimeEpsilon ? c1.GetDura
                     ((ACutsceneLogic)db).OnSelectClips(vSelectClips);
                 }
             }
+        }
+        //--------------------------------------------------------
+        internal void ClearSelectGroup()
+        {
+            m_vSelectGroups.Clear();
+        }
+        //--------------------------------------------------------
+        internal void AddSelectGroup(TimelineTrackGroup group)
+        {
+            if (m_vSelectGroups.Contains(group))
+                return;
+            m_vSelectGroups.Add(group);
         }
     }
 }

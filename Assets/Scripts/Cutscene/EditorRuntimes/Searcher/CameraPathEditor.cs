@@ -29,6 +29,10 @@ namespace Framework.Cutscene.Editor
         private static Quaternion s_CamOrigRot;
         private static float s_CamOrigFov;
 
+        // -----------整体操作柄相关变量-----------
+        private static Vector3 s_GroupHandlePos;
+        private static Quaternion s_GroupHandleRot = Quaternion.identity;
+        private static bool s_GroupHandleInit = false;
         //-----------------------------------------------------
         public static void StartEdit(CameraPathClip.PathPoint[] vPaths, System.Action<IList<CameraPathClip.PathPoint>> onChanged = null, float duration = 3)
         {
@@ -53,6 +57,45 @@ namespace Framework.Cutscene.Editor
         public static bool IsEditing()
         {
             return s_Editing;
+        }
+        //-----------------------------------------------------
+        public static Vector3 GetCenterPoint()
+        {
+            if (s_vPaths == null || s_vPaths.Count == 0)
+                return Vector3.zero;
+            Vector3 sum = Vector3.zero;
+            foreach (var pt in s_vPaths)
+            {
+                sum += pt.position;
+            }
+            return sum / s_vPaths.Count;
+        }
+        //-----------------------------------------------------
+        public static void MoveAllPoints(Vector3 offset)
+        {
+            if (s_vPaths == null) return;
+            s_vStacks.Push(new List<CameraPathClip.PathPoint>(s_vPaths.ToArray()));
+            for (int i = 0; i < s_vPaths.Count; ++i)
+            {
+                var pt = s_vPaths[i];
+                pt.position += offset;
+                s_vPaths[i] = pt;
+            }
+            s_OnChanged?.Invoke(s_vPaths);
+        }
+        //-----------------------------------------------------
+        public static void RotateAllPoints(Quaternion rotOffset, Vector3 center)
+        {
+            if (s_vPaths == null) return;
+            s_vStacks.Push(new List<CameraPathClip.PathPoint>(s_vPaths.ToArray()));
+            for (int i = 0; i < s_vPaths.Count; ++i)
+            {
+                var pt = s_vPaths[i];
+                pt.position = rotOffset * (pt.position - center) + center;
+                pt.eulerAngle = (rotOffset * Quaternion.Euler(pt.eulerAngle)).eulerAngles;
+                s_vPaths[i] = pt;
+            }
+            s_OnChanged?.Invoke(s_vPaths);
         }
         //-----------------------------------------------------
         public static void StopEdit()
@@ -96,6 +139,7 @@ namespace Framework.Cutscene.Editor
                 if(s_vStacks.Count>0)
                 {
                     s_vPaths = s_vStacks.Pop();
+                    s_GroupHandlePos = GetCenterPoint();
 
                     e.Use();
                 }
@@ -120,11 +164,13 @@ namespace Framework.Cutscene.Editor
                     {
                         s_vStacks.Push(new List<CameraPathClip.PathPoint>(s_vPaths.ToArray()));
                         s_vPaths[s_SelectedIndex] = pt;
+                        s_GroupHandlePos = GetCenterPoint();
                     }
                     else
                     {
                         s_vStacks.Push(new List<CameraPathClip.PathPoint>(s_vPaths.ToArray()));
                         s_vPaths.Add(pt);
+                        s_GroupHandlePos = GetCenterPoint();
                     }
                 }
                 else
@@ -149,6 +195,7 @@ namespace Framework.Cutscene.Editor
                         s_vStacks.Push(new List<CameraPathClip.PathPoint>(s_vPaths.ToArray()));
                         pt.position = newPos;
                         s_vPaths[i] = pt;
+                        s_GroupHandlePos = GetCenterPoint();
                     }
                 }
 
@@ -179,6 +226,7 @@ namespace Framework.Cutscene.Editor
                         s_vPaths.RemoveAt(i);
                         s_SelectedIndex = -1;
                         s_OnChanged?.Invoke(s_vPaths);
+                        s_GroupHandlePos = GetCenterPoint();
                         e.Use();
                         Handles.EndGUI();
                         break;
@@ -195,6 +243,7 @@ namespace Framework.Cutscene.Editor
                             outTan = Vector3.zero
                         };
                         s_vPaths[i] = newPt;
+                        s_GroupHandlePos = GetCenterPoint();
                         s_OnChanged?.Invoke(s_vPaths);
                         e.Use();
                         Handles.EndGUI();
@@ -263,6 +312,8 @@ namespace Framework.Cutscene.Editor
                 Handles.DrawBezier(start, end, tan0, tan1, Color.green, null, 2f);
             }
 
+            DrawGroupHandle(sceneView);
+
             sceneView.Repaint();
 
             // ESC退出
@@ -277,6 +328,48 @@ namespace Framework.Cutscene.Editor
                     StopEdit();
                 }
                 e.Use();
+            }
+        }
+        //-----------------------------------------------------
+        private static void DrawGroupHandle(SceneView sceneView)
+        {
+            if (s_vPaths == null || s_vPaths.Count == 0) return;
+
+            // 初始化整体柄位置和旋转
+            if (!s_GroupHandleInit)
+            {
+                s_GroupHandlePos = GetCenterPoint();
+                s_GroupHandleRot = Quaternion.identity;
+                s_GroupHandleInit = true;
+            }
+            Handles.Label(s_GroupHandlePos, "整体操作柄");
+            if (Tools.current == Tool.Move)
+            {
+                EditorGUI.BeginChangeCheck();
+                Vector3 newPos = Handles.PositionHandle(s_GroupHandlePos, s_GroupHandleRot);
+                if (EditorGUI.EndChangeCheck())
+                {
+                    Vector3 offset = newPos - s_GroupHandlePos;
+                    if (offset.sqrMagnitude > 0.0001f)
+                    {
+                        MoveAllPoints(offset);
+                        s_GroupHandlePos = newPos;
+                    }
+                }
+            }
+            else if (Tools.current == Tool.Rotate)
+            {
+                EditorGUI.BeginChangeCheck();
+                Quaternion newRot = Handles.RotationHandle(s_GroupHandleRot, s_GroupHandlePos);
+                if (EditorGUI.EndChangeCheck())
+                {
+                    Quaternion rotOffset = newRot * Quaternion.Inverse(s_GroupHandleRot);
+                    if (Quaternion.Angle(s_GroupHandleRot, newRot) > 0.01f)
+                    {
+                        RotateAllPoints(rotOffset, s_GroupHandlePos);
+                        s_GroupHandleRot = newRot;
+                    }
+                }
             }
         }
         //-----------------------------------------------------

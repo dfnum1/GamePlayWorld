@@ -145,10 +145,19 @@ namespace Framework.Cutscene.Editor
 
         private bool m_MiddleMouseDragging = false;
         private Vector2 m_MiddleMouseDragLastPos;
+
+        private string m_strSearchDraw = null;
         public int viewStateHash { get; private set; }
         public Vector2 timeAreaTranslation
         {
             get { return m_TimeArea.translation; }
+        }
+        //--------------------------------------------------------
+        public bool IsSearchDrawing(string drawName)
+        {
+            if (string.IsNullOrEmpty(drawName) || string.IsNullOrEmpty(m_strSearchDraw))
+                return false;
+            return m_strSearchDraw.Contains(drawName) || drawName.Contains(m_strSearchDraw);
         }
         //--------------------------------------------------------
         public Rect leftRect
@@ -242,7 +251,12 @@ namespace Framework.Cutscene.Editor
             if (IsRuntimePlayingCutscene())
                 return;
 
-            if(m_pCutscene!=null) m_pCutscene.Destroy();
+            if (m_pCutscene != null)
+            {
+                DataUtils.RemoveRuntimeCutsceneInstance(m_pCutscene);
+                m_pCutscene.Stop(true);
+                m_pCutscene.Destroy();
+            }
             m_pCutscene = null;
         }
         //--------------------------------------------------------
@@ -743,10 +757,13 @@ namespace Framework.Cutscene.Editor
         void ForcePlay(CutsceneData assetData = null)
         {
             if (assetData == null) assetData = GetAsset();
+            m_pCutscene.Stop(true);
             m_pCutscene.Destroy();
             GetOwner<CutsceneEditor>().SaveAgentTreeData();
             m_pCutscene.SetEditorMode(true, GetOwner());
             m_pCutscene.Create(GetCutsceneGraph(), null, assetData!=null? assetData.id:-1);
+            m_pCutscene.SetGUID(DataUtils.EDITOR_INSTANCE_ID);
+            DataUtils.AddRuntimeCutsceneInstance(m_pCutscene);
             if (m_pCutscene != null)
             {
                 if (m_fPlayTime >= GetDuration())
@@ -772,11 +789,14 @@ namespace Framework.Cutscene.Editor
             if (assetData == null) assetData = GetAsset();
             if (m_pCutscene == null)
                 return;
+            m_pCutscene.Stop(true);
             m_pCutscene.Destroy();
             GetOwner<CutsceneEditor>().SaveAgentTreeData();
             m_pCutscene.SetEditorMode(true, GetOwner());
             m_pCutscene.Create(GetCutsceneGraph(), null, assetData != null ? assetData.id : -1);
-            if(isPlay)
+            m_pCutscene.SetGUID(DataUtils.EDITOR_INSTANCE_ID);
+            DataUtils.AddRuntimeCutsceneInstance(m_pCutscene);
+            if (isPlay)
             {
                 if (m_fPlayTime >= GetDuration())
                     m_fPlayTime = 0;
@@ -795,7 +815,7 @@ namespace Framework.Cutscene.Editor
         {
             EditorGUI.BeginChangeCheck();
             var currentTime = m_TimeFromat.ToTimeString(m_fPlayTime, GetFrameRate(), "0.####");
-            var newCurrentTime = GUILayout.TextField(currentTime, EditorStyles.toolbarTextField, new GUILayoutOption[] { GUILayout.Width(105) });
+            var newCurrentTime = GUILayout.TextField(currentTime, EditorStyles.toolbarTextField, new GUILayoutOption[] { GUILayout.Width(60) });
             if (EditorGUI.EndChangeCheck())
             {
                 m_fPlayTime = (float)this.FromTimeString(newCurrentTime);
@@ -803,10 +823,23 @@ namespace Framework.Cutscene.Editor
                     m_pCutscene.SetTime(m_fPlayTime);
             }
 
+
             if (GetAsset() != null)
             {
-                var nameRect = new Rect(m_RightRect.width - m_LeftRect.width, -4, 200, 25);
-                GUI.Label(nameRect, "当前编辑:" + GetAsset().name);
+                //!搜索
+                {
+                    var nameRect = new Rect(80, -2, 200, 25);
+                    GUILayout.BeginArea(nameRect);
+                    EditorGUILayout.BeginHorizontal();
+                    EditorGUILayout.LabelField("搜索", GUILayout.Width(30));
+                    m_strSearchDraw = EditorGUILayout.TextField(m_strSearchDraw);
+                    EditorGUILayout.EndHorizontal();
+                    GUILayout.EndArea();
+                }
+                {
+                    var nameRect = new Rect(m_RightRect.width - m_LeftRect.width, -4, 200, 25);
+                    GUI.Label(nameRect, "当前编辑:" + GetAsset().name);
+                }
             }
             var settingRect = new Rect(m_RightRect.xMax - 30- m_LeftRect.width, 0, 25, 25);
             if (GUI.Button(settingRect, EditorGUIUtility.TrIconContent("Settings", ""), EditorStyles.toolbarButton))
@@ -1792,7 +1825,7 @@ namespace Framework.Cutscene.Editor
             {
                 db.OnSelectGroup(selectGroup);
             }
-
+            m_pDragDraw.ClearSelectGroup();
             if (data is TimelineTrackGroup)
             {
                 TimelineTrackGroup group = data as TimelineTrackGroup;
@@ -1805,6 +1838,16 @@ namespace Framework.Cutscene.Editor
                 {
                     if (db is EmptyItemLine) continue;
                     var data1 = db as TreeItem;
+                    if (data1 is TimelineTrackGroup)
+                    {
+                        m_pDragDraw.AddSelectGroup(data1 as TimelineTrackGroup);
+                    }
+                }
+
+                foreach (var db in datas)
+                {
+                    if (db is EmptyItemLine) continue;
+                    var data1 = db as TreeItem;
                     if (data1 is TimelineTrack)
                     {
                         if(((TimelineTrack)data1).ownerGroup == group)
@@ -1813,6 +1856,7 @@ namespace Framework.Cutscene.Editor
                         }
                     }
                 }
+
                 m_pTimelineTree.SetSelection(vSelects);
             }
         }

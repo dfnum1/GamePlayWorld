@@ -37,6 +37,7 @@ namespace Framework.Cutscene.Editor
         bool m_bDragDuration = false;
         float m_fDragGrabTime = 0;
         float m_fDragOfffsetTime = 0;
+        float m_fSeachingShowTime = 0;
         ClipDrawData m_ClipDrawData;
         Color m_SwatchColor = Color.white;
         TimelineDrawLogic.TimelineTrack m_pTrack;
@@ -205,11 +206,11 @@ namespace Framework.Cutscene.Editor
             return new ClipBlends(blendInKind, _mixInRect, blendOutKind, _mixOutRect);
         }
         //--------------------------------------------------------
-        public float GetBegin()
+        public float GetBegin(bool bIncludeDragOffset = true)
         {
             if (m_bDragDuration)
                 return clip.GetTime();
-            return clip.GetTime() + m_fDragOfffsetTime;
+            return clip.GetTime() + (bIncludeDragOffset?m_fDragOfffsetTime:0);
         }
         //--------------------------------------------------------
         public void SetBegin(float begin)
@@ -384,6 +385,9 @@ namespace Framework.Cutscene.Editor
         //--------------------------------------------------------
         public void Draw(Rect rect, TimelineDrawLogic statLogic)
         {
+            m_fSeachingShowTime -= statLogic.GetOwner().GetDeltaTime();
+            if (m_fSeachingShowTime < -0.5f)
+                m_fSeachingShowTime = 0.5f;
             parentViewRect = rect;
             float onePixelTime = statLogic.PixelDeltaToDeltaTime(ConstUtil.kVisibilityBufferInPixels);
             var visibleTime = statLogic.timeAreaShownRange + new Vector2(-onePixelTime, onePixelTime);
@@ -468,7 +472,7 @@ namespace Framework.Cutscene.Editor
 
             m_ClipDrawData.clippedRect = new Rect(clippedRect.x - rectXOffset, 0.0f, clippedRect.width, clippedRect.height);
 
-            m_ClipDrawData.swatchColor = m_SwatchColor;
+            m_ClipDrawData.swatchColor = EditorPreferences.GetTypeColor(this.clip.GetType());
 
             m_ClipDrawData.minLoopIndex = m_MinLoopIndex;
             m_ClipDrawData.loopRects = m_LoopRects;
@@ -478,6 +482,7 @@ namespace Framework.Cutscene.Editor
             // m_ClipDrawData.ClipDrawOptions = UpdateClipDrawOptions(m_ClipEditor, clip);
 
             m_ClipDrawData.overlapWithClip = IsOverlapWithClip();
+            m_ClipDrawData.isSearching = state.IsSearchDrawing(this.clip.GetName()) && m_fSeachingShowTime<=0;
             UpdateClipIcons(state);
         }
         //--------------------------------------------------------

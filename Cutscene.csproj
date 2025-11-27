@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{C09A8089-8DA3-F26B-B90D-57D5BC7C3B5C}</ProjectGuid>
+    <ProjectGuid>{FE4D3497-B0FE-8A21-6859-78DD878DA567}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Cutscene</AssemblyName>
@@ -865,7 +865,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="EditorFramework.csproj">
-      <Project>{F00156E1-AA19-963C-2F97-AF6BE3F11A58}</Project>
+      <Project>{E05BCF8F-6BBB-3A26-C962-75C3D5577FA4}</Project>
       <Name>EditorFramework</Name>
     </ProjectReference>
   </ItemGroup>

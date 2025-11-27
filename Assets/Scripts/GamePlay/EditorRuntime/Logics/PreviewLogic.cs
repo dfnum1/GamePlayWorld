@@ -25,7 +25,7 @@ namespace Framework.War.Editor
         {
             if (m_Preview == null) m_Preview = new TargetPreview(GetOwner());
             GameObject[] roots = new GameObject[1];
-            roots[0] = new GameObject("EditorRoot");
+            roots[0] = new GameObject("WarEditorRoot");
             m_Preview.AddPreview(roots[0]);
 
             m_Preview.SetCamera(0.01f, 10000f, 60f);
@@ -33,6 +33,7 @@ namespace Framework.War.Editor
             m_Preview.SetPreviewInstance(roots[0] as GameObject);
             m_Preview.OnDrawAfterCB = this.OnDraw;
             m_Preview.bLeftMouseForbidMove = true;
+            m_Preview.SetFloorTexture(WarEditorUtil.GetFloorTexture());
 
             //test
             m_Preview.AddPreview(m_RoleTest);

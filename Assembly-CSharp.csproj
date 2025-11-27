@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{5B48B700-8661-68B0-F773-FF9E5FA715BA}</ProjectGuid>
+    <ProjectGuid>{0C335728-16B4-86A0-8513-421CDD295C30}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -818,16 +818,16 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Cutscene.csproj">
-      <Project>{C09A8089-8DA3-F26B-B90D-57D5BC7C3B5C}</Project>
+      <Project>{FE4D3497-B0FE-8A21-6859-78DD878DA567}</Project>
       <Name>Cutscene</Name>
     </ProjectReference>
-    <ProjectReference Include="WarWorld.csproj">
-      <Project>{809FC001-048E-4BCA-0003-8E729E41E145}</Project>
-      <Name>WarWorld</Name>
-    </ProjectReference>
     <ProjectReference Include="EditorFramework.csproj">
-      <Project>{F00156E1-AA19-963C-2F97-AF6BE3F11A58}</Project>
+      <Project>{E05BCF8F-6BBB-3A26-C962-75C3D5577FA4}</Project>
       <Name>EditorFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="GamePlay.csproj">
+      <Project>{238352BE-77EC-4C0E-F8F0-8620964B1FFF}</Project>
+      <Name>GamePlay</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

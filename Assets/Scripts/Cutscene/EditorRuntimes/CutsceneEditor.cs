@@ -97,7 +97,9 @@ namespace Framework.Cutscene.Editor
             m_CutsceneManager = new CutsceneManager();
             m_CutsceneManager.SetEditorMode(true);
             m_pCutscene = new CutsceneInstance(m_CutsceneManager);
+            m_pCutscene.SetGUID(DataUtils.EDITOR_INSTANCE_ID);
             m_pCutscene.SetEditorMode(true, this);
+            DataUtils.AddRuntimeCutsceneInstance(m_pCutscene);
             this.minSize = new Vector2(600, 400);
             this.wantsMouseMove = true;
             this.wantsMouseEnterLeaveWindow = true;
@@ -149,6 +151,7 @@ namespace Framework.Cutscene.Editor
             CutsceneCustomAgentEditor.CloseEditor();
             if (m_pCutscene != null)
             {
+                DataUtils.RemoveRuntimeCutsceneInstance(m_pCutscene);
                 m_pCutscene.SetEditorMode(false, null);
                 m_pCutscene.Stop(true);
                 m_pCutscene.Destroy();
@@ -174,6 +177,8 @@ namespace Framework.Cutscene.Editor
                         m_CutsceneManager = new CutsceneManager();
                         m_pCutscene = new CutsceneInstance(m_CutsceneManager);
                         m_pCutscene.SetEditorMode(true, this);
+                        m_pCutscene.SetGUID(DataUtils.EDITOR_INSTANCE_ID);
+                        DataUtils.AddRuntimeCutsceneInstance(m_pCutscene);
                         return;
                     }
                 }

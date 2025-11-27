@@ -13,9 +13,9 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
 using UnityEditor.Experimental.GraphView;
+using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.UIElements;
-using UnityEditor.UIElements;
 
 namespace Framework.AT.Editor
 {
@@ -1086,7 +1086,7 @@ namespace Framework.AT.Editor
             else if(portVariable is AT.Runtime.VariableVec2)
             {
                 var temVar = (AT.Runtime.VariableVec2)portVariable;
-                var intField = new UnityEditor.UIElements.Vector2Field
+                var intField = new Vector2Field
                 {
                     value = temVar.value,
                     style =
@@ -1121,7 +1121,7 @@ namespace Framework.AT.Editor
             else if (portVariable is AT.Runtime.VariableVec3)
             {
                 var temVar = (AT.Runtime.VariableVec3)portVariable;
-                var intField = new UnityEditor.UIElements.Vector3Field
+                var intField = new Vector3Field
                 {
                     value = temVar.value,
                     style =
@@ -1156,7 +1156,7 @@ namespace Framework.AT.Editor
             else if (portVariable is AT.Runtime.VariableVec4)
             {
                 var temVar = (AT.Runtime.VariableVec4)portVariable;
-                var intField = new UnityEditor.UIElements.Vector4Field
+                var intField = new Vector4Field
                 {
                     value = temVar.value,
                     style =

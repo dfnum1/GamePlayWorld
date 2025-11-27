@@ -272,7 +272,7 @@ namespace Framework.ED
         {
             if (realType == null)
             {
-                realType = Assembly.GetAssembly(typeof(Editor)).GetType("UnityEditor.HandleUtility");
+                realType = Assembly.GetAssembly(typeof(UnityEditor.Editor)).GetType("UnityEditor.HandleUtility");
                 s_property_handleWireMaterial = realType.GetProperty("handleWireMaterial", BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Static);
             }
         }

@@ -249,7 +249,7 @@ namespace Framework.ED
         public float fDeltaTime;
 
         private bool m_HasPreview;
-        private Editor m_CacheEditor;
+        private UnityEditor.Editor m_CacheEditor;
         public static int PreviewCullingLayer = 0;//31;
         private static Styles s_Styles;
 
@@ -412,6 +412,11 @@ namespace Framework.ED
                 m_PreviewUtility.cameraFieldOfView = m_fFov;
         }
         //-----------------------------------------------------
+        public void SetZoom(float zoomFactor)
+        {
+            m_ZoomFactor = zoomFactor;
+        }
+        //-----------------------------------------------------
         public void InitCameraPos(Vector3 pos, Vector3 dir)
         {
             if (m_PreviewInstance != null) m_PreviewInstance.transform.position = pos;
@@ -422,7 +427,7 @@ namespace Framework.ED
             }
         }
         //-----------------------------------------------------
-        public void SetEditor(Editor editor)
+        public void SetEditor(UnityEditor.Editor editor)
         {
             m_CacheEditor = editor;
         }
@@ -679,6 +684,13 @@ namespace Framework.ED
             SetPreviewCharacterEnabled(false, false);
         }
         //-----------------------------------------------------
+        public void SetFloorTexture(Texture2D pFloor)
+        {
+            m_FloorTexture = pFloor;
+            if(m_FloorMaterial)
+                m_FloorMaterial.mainTexture = m_FloorTexture;
+        }
+        //-----------------------------------------------------
         private bool HasStaticPreview()
         {
             if (target == null)
@@ -855,13 +867,13 @@ namespace Framework.ED
         }
         //-----------------------------------------------------
         private void CreatePreviewInstances()
-        {
-            return;
+        {/*
             if (m_Targets == null || m_Targets.Length <= 0) return;
             DestroyPreviewInstances();
 
             GameObject gameObject = UnityEngine.Object.Instantiate(target) as GameObject;
             SetPreviewInstance(gameObject);
+            */
         }
         //-----------------------------------------------------
         public void ClearInstanceTarget()
@@ -1260,6 +1272,15 @@ namespace Framework.ED
                 if (bBreakEvent) evt.Use();
             }
 
+            if(EditorGUIUtility.editingTextField)
+            {
+                m_bKeyMovePress[0] = false;
+                m_bKeyMovePress[1] = false;
+                m_bKeyMovePress[2] = false;
+                m_bKeyMovePress[3] = false;
+                m_bKeyMovePress[4] = false;
+                return;
+            }
 
             if (CanKeyMoveCamera)
             {
@@ -1278,6 +1299,14 @@ namespace Framework.ED
                     if (evt.keyCode == KeyCode.A) m_bKeyMovePress[2] = false;
                     if (evt.keyCode == KeyCode.D) m_bKeyMovePress[3] = false;
                     if (evt.keyCode == KeyCode.LeftShift) m_bKeyMovePress[4] = false;
+                    if (evt.keyCode == KeyCode.Escape)
+                    {
+                        m_bKeyMovePress[0] = false;
+                        m_bKeyMovePress[1] = false;
+                        m_bKeyMovePress[2] = false;
+                        m_bKeyMovePress[3] = false;
+                        m_bKeyMovePress[4] = false;
+                    }
                 }
 
                 if (m_bKeyMovePress[0])

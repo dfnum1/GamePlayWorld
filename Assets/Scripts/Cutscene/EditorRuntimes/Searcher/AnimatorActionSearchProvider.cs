@@ -44,8 +44,18 @@ namespace Framework.Cutscene.Editor
             if (pObject == null)
                 return;
             var animator = pObject.GetAnimator();
-            if (animator && animator.runtimeAnimatorController)
+            if (animator && animator.runtimeAnimatorController != null)
+            {
                 m_AnimatorPath = AssetDatabase.GetAssetPath(animator.runtimeAnimatorController);
+                if(!string.IsNullOrEmpty(m_AnimatorPath))
+                {
+                    AnimatorOverrideController overrideController = AssetDatabase.LoadAssetAtPath<AnimatorOverrideController>(m_AnimatorPath);
+                    if (overrideController)
+                    {
+                        m_AnimatorPath = AssetDatabase.GetAssetPath(overrideController.runtimeAnimatorController);
+                    }
+                }
+            }
         }
 
         /// <summary>

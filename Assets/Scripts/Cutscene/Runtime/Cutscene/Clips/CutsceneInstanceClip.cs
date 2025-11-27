@@ -194,6 +194,8 @@ namespace Framework.Cutscene.Runtime
             if(m_pAnimator == null && m_Instance!=null)
             {
                 m_pAnimator = m_Instance.GetComponent<Animator>();
+                if(m_pAnimator == null)
+                    m_pAnimator = m_Instance.GetComponentInChildren<Animator>();
             }
             return m_pAnimator;
         }

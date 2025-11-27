@@ -95,6 +95,11 @@ namespace Framework.Cutscene.Editor
             return new ClipBorder(Color.white, k_ClipSelectionBorder);
         }
 
+        public static ClipBorder Searching()
+        {
+            return new ClipBorder(EditorPreferences.GetSettings().colorSearchingClipOutline, k_ClipRecordingBorder);
+        }
+
         public static ClipBorder Default()
         {
             return new ClipBorder(EditorPreferences.GetSettings().clipBorderColor, k_ClipSelectionBorder);
@@ -141,6 +146,7 @@ namespace Framework.Cutscene.Editor
         public ClipBlends clipBlends;
         public Color swatchColor;
         public bool overlapWithClip; // does this clip overlap with the previous clip
+        public bool isSearching;
     }
     internal static class ClipDrawUtil
     {
@@ -237,6 +243,10 @@ namespace Framework.Cutscene.Editor
 
             if (drawData.selected)
                 DrawClipSelectionBorder(drawData.clipCenterSection, selectionBorder, drawData.clipBlends);
+            if(drawData.isSearching)
+            {
+                DrawClipSelectionBorder(drawData.clipCenterSection, ClipBorder.Searching(), drawData.clipBlends);
+            }
 
             if (drawData.previousClip != null && drawData.previousClipSelected)
             {

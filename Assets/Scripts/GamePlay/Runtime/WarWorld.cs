@@ -1,14 +1,14 @@
 /********************************************************************
-Éú³ÉÈÕÆÚ:	11:07:2025
-Àà    Ãû: 	WarWorld
-×÷    Õß:	HappLI
-Ãè    Êö:	Õ½ÕùÊÀ½ç
+ç”Ÿæˆæ—¥æœŸ:	11:07:2025
+ç±»    å: 	WarWorld
+ä½œ    è€…:	HappLI
+æ    è¿°:	æˆ˜äº‰ä¸–ç•Œ
 *********************************************************************/
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Framework.War
+namespace Framework.War.Runtime
 {
     public class WarWorld
     {

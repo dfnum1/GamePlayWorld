@@ -264,10 +264,10 @@ namespace Framework.Cutscene.Runtime
             m_pPlayable.RefreshDuration();
         }
         //-----------------------------------------------------
-        public void SetTime(float time)
+        public void SetTime(float time, bool bForceUpdate = false)
         {
             if (m_pPlayable == null) return;
-            m_pPlayable.SetTime(time);
+            m_pPlayable.SetTime(time, bForceUpdate);
 #if UNITY_EDITOR
             if (m_pOwnerEditor != null && m_pOwnerEditor is Editor.CutsceneEditor)
             {

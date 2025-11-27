@@ -74,6 +74,13 @@ namespace Framework.Cutscene.Runtime
             return false;
         }
         //-----------------------------------------------------
+        internal void AddCutsceneInstance(CutsceneInstance cutscene)
+        {
+            if (m_vCutscenes == null)
+                m_vCutscenes = new Dictionary<int, CutsceneInstance>(4);
+            m_vCutscenes[cutscene.GetGUID()] = cutscene;
+        }
+        //-----------------------------------------------------
         public int CreateCutscene(string cutsceneName, string subName = null, bool bAsync = false, bool bEnable = true)
         {
             if (string.IsNullOrEmpty(cutsceneName))
@@ -208,13 +215,13 @@ namespace Framework.Cutscene.Runtime
             }
         }
         //-----------------------------------------------------
-        public bool StopCutscene(int cutsceneGuid)
+        public bool StopCutscene(int cutsceneGuid,bool bOverTime = false)
         {
             if (m_vCutscenes == null || m_vCutscenes.Count <= 0)
                 return false;
             if (m_vCutscenes.TryGetValue(cutsceneGuid, out var cutscene))
             {
-                cutscene.Stop();
+                cutscene.Stop(bOverTime);
                 return true;
             }
             else
@@ -224,7 +231,7 @@ namespace Framework.Cutscene.Runtime
             return false;
         }
         //-----------------------------------------------------
-        public bool StopCutscene(string name)
+        public bool StopCutscene(string name, bool bOverTime = false)
         {
             if (m_vCutscenes == null || m_vCutscenes.Count <= 0 || string.IsNullOrEmpty(name))
                 return false;
@@ -233,7 +240,7 @@ namespace Framework.Cutscene.Runtime
             {
                 if (name.CompareTo(db.Value.GetName()) == 0)
                 {
-                    db.Value.Stop();
+                    db.Value.Stop(bOverTime);
                     bFound = true;
                 }
             }
@@ -534,6 +541,8 @@ namespace Framework.Cutscene.Runtime
             foreach (var db in m_vCutscenes)
             {
                 if (pIngore!=null && pIngore == db.Value) continue;
+                if (db.Value.IsEditorMode())
+                    continue;
                 m_vDoList.AddLast(db.Value);
             }
 

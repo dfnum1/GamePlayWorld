@@ -169,6 +169,11 @@ namespace Framework.ED
             m_pTimer.m_currentSnap = scale;
         }
         //--------------------------------------------------------
+        public float GetDeltaTime()
+        {
+            return m_pTimer.deltaTime;
+        }
+        //--------------------------------------------------------
         public virtual int GetPriority() { return 0; }
         public virtual bool IsManaged() { return true; }
         public virtual bool IsRuntimeOpen() { return m_bRuntimingOpened; }

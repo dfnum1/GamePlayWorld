@@ -10,9 +10,8 @@ using UnityEditor;
 using System.Collections.Generic;
 using System;
 using Framework.ED;
-using Framework.Cutscene.Runtime;
 
-namespace Framework.Cutscene.Editor
+namespace Framework.War.Editor
 {
     public class EditorPreferences
     {
@@ -33,7 +32,7 @@ namespace Framework.Cutscene.Editor
         {
             public int FrameRate = 30;
             public float playbackSpeedScale = 1;
-            public string generatorCodePath = "Assets/OpenScripts/GameApp/Cutscene";
+            public string generatorCodePath = "Assets/OpenScripts/GameApp/WarWorld";
             public float animationRunStandardDistance = 7;
             public float animationRunStandardTime = 0.8f;
             public float animationRunStandardSpeed = 1;
@@ -67,8 +66,6 @@ namespace Framework.Cutscene.Editor
 
             [SerializeField]
             public Color colorRecordingClipOutline = new Color(1, 0, 0, 0.9f);
-            [SerializeField]
-            public Color colorSearchingClipOutline = Color.yellow;
             [SerializeField]
             public Color colorOverClip = new Color(1, 0, 0, 0.7f);
 
@@ -123,9 +120,6 @@ namespace Framework.Cutscene.Editor
             [SerializeField] private string typeColorsData = "";
             [NonSerialized] public Dictionary<string, Color> typeColors = new Dictionary<string, Color>();
 
-            [SerializeField] private string playAbleDebugerData = "";
-            [NonSerialized] public Dictionary<string, bool> playAbleDebugers = new Dictionary<string, bool>();
-
             public void OnAfterDeserialize()
             {
                 // Deserialize typeColorsData
@@ -139,17 +133,6 @@ namespace Framework.Cutscene.Editor
                         typeColors.Add(data[i], col);
                     }
                 }
-
-                playAbleDebugers = new Dictionary<string, bool>();
-                string[] debugerData = playAbleDebugerData.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
-                for (int i = 0; i < debugerData.Length; i += 2)
-                {
-                    bool bValue = false;
-                    if (bool.TryParse(debugerData[i + 1], out bValue))
-                    {
-                        playAbleDebugers.Add(debugerData[i], bValue);
-                    }
-                }
             }
 
             public void OnBeforeSerialize()
@@ -159,11 +142,6 @@ namespace Framework.Cutscene.Editor
                 foreach (var item in typeColors)
                 {
                     typeColorsData += item.Key + "," + ColorUtility.ToHtmlStringRGB(item.Value) + ",";
-                }
-                playAbleDebugerData = "";
-                foreach (var item in playAbleDebugers)
-                {
-                    playAbleDebugerData += item.Key + "," + item.Value.ToString() + ",";
                 }
             }
         }
@@ -316,7 +294,7 @@ namespace Framework.Cutscene.Editor
 
         static void RepaintAll()
         {
-            var editors = Resources.FindObjectsOfTypeAll<CutsceneEditor>();
+            var editors = Resources.FindObjectsOfTypeAll<WarWorldEditor>();
             if (editors != null)
             {
                 for (int i = 0; i < editors.Length; ++i)
@@ -360,29 +338,6 @@ namespace Framework.Cutscene.Editor
             return col;
         }
 
-        public static bool GetPlayableDebuger(EDataType type,int typeId, int customType)
-        {
-            VerifyLoaded();
-            string key = type + "_" + typeId +"_" + customType;
-            if (string.IsNullOrEmpty(key)) return true;
-            bool debug = false;
-            if (settings[lastKey].playAbleDebugers.TryGetValue(key, out debug))
-            {
-                return debug;
-            }
-            return true;
-        }
-        public static void SetPlayableDebuger(EDataType type, int typeId, int customType, bool bDebug)
-        {
-            VerifyLoaded();
-            string key = type + "_" + typeId + "_" + customType;
-            if (string.IsNullOrEmpty(key)) return;
-            if(!settings[lastKey].playAbleDebugers.TryGetValue(key, out var existValue) || existValue != bDebug)
-            {
-                settings[lastKey].playAbleDebugers[key] = bDebug;
-                SavePrefs(lastKey, settings[lastKey]);
-            }
-        }
     }
 }
 #endif

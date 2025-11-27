@@ -47,9 +47,9 @@ namespace Framework.Cutscene.Runtime
             if (m_pCutscene != null) m_pCutscene.Resume();
         }
         //-----------------------------------------------------
-        public void SetTime(float time)
+        public void SetTime(float time,bool bForceUpdate = false)
         {
-            if (m_pCutscene != null) m_pCutscene.SetTime(time);
+            if (m_pCutscene != null) m_pCutscene.SetTime(time, bForceUpdate);
         }
         //-----------------------------------------------------
         internal void SetKey(long key)
