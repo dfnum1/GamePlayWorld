@@ -1,4 +1,4 @@
-
+#if UNITY_EDITOR
 using UnityEngine;
 
 namespace Framework.War.Editor
@@ -46,3 +46,4 @@ namespace Framework.War.Editor
         }
     }
 }
+#endif
