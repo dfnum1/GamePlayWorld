@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GamePlay", "GamePlay.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{0C335728-16B4-86A0-8513-421CDD295C30}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuideSystem", "GuideSystem.csproj", "{649CBCCA-4C7D-9080-7585-9338DAEF36EC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,10 @@ Global
 		{0C335728-16B4-86A0-8513-421CDD295C30}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0C335728-16B4-86A0-8513-421CDD295C30}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0C335728-16B4-86A0-8513-421CDD295C30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{649CBCCA-4C7D-9080-7585-9338DAEF36EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{649CBCCA-4C7D-9080-7585-9338DAEF36EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{649CBCCA-4C7D-9080-7585-9338DAEF36EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{649CBCCA-4C7D-9080-7585-9338DAEF36EC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

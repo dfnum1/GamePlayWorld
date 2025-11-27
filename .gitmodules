@@ -1,0 +1,3 @@
+[submodule "Packages/GamePlay"]
+	path = Packages/GamePlay
+	url = git@github.com:dfnum1/GamePlay.git

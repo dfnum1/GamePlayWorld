@@ -58,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\GameMain\Generators\Cutscene\Generated\CreateDataerDelegate.gen.cs" />
+    <Compile Include="Assets\OpenScripts\GameApp\GuideSystem\Generated\GuideWrapper.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -829,6 +830,10 @@
     <ProjectReference Include="GamePlay.csproj">
       <Project>{238352BE-77EC-4C0E-F8F0-8620964B1FFF}</Project>
       <Name>GamePlay</Name>
+    </ProjectReference>
+    <ProjectReference Include="GuideSystem.csproj">
+      <Project>{649CBCCA-4C7D-9080-7585-9338DAEF36EC}</Project>
+      <Name>GuideSystem</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
