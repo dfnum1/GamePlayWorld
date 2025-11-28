@@ -10,6 +10,7 @@ namespace Framework.Cutscene.Runtime
 		        case Framework.Cutscene.Runtime.EDataType.eClip:
 		            switch(typeId)
 		            {
+		                case 500: return new Framework.ActorSystem.Runtime.MoveToTargetClip();
 		                case 7: return new Framework.Cutscene.Runtime.ActiveClip();
 		                case 3: return new Framework.Cutscene.Runtime.AnimatorActionClip();
 		                case 11: return new Framework.Cutscene.Runtime.CameraLerpGameClip();
@@ -36,11 +37,9 @@ namespace Framework.Cutscene.Runtime
 		            switch(typeId)
 		            {
 		                case 1: return new Framework.Cutscene.Runtime.CutsceneCustomEvent();
-		                case 3: return new Framework.Cutscene.Runtime.CutsceneExecuteAT();
 		                case 7: return new Framework.Cutscene.Runtime.CutscenePauseCutsceneEvent();
 		                case 5: return new Framework.Cutscene.Runtime.CutscenePlayCutsceneEvent();
 		                case 8: return new Framework.Cutscene.Runtime.CutsceneResumeCutsceneEvent();
-		                case 2: return new Framework.Cutscene.Runtime.CutsceneSetATPort();
 		                case 4: return new Framework.Cutscene.Runtime.CutsceneSetCamera();
 		                case 6: return new Framework.Cutscene.Runtime.CutsceneStopCutsceneEvent();
 		                default: return null;

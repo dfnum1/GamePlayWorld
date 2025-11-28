@@ -1,0 +1,32 @@
+﻿{
+    "boundBox": {
+        "m_Position": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "m_Size": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        }
+    },
+    "timelineActions": [
+        {
+            "actioName": "AttackGroup",
+            "type": 102,
+            "actionTag": 0,
+            "priority": 0,
+            "layer": 0,
+            "cutsceneGraphData": "{\n    \"vCutscenes\": [\n        {\n            \"cutSceneData\": {\n                \"name\": \"attack\",\n                \"id\": 1,\n                \"frameRate\": 60,\n                \"groups\": [\n                    {\n                        \"name\": \"Group01\",\n                        \"id\": 1,\n                        \"binderId\": -1,\n                        \"isGroup\": false,\n                        \"groupFlag\": 0,\n                        \"tracks\": [\n                            {\n                                \"trackName\": \"Track01\",\n                                \"datas\": [\n                                    {\n                                        \"type\": 1,\n                                        \"typeId\": 18,\n                                        \"content\": \"{\\\"baseProp\\\":{\\\"name\\\":\\\"AnimationClip\\\",\\\"time\\\":0.016666531562805177,\\\"duration\\\":1.0333335399627686,\\\"endEdgeType\\\":0,\\\"repeatCnt\\\":1,\\\"blendIn\\\":0.0,\\\"blendOut\\\":0.0},\\\"action\\\":\\\"Assets/Demos/roles/role1/fbx/Attack.anim\\\",\\\"layer\\\":0,\\\"actionOffset\\\":0.0,\\\"playSpeed\\\":1.0}\"\n                                    }\n                                ]\n                            }\n                        ]\n                    }\n                ]\n            }\n        }\n    ]\n}"
+        },
+        {
+            "actioName": "Run",
+            "type": 2,
+            "actionTag": 0,
+            "priority": 0,
+            "layer": 0,
+            "cutsceneGraphData": "{\n    \"vCutscenes\": [\n        {\n            \"cutSceneData\": {\n                \"name\": \"default\",\n                \"id\": 1,\n                \"frameRate\": 60,\n                \"groups\": [\n                    {\n                        \"name\": \"Group01\",\n                        \"id\": 1,\n                        \"binderId\": -1,\n                        \"isGroup\": false,\n                        \"groupFlag\": 0,\n                        \"tracks\": [\n                            {\n                                \"trackName\": \"Track01\",\n                                \"datas\": [\n                                    {\n                                        \"type\": 1,\n                                        \"typeId\": 18,\n                                        \"content\": \"{\\\"baseProp\\\":{\\\"name\\\":\\\"AnimationClip\\\",\\\"time\\\":0.0,\\\"duration\\\":0.8000000715255737,\\\"endEdgeType\\\":0,\\\"repeatCnt\\\":1,\\\"blendIn\\\":0.0,\\\"blendOut\\\":0.0},\\\"action\\\":\\\"Assets/Demos/roles/role1/fbx/Run.anim\\\",\\\"layer\\\":0,\\\"actionOffset\\\":0.0,\\\"playSpeed\\\":1.0}\"\n                                    }\n                                ]\n                            }\n                        ]\n                    }\n                ]\n            }\n        }\n    ]\n}"
+        }
+    ]
+}
