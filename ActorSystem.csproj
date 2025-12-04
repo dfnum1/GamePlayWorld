@@ -54,7 +54,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
-    <Analyzer Include="D:\work_source\github\GamePlayWorld\Packages\GamePlay\Scripts\GameFramework\EditorFramework\Plugins\TagLibSharp.dll" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Packages\GamePlay\Scripts\ActorSystem\AssemblyInfo.cs" />
@@ -98,12 +97,15 @@
     <Compile Include="Packages\GamePlay\Scripts\ActorSystem\Runtime\Graph\Animation\AnimGraphVisualizer\Graph\Layouts\ReingoldTilford.cs" />
     <Compile Include="Packages\GamePlay\Scripts\ActorSystem\Runtime\Graph\Animation\GraphPlayableUtil.cs" />
     <Compile Include="Packages\GamePlay\Scripts\ActorSystem\Runtime\Graph\Animation\AnimGraphVisualizer\PlayableNodes\AnimationLayerMixerPlayableNode.cs" />
+    <Compile Include="Packages\GamePlay\Scripts\ActorSystem\EditorRuntimes\Utils\ResourceUtil.cs" />
     <Compile Include="Packages\GamePlay\Scripts\ActorSystem\Runtime\Graph\Animation\GraphAnimationPlayer.cs" />
+    <Compile Include="Packages\GamePlay\Scripts\ActorSystem\Runtime\Projectile\AProjectileDatas.cs" />
     <Compile Include="Packages\GamePlay\Scripts\ActorSystem\EditorRuntimes\Projectile\Logics\ProjectileDataDrawer.cs" />
     <Compile Include="Packages\GamePlay\Scripts\ActorSystem\Runtime\Data\ActorGraphData.cs" />
     <Compile Include="Packages\GamePlay\Scripts\ActorSystem\Runtime\Data\EActionStateType.cs" />
     <Compile Include="Packages\GamePlay\Scripts\ActorSystem\Runtime\ActorParameter.cs" />
     <Compile Include="Packages\GamePlay\Scripts\ActorSystem\Runtime\Graph\Animation\AnimGraphVisualizer\Graph\Renderer\DefaultGraphRenderer.cs" />
+    <Compile Include="Packages\GamePlay\Scripts\ActorSystem\Runtime\Behavior\AActorComponent.cs" />
     <Compile Include="Packages\GamePlay\Scripts\ActorSystem\Runtime\Utils\ActorSystemUtil.cs" />
     <Compile Include="Packages\GamePlay\Scripts\ActorSystem\Runtime\Actor.cs" />
     <Compile Include="Packages\GamePlay\Scripts\ActorSystem\Runtime\ActorManager.cs" />
@@ -120,9 +122,6 @@
     <Compile Include="Packages\GamePlay\Scripts\ActorSystem\Runtime\Graph\Animation\AnimGraphVisualizer\PlayableNodes\PlayableNode.cs" />
     <Compile Include="Packages\GamePlay\Scripts\ActorSystem\Runtime\Agents\ActorGraphicAgent.cs" />
     <Compile Include="Packages\GamePlay\Scripts\ActorSystem\EditorRuntimes\Utils\EditorUtil.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\ActorSystem\Runtime\Behavior\AActorComponent.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\ActorSystem\EditorRuntimes\Utils\ResourceUtil.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\ActorSystem\Runtime\Projectile\AProjectileDatas.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Packages\GamePlay\Scripts\ActorSystem\ActorSystem.asmdef" />
@@ -419,14 +418,14 @@
     <Reference Include="Unity.Burst.Cecil.Rocks">
       <HintPath>Library\PackageCache\com.unity.burst@1.8.2\Unity.Burst.CodeGen\Unity.Burst.Cecil.Rocks.dll</HintPath>
     </Reference>
+    <Reference Include="TagLibSharp">
+      <HintPath>Packages\GamePlay\Scripts\GameFramework\EditorFramework\Plugins\TagLibSharp.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
       <HintPath>Library\PackageCache\com.unity.visualscripting@1.8.0\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="ReportGeneratorMerged">
       <HintPath>Library\PackageCache\com.unity.testtools.codecoverage@1.2.2\lib\ReportGenerator\ReportGeneratorMerged.dll</HintPath>
-    </Reference>
-    <Reference Include="TagLibSharp">
-      <HintPath>Packages\GamePlay\Scripts\GameFramework\EditorFramework\Plugins\TagLibSharp.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Android.Types">
       <HintPath>D:\Program Files\Unitys\Unity 2021.3.19f1c1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Types.dll</HintPath>
