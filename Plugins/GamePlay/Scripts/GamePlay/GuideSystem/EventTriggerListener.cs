@@ -6,10 +6,11 @@
 *********************************************************************/
 #if UNITY_EDITOR
 using UnityEditor;
+using UnityEngine;
 #endif
 namespace Framework.Guide
 {
-    public class EventTriggerListener : AEventTriggerListenerEditor
+    public class EventTriggerListener : AEventTriggerListener
     {
     }
 
