@@ -54,8 +54,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
+    <Analyzer Include="D:\work_source\github\GamePlayWorld\Packages\GamePlay\Scripts\GameFramework\EditorFramework\Plugins\TagLibSharp.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\AssemblyComplier.cs" />
     <Compile Include="Assets\OpenScripts\GameApp\GuideSystem\Generated\GuideWrapper.cs" />
     <Compile Include="Assets\Scripts\GameMain\Generators\Cutscene\Generated\CreateDataerDelegate.gen.cs" />
   </ItemGroup>
@@ -321,14 +323,14 @@
     <Reference Include="Unity.Burst.Cecil.Rocks">
       <HintPath>Library\PackageCache\com.unity.burst@1.8.2\Unity.Burst.CodeGen\Unity.Burst.Cecil.Rocks.dll</HintPath>
     </Reference>
-    <Reference Include="TagLibSharp">
-      <HintPath>Packages\GamePlay\Scripts\EditorFramework\Plugins\TagLibSharp.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
       <HintPath>Library\PackageCache\com.unity.visualscripting@1.8.0\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="ReportGeneratorMerged">
       <HintPath>Library\PackageCache\com.unity.testtools.codecoverage@1.2.2\lib\ReportGenerator\ReportGeneratorMerged.dll</HintPath>
+    </Reference>
+    <Reference Include="TagLibSharp">
+      <HintPath>Packages\GamePlay\Scripts\GameFramework\EditorFramework\Plugins\TagLibSharp.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Android.Types">
       <HintPath>D:\Program Files\Unitys\Unity 2021.3.19f1c1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Types.dll</HintPath>
@@ -830,17 +832,21 @@
       <Project>{FE4D3497-B0FE-8A21-6859-78DD878DA567}</Project>
       <Name>Cutscene</Name>
     </ProjectReference>
-    <ProjectReference Include="GamePlay.csproj">
-      <Project>{238352BE-77EC-4C0E-F8F0-8620964B1FFF}</Project>
-      <Name>GamePlay</Name>
+    <ProjectReference Include="GameState.csproj">
+      <Project>{C13279C0-A231-5CD9-21B9-BDFC264528E6}</Project>
+      <Name>GameState</Name>
     </ProjectReference>
     <ProjectReference Include="AgentTree.csproj">
       <Project>{73E9CEA4-F5EA-B33C-12D3-0BEA1E149D40}</Project>
       <Name>AgentTree</Name>
     </ProjectReference>
-    <ProjectReference Include="EditorFramework.csproj">
-      <Project>{E05BCF8F-6BBB-3A26-C962-75C3D5577FA4}</Project>
-      <Name>EditorFramework</Name>
+    <ProjectReference Include="GameFramework.csproj">
+      <Project>{381EAD1A-37E2-C733-BA6B-EEC2575EB60D}</Project>
+      <Name>GameFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="GamePlayComponent.csproj">
+      <Project>{0B7FE0B7-3D3E-F80F-61D8-152CB4A2F82C}</Project>
+      <Name>GamePlayComponent</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

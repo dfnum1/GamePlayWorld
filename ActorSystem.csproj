@@ -54,6 +54,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
+    <Analyzer Include="D:\work_source\github\GamePlayWorld\Packages\GamePlay\Scripts\GameFramework\EditorFramework\Plugins\TagLibSharp.dll" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Packages\GamePlay\Scripts\ActorSystem\AssemblyInfo.cs" />
@@ -61,17 +62,17 @@
     <Compile Include="Packages\GamePlay\Scripts\ActorSystem\Runtime\Projectile\IProjectileParticle.cs" />
     <Compile Include="Packages\GamePlay\Scripts\ActorSystem\Runtime\WordBoundBox.cs" />
     <Compile Include="Packages\GamePlay\Scripts\ActorSystem\Runtime\Data\ESlotBindBit.cs" />
+    <Compile Include="Packages\GamePlay\Scripts\ActorSystem\EditorRuntimes\Projectile\Logics\ProjectileDataListLogic.cs" />
     <Compile Include="Packages\GamePlay\Scripts\ActorSystem\Runtime\Graph\Animation\AnimGraphVisualizer\Graph\Renderer\IGraphRenderer.cs" />
     <Compile Include="Packages\GamePlay\Scripts\ActorSystem\Runtime\Graph\Animation\AnimGraphVisualizer\PlayableGraphVisualizerWindow.cs" />
+    <Compile Include="Packages\GamePlay\Scripts\ActorSystem\EditorRuntimes\Projectile\ProjecitleProvider.cs" />
     <Compile Include="Packages\GamePlay\Scripts\ActorSystem\Runtime\Skill\SkillSystem.cs" />
     <Compile Include="Packages\GamePlay\Scripts\ActorSystem\Runtime\Graph\Animation\AnimGraphVisualizer\PlayableNodes\AnimationClipPlayableNode.cs" />
     <Compile Include="Packages\GamePlay\Scripts\ActorSystem\Runtime\Utils\IntersetionUtil.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\ActorSystem\Runtime\Behavior\ActorComponent.cs" />
     <Compile Include="Packages\GamePlay\Scripts\ActorSystem\Runtime\Graph\Clips\ActorClipTypeDef.cs" />
     <Compile Include="Packages\GamePlay\Scripts\ActorSystem\EditorRuntimes\Projectile\Logics\AProjectileEditorLogic.cs" />
     <Compile Include="Packages\GamePlay\Scripts\ActorSystem\Runtime\Utils\BezierUtility.cs" />
     <Compile Include="Packages\GamePlay\Scripts\ActorSystem\Runtime\Graph\Animation\AnimGraphVisualizer\Graph\Node.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\ActorSystem\Runtime\Projectile\ProjectileDatas.cs" />
     <Compile Include="Packages\GamePlay\Scripts\ActorSystem\Runtime\Data\AActorStateInfo.cs" />
     <Compile Include="Packages\GamePlay\Scripts\ActorSystem\Runtime\Projectile\ProjectileManager.cs" />
     <Compile Include="Packages\GamePlay\Scripts\ActorSystem\EditorRuntimes\ActorSystem\Logic\PreviewLogic.cs" />
@@ -85,6 +86,7 @@
     <Compile Include="Packages\GamePlay\Scripts\ActorSystem\Runtime\Agents\ActorTransformLogic.cs" />
     <Compile Include="Packages\GamePlay\Scripts\ActorSystem\EditorRuntimes\ActorSystem\Logic\ActionEditorLogic.cs" />
     <Compile Include="Packages\GamePlay\Scripts\ActorSystem\Runtime\Graph\Animation\AnimGraphVisualizer\PlayableNodes\PlayableOutputNode.cs" />
+    <Compile Include="Packages\GamePlay\Scripts\ActorSystem\Runtime\Graph\Clips\ActorProjectileClip.cs" />
     <Compile Include="Packages\GamePlay\Scripts\ActorSystem\Runtime\Graph\Animation\AnimGraphVisualizer\PlayableGraphVisualizer.cs" />
     <Compile Include="Packages\GamePlay\Scripts\ActorSystem\EditorRuntimes\Projectile\ProjectileEditor.cs" />
     <Compile Include="Packages\GamePlay\Scripts\ActorSystem\Runtime\Base\AttackFrameParameter.cs" />
@@ -118,9 +120,9 @@
     <Compile Include="Packages\GamePlay\Scripts\ActorSystem\Runtime\Graph\Animation\AnimGraphVisualizer\PlayableNodes\PlayableNode.cs" />
     <Compile Include="Packages\GamePlay\Scripts\ActorSystem\Runtime\Agents\ActorGraphicAgent.cs" />
     <Compile Include="Packages\GamePlay\Scripts\ActorSystem\EditorRuntimes\Utils\EditorUtil.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\ActorSystem\EditorRuntimes\Projectile\Logics\ProjectileDataListLogic.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\ActorSystem\Runtime\Graph\Clips\ActorProjectileClip.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\ActorSystem\EditorRuntimes\Projectile\ProjecitleProvider.cs" />
+    <Compile Include="Packages\GamePlay\Scripts\ActorSystem\Runtime\Behavior\AActorComponent.cs" />
+    <Compile Include="Packages\GamePlay\Scripts\ActorSystem\EditorRuntimes\Utils\ResourceUtil.cs" />
+    <Compile Include="Packages\GamePlay\Scripts\ActorSystem\Runtime\Projectile\AProjectileDatas.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Packages\GamePlay\Scripts\ActorSystem\ActorSystem.asmdef" />
@@ -417,14 +419,14 @@
     <Reference Include="Unity.Burst.Cecil.Rocks">
       <HintPath>Library\PackageCache\com.unity.burst@1.8.2\Unity.Burst.CodeGen\Unity.Burst.Cecil.Rocks.dll</HintPath>
     </Reference>
-    <Reference Include="TagLibSharp">
-      <HintPath>Packages\GamePlay\Scripts\EditorFramework\Plugins\TagLibSharp.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
       <HintPath>Library\PackageCache\com.unity.visualscripting@1.8.0\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="ReportGeneratorMerged">
       <HintPath>Library\PackageCache\com.unity.testtools.codecoverage@1.2.2\lib\ReportGenerator\ReportGeneratorMerged.dll</HintPath>
+    </Reference>
+    <Reference Include="TagLibSharp">
+      <HintPath>Packages\GamePlay\Scripts\GameFramework\EditorFramework\Plugins\TagLibSharp.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Android.Types">
       <HintPath>D:\Program Files\Unitys\Unity 2021.3.19f1c1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Types.dll</HintPath>
@@ -806,9 +808,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="EditorFramework.csproj">
-      <Project>{E05BCF8F-6BBB-3A26-C962-75C3D5577FA4}</Project>
-      <Name>EditorFramework</Name>
+    <ProjectReference Include="GameFramework.csproj">
+      <Project>{381EAD1A-37E2-C733-BA6B-EEC2575EB60D}</Project>
+      <Name>GameFramework</Name>
     </ProjectReference>
     <ProjectReference Include="Cutscene.csproj">
       <Project>{FE4D3497-B0FE-8A21-6859-78DD878DA567}</Project>

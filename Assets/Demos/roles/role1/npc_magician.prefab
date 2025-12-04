@@ -410,7 +410,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4416172077043203930}
   - component: {fileID: 7757812989387171104}
-  - component: {fileID: -6876782103182317488}
+  - component: {fileID: -6184622492837846169}
   m_Layer: 0
   m_Name: npc_magician
   m_TagString: Untagged
@@ -456,7 +456,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
---- !u!114 &-6876782103182317488
+--- !u!114 &-6184622492837846169
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -465,22 +465,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 3891872828631868896}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c29f0a4604d72e742abaf49e98a28330, type: 3}
+  m_Script: {fileID: 11500000, guid: 232af69093333524ba686c3a4fe359b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slots:
-  - name: center
-    slot: {fileID: 3583411167752555116}
-    offset: {x: 0, y: 0, z: 0}
-  commonActions:
-  - actioName: Idle
-    type: 1
-    actionTag: 0
-    priority: 0
-    layer: 0
-    clip: {fileID: 7400000, guid: e04262985add35c4ea6f2320b218169f, type: 2}
+  slots: []
+  commonActions: []
   avatarMasks: []
-  ActionGraphData: {fileID: 4900000, guid: b644b7669de969e449d2598afa4440d8, type: 3}
+  ActionGraphData: {fileID: 0}
   ATData:
     tasks: []
     actions: []

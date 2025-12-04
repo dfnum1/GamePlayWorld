@@ -54,6 +54,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
+    <Analyzer Include="D:\work_source\github\GamePlayWorld\Packages\GamePlay\Scripts\GameFramework\EditorFramework\Plugins\TagLibSharp.dll" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Packages\GamePlay\Scripts\Cutscene\Runtime\Cutscene\Events\CutsceneExecuteAT.cs" />
@@ -62,7 +63,6 @@
     <Compile Include="Packages\GamePlay\Scripts\Cutscene\Runtime\Cutscene\Clips\RotationClip.cs" />
     <Compile Include="Packages\GamePlay\Scripts\Cutscene\EditorRuntimes\EditorLogic\Draw\DragDropDraw.cs" />
     <Compile Include="Packages\GamePlay\Scripts\Cutscene\Runtime\Cutscene\Datas\CutsceneData.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\Runtime\Cutscene\Behaviors\CutsceneObjectBinder.cs" />
     <Compile Include="Packages\GamePlay\Scripts\Cutscene\Runtime\Cutscene\Clips\FollowToClip.cs" />
     <Compile Include="Packages\GamePlay\Scripts\Cutscene\Runtime\Cutscene\Clips\CameraPathClip.cs" />
     <Compile Include="Packages\GamePlay\Scripts\Cutscene\Runtime\Cutscene\CutsceneInstance.cs" />
@@ -85,6 +85,7 @@
     <Compile Include="Packages\GamePlay\Scripts\Cutscene\EditorRuntimes\Preference\EditorPreferences.cs" />
     <Compile Include="Packages\GamePlay\Scripts\Cutscene\Runtime\Cutscene\Clips\CutsceneAnimationClip.cs" />
     <Compile Include="Packages\GamePlay\Scripts\Cutscene\Runtime\Cutscene\Clips\CameraLerpGameClip.cs" />
+    <Compile Include="Packages\GamePlay\Scripts\Cutscene\EditorRuntimes\Searcher\SearchTypeProvider.cs" />
     <Compile Include="Packages\GamePlay\Scripts\Cutscene\Runtime\Cutscene\Clips\TimeScaleClip.cs" />
     <Compile Include="Packages\GamePlay\Scripts\Cutscene\Runtime\Cutscene\Clips\CutsceneCustomClip.cs" />
     <Compile Include="Packages\GamePlay\Scripts\Cutscene\EditorRuntimes\EditorLogic\TimelineDrawLogic.cs" />
@@ -120,13 +121,11 @@
     <Compile Include="Packages\GamePlay\Scripts\Cutscene\EditorRuntimes\Utils\TextUtil.cs" />
     <Compile Include="Packages\GamePlay\Scripts\Cutscene\Runtime\Cutscene\Datas\PathPoint.cs" />
     <Compile Include="Packages\GamePlay\Scripts\Cutscene\Runtime\Cutscene\Clips\CutsceneGroupBindObjectFollowTargetClip.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\Runtime\Cutscene\Datas\CutsceneCustomAgent.cs" />
     <Compile Include="Packages\GamePlay\Scripts\Cutscene\Runtime\Cutscene\Events\CutsceneCutsceneEventDriver.cs" />
     <Compile Include="Packages\GamePlay\Scripts\Cutscene\Runtime\Cutscene\Playable\CutsceneTrack.cs" />
     <Compile Include="Packages\GamePlay\Scripts\Cutscene\EditorRuntimes\Utils\BindIdInputPopup.cs" />
     <Compile Include="Packages\GamePlay\Scripts\Cutscene\AssemblyInfo.cs" />
     <Compile Include="Packages\GamePlay\Scripts\Cutscene\Runtime\Cutscene\Playable\CutscenePlayable.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\Runtime\Cutscene\Datas\CutsceneObject.cs" />
     <Compile Include="Packages\GamePlay\Scripts\Cutscene\EditorRuntimes\EditorLogic\PreviewLogic.cs" />
     <Compile Include="Packages\GamePlay\Scripts\Cutscene\EditorRuntimes\EditorLogic\ToolBarDrawLogic.cs" />
     <Compile Include="Packages\GamePlay\Scripts\Cutscene\Runtime\Cutscene\Clips\ProjecitleClip.cs" />
@@ -141,7 +140,9 @@
     <Compile Include="Packages\GamePlay\Scripts\Cutscene\Runtime\Cutscene\Playable\FrameData.cs" />
     <Compile Include="Packages\GamePlay\Scripts\Cutscene\EditorRuntimes\EditorLogic\Draw\DragDraw.cs" />
     <Compile Include="Packages\GamePlay\Scripts\Cutscene\Runtime\Cutscene\Clips\CameraShakeClip.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\EditorRuntimes\Searcher\SearchTypeProvider.cs" />
+    <Compile Include="Packages\GamePlay\Scripts\Cutscene\Runtime\Cutscene\Datas\ACutsceneCustomAgent.cs" />
+    <Compile Include="Packages\GamePlay\Scripts\Cutscene\Runtime\Cutscene\Behaviors\ACutsceneObjectBinder.cs" />
+    <Compile Include="Packages\GamePlay\Scripts\Cutscene\Runtime\Cutscene\Datas\ACutsceneObject.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Packages\GamePlay\Scripts\Cutscene\Cutscene.asmdef" />
@@ -438,14 +439,14 @@
     <Reference Include="Unity.Burst.Cecil.Rocks">
       <HintPath>Library\PackageCache\com.unity.burst@1.8.2\Unity.Burst.CodeGen\Unity.Burst.Cecil.Rocks.dll</HintPath>
     </Reference>
-    <Reference Include="TagLibSharp">
-      <HintPath>Packages\GamePlay\Scripts\EditorFramework\Plugins\TagLibSharp.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
       <HintPath>Library\PackageCache\com.unity.visualscripting@1.8.0\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="ReportGeneratorMerged">
       <HintPath>Library\PackageCache\com.unity.testtools.codecoverage@1.2.2\lib\ReportGenerator\ReportGeneratorMerged.dll</HintPath>
+    </Reference>
+    <Reference Include="TagLibSharp">
+      <HintPath>Packages\GamePlay\Scripts\GameFramework\EditorFramework\Plugins\TagLibSharp.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Android.Types">
       <HintPath>D:\Program Files\Unitys\Unity 2021.3.19f1c1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Types.dll</HintPath>
@@ -827,9 +828,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="EditorFramework.csproj">
-      <Project>{E05BCF8F-6BBB-3A26-C962-75C3D5577FA4}</Project>
-      <Name>EditorFramework</Name>
+    <ProjectReference Include="GameFramework.csproj">
+      <Project>{381EAD1A-37E2-C733-BA6B-EEC2575EB60D}</Project>
+      <Name>GameFramework</Name>
     </ProjectReference>
     <ProjectReference Include="AgentTree.csproj">
       <Project>{73E9CEA4-F5EA-B33C-12D3-0BEA1E149D40}</Project>

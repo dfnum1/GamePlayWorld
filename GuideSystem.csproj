@@ -54,27 +54,22 @@
   </PropertyGroup>
   <ItemGroup>
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
+    <Analyzer Include="D:\work_source\github\GamePlayWorld\Packages\GamePlay\Scripts\GameFramework\EditorFramework\Plugins\TagLibSharp.dll" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Packages\GamePlay\Scripts\GuideSystem\EditorRuntimes\GuideSystemEditor.cs" />
     <Compile Include="Packages\GamePlay\Scripts\GuideSystem\Runtime\Node\TriggerNode.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\GuideSystem\Runtime\GuideUI\UIGuideSerialize.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\GuideSystem\Runtime\GuideTag.cs" />
     <Compile Include="Packages\GamePlay\Scripts\GuideSystem\Runtime\Node\ExcudeNode.cs" />
     <Compile Include="Packages\GamePlay\Scripts\GuideSystem\EditorRuntimes\Node\ExcudeNodeDraw.cs" />
     <Compile Include="Packages\GamePlay\Scripts\GuideSystem\Runtime\GuideGroup.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\GuideSystem\Runtime\GuideUI\EventTriggerListener.cs" />
     <Compile Include="Packages\GamePlay\Scripts\GuideSystem\EditorRuntimes\GuidePreferences.cs" />
     <Compile Include="Packages\GamePlay\Scripts\GuideSystem\EditorRuntimes\EventInspector.cs" />
     <Compile Include="Packages\GamePlay\Scripts\GuideSystem\EditorRuntimes\GuideAutoCode.cs" />
     <Compile Include="Packages\GamePlay\Scripts\GuideSystem\Runtime\Utitlity\SortUtility.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\GuideSystem\Runtime\GuideCustomAgent.cs" />
     <Compile Include="Packages\GamePlay\Scripts\GuideSystem\EditorRuntimes\GuideEditorUtil.cs" />
     <Compile Include="Packages\GamePlay\Scripts\GuideSystem\Runtime\Handles\Execute\GuideExcudeDef.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\GuideSystem\Runtime\GuideGuid.cs" />
     <Compile Include="Packages\GamePlay\Scripts\GuideSystem\Runtime\Handles\Execute\GuideExcudeHandler.cs" />
     <Compile Include="Packages\GamePlay\Scripts\GuideSystem\EditorRuntimes\GuideProvider.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\GuideSystem\Runtime\GuideHighlightMask.cs" />
     <Compile Include="Packages\GamePlay\Scripts\GuideSystem\Runtime\GuideSystemDef.cs" />
     <Compile Include="Packages\GamePlay\Scripts\GuideSystem\EditorRuntimes\NodeSearcher.cs" />
     <Compile Include="Packages\GamePlay\Scripts\GuideSystem\EditorRuntimes\GudieRecodeMode.cs" />
@@ -89,7 +84,6 @@
     <Compile Include="Packages\GamePlay\Scripts\GuideSystem\Runtime\Handles\Step\GuideStepDef.cs" />
     <Compile Include="Packages\GamePlay\Scripts\GuideSystem\EditorRuntimes\GuideSearcher.cs" />
     <Compile Include="Packages\GamePlay\Scripts\GuideSystem\EditorRuntimes\GuideEditorResources.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\GuideSystem\Runtime\GuideDatas.cs" />
     <Compile Include="Packages\GamePlay\Scripts\GuideSystem\Runtime\Node\GuideOperate.cs" />
     <Compile Include="Packages\GamePlay\Scripts\GuideSystem\Runtime\Handles\Step\GuideStepHandler.cs" />
     <Compile Include="Packages\GamePlay\Scripts\GuideSystem\EditorRuntimes\Node\NodePort.cs" />
@@ -98,18 +92,25 @@
     <Compile Include="Packages\GamePlay\Scripts\GuideSystem\Runtime\Node\Port.cs" />
     <Compile Include="Packages\GamePlay\Scripts\GuideSystem\EditorRuntimes\GuideNodePreviewEditor.cs" />
     <Compile Include="Packages\GamePlay\Scripts\GuideSystem\Runtime\Utitlity\VariableList.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\GuideSystem\Runtime\GuideUI\UIPenetrate.cs" />
     <Compile Include="Packages\GamePlay\Scripts\GuideSystem\EditorRuntimes\Node\TriggerNodeDraw.cs" />
     <Compile Include="Packages\GamePlay\Scripts\GuideSystem\EditorRuntimes\GuideEditorLogic.cs" />
     <Compile Include="Packages\GamePlay\Scripts\GuideSystem\Runtime\GuideAttribute.cs" />
     <Compile Include="Packages\GamePlay\Scripts\GuideSystem\Runtime\GuideSystem.cs" />
     <Compile Include="Packages\GamePlay\Scripts\GuideSystem\Runtime\GuideUI\GuidePanel.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\GuideSystem\Runtime\GuideUI\UITouchIngore.cs" />
     <Compile Include="Packages\GamePlay\Scripts\GuideSystem\EditorRuntimes\Node\GraphNode.cs" />
     <Compile Include="Packages\GamePlay\Scripts\GuideSystem\Runtime\IGuideScroll.cs" />
     <Compile Include="Packages\GamePlay\Scripts\GuideSystem\EditorRuntimes\Node\StepNodeDraw.cs" />
     <Compile Include="Packages\GamePlay\Scripts\GuideSystem\Runtime\Node\BaseNode.cs" />
     <Compile Include="Packages\GamePlay\Scripts\GuideSystem\EditorRuntimes\GuideEditorGUI.cs" />
+    <Compile Include="Packages\GamePlay\Scripts\GuideSystem\Runtime\AGuideCustomAgent.cs" />
+    <Compile Include="Packages\GamePlay\Scripts\GuideSystem\Runtime\GuideUI\AEventTriggerListener.cs" />
+    <Compile Include="Packages\GamePlay\Scripts\GuideSystem\Runtime\AGuideDatas.cs" />
+    <Compile Include="Packages\GamePlay\Scripts\GuideSystem\Runtime\AGuideGuid.cs" />
+    <Compile Include="Packages\GamePlay\Scripts\GuideSystem\Runtime\AGuideHighlightMask.cs" />
+    <Compile Include="Packages\GamePlay\Scripts\GuideSystem\Runtime\AGuideTag.cs" />
+    <Compile Include="Packages\GamePlay\Scripts\GuideSystem\Runtime\GuideUI\AUIGuideSerialize.cs" />
+    <Compile Include="Packages\GamePlay\Scripts\GuideSystem\Runtime\GuideUI\AUIPenetrate.cs" />
+    <Compile Include="Packages\GamePlay\Scripts\GuideSystem\Runtime\GuideUI\AUITouchIngore.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Packages\GamePlay\Scripts\GuideSystem\EditorRuntimes\EditorResources\Node.uss" />
@@ -408,14 +409,14 @@
     <Reference Include="Unity.Burst.Cecil.Rocks">
       <HintPath>Library\PackageCache\com.unity.burst@1.8.2\Unity.Burst.CodeGen\Unity.Burst.Cecil.Rocks.dll</HintPath>
     </Reference>
-    <Reference Include="TagLibSharp">
-      <HintPath>Packages\GamePlay\Scripts\EditorFramework\Plugins\TagLibSharp.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
       <HintPath>Library\PackageCache\com.unity.visualscripting@1.8.0\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="ReportGeneratorMerged">
       <HintPath>Library\PackageCache\com.unity.testtools.codecoverage@1.2.2\lib\ReportGenerator\ReportGeneratorMerged.dll</HintPath>
+    </Reference>
+    <Reference Include="TagLibSharp">
+      <HintPath>Packages\GamePlay\Scripts\GameFramework\EditorFramework\Plugins\TagLibSharp.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Android.Types">
       <HintPath>D:\Program Files\Unitys\Unity 2021.3.19f1c1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Types.dll</HintPath>
@@ -800,6 +801,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="GameFramework.csproj">
+      <Project>{381EAD1A-37E2-C733-BA6B-EEC2575EB60D}</Project>
+      <Name>GameFramework</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
