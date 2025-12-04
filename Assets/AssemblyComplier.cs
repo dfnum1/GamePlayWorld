@@ -9,13 +9,38 @@ using UnityEngine;
 
 public class AssemblyComplier
 {
+    static HashSet<string> ms_vPackageDlls = new HashSet<string>();
     [MenuItem("Tools/AssemblyComplier")]
     public static void CompileAssembly()
     {
+        ms_vPackageDlls.Clear();
+        ms_vPackageDlls.Add("agenttree");
+        ms_vPackageDlls.Add("guidesystem");
+        ms_vPackageDlls.Add("gameframework");
+        ms_vPackageDlls.Add("gamestate");
+        ms_vPackageDlls.Add("cutscene");
+        ms_vPackageDlls.Add("actorsystem");
+        //ComplierDll((succeed4) =>
+        //{
+        //},
+        //Application.dataPath + "/../Packages/GamePlay/Scripts/Cutscene", 
+        //Application.dataPath + "/../Plugins/GamePlay/Scripts/Framework/CutsceneEditor.dll",
+        //"UNITY_EDITOR",
+        //                   Application.dataPath + "/../Plugins/GamePlay/Scripts/Framework/TagLibSharp.dll",
+        //                   Application.dataPath + "/../Plugins/GamePlay/Scripts/Framework/GameFrameworkEditor.dll",
+        //                   Application.dataPath + "/../Plugins/GamePlay/Scripts/Framework/AgentTreeEditor.dll");
+        //return;
         BuildEditorDll((result) => {
-        BuildDll((resutl1) => {
-            EditorUtility.DisplayDialog("提示", (result && resutl1) ? "DLL编译成功" : "DLL编译失败", "确定");
-        });
+            if(result)
+            {
+                BuildDll((resutl1) => {
+                    EditorUtility.DisplayDialog("提示", (result && resutl1) ? "DLL编译成功" : "DLL编译失败", "确定");
+                });
+            }
+            else
+            {
+                EditorUtility.DisplayDialog("提示", "DLL编译失败", "确定");
+            }
         });
     }
     //--------------------------------------------------------
@@ -40,27 +65,34 @@ public class AssemblyComplier
                                         {
                                             onCallback(succeed4);
                                         },
-                                        Application.dataPath + "/../Packages/GamePlay/Scripts/GuideSystem", Application.dataPath + "/../Plugins/GamePlay/GuideSystemEditor.dll", "UNITY_EDITOR");
+                                        Application.dataPath + "/../Packages/GamePlay/Scripts/GuideSystem", Application.dataPath + "/../Plugins/GamePlay/Scripts/Framework/GuideSystemEditor.dll", "UNITY_EDITOR",
+                                        Application.dataPath + "/../Plugins/GamePlay/Scripts/Framework/GameFrameworkEditor.dll");
                                     }
                                     else
                                         onCallback(false);
                                 },
-                                Application.dataPath + "/../Packages/GamePlay/Scripts/ActorSystem", Application.dataPath + "/../Plugins/GamePlay/ActorSystemEditor.dll", "UNITY_EDITOR");
+                                Application.dataPath + "/../Packages/GamePlay/Scripts/ActorSystem", Application.dataPath + "/../Plugins/GamePlay/Scripts/Framework/ActorSystemEditor.dll", "UNITY_EDITOR",
+                                Application.dataPath + "/../Plugins/GamePlay/Scripts/Framework/GameFrameworkEditor.dll",
+                                Application.dataPath + "/../Plugins/GamePlay/Scripts/Framework/AgentTreeEditor.dll",
+                                Application.dataPath + "/../Plugins/GamePlay/Scripts/Framework/CutsceneEditor.dll");
                             }
                             else
                                 onCallback(false);
                         },
-                        Application.dataPath + "/../Packages/GamePlay/Scripts/Cutscene", Application.dataPath + "/../Plugins/GamePlay/CutsceneEditor.dll", "UNITY_EDITOR",
-                           Application.dataPath + "/../Plugins/GamePlay/TagLibSharp.dll");
+                        Application.dataPath + "/../Packages/GamePlay/Scripts/Cutscene", Application.dataPath + "/../Plugins/GamePlay/Scripts/Framework/CutsceneEditor.dll", "UNITY_EDITOR",
+                           Application.dataPath + "/../Plugins/GamePlay/Scripts/Framework/TagLibSharp.dll",
+                           Application.dataPath + "/../Plugins/GamePlay/Scripts/Framework/GameFrameworkEditor.dll",
+                           Application.dataPath + "/../Plugins/GamePlay/Scripts/Framework/AgentTreeEditor.dll");
                     }
                     else
                         onCallback(false);
                 },
-                Application.dataPath + "/../Packages/GamePlay/Scripts/AgentTree", Application.dataPath + "/../Plugins/GamePlay/AgentTreeEditor.dll", "UNITY_EDITOR");
+                Application.dataPath + "/../Packages/GamePlay/Scripts/AgentTree", Application.dataPath + "/../Plugins/GamePlay/Scripts/Framework/AgentTreeEditor.dll", "UNITY_EDITOR",
+                Application.dataPath + "/../Plugins/GamePlay/Scripts/Framework/GameFrameworkEditor.dll");
             }
             else
                 onCallback(false);
-        }, Application.dataPath + "/../Packages/GamePlay/Scripts/GameFramework", Application.dataPath + "/../Plugins/GamePlay/GameFrameworkEditor.dll", "UNITY_EDITOR");
+        }, Application.dataPath + "/../Packages/GamePlay/Scripts/GameFramework", Application.dataPath + "/../Plugins/GamePlay/Scripts/Framework/GameFrameworkEditor.dll", "UNITY_EDITOR");
     }
     //--------------------------------------------------------
     static void BuildDll(System.Action<bool> onCallback)
@@ -84,27 +116,26 @@ public class AssemblyComplier
                                         {
                                             onCallback(succeed4);
                                         },
-                                        Application.dataPath + "/../Packages/GamePlay/Scripts/GuideSystem", Application.dataPath + "/../Plugins/GamePlay/GuideSystem.dll");
+                                        Application.dataPath + "/../Packages/GamePlay/Scripts/GuideSystem", Application.dataPath + "/../Plugins/GamePlay/Scripts/Framework/GuideSystem.dll");
                                     }
                                     else
                                         onCallback(false);
                                 },
-                                Application.dataPath + "/../Packages/GamePlay/Scripts/ActorSystem", Application.dataPath + "/../Plugins/GamePlay/ActorSystem.dll");
+                                Application.dataPath + "/../Packages/GamePlay/Scripts/ActorSystem", Application.dataPath + "/../Plugins/GamePlay/Scripts/Framework/ActorSystem.dll");
                             }
                             else
                                 onCallback(false);
                         },
-                        Application.dataPath + "/../Packages/GamePlay/Scripts/Cutscene", Application.dataPath + "/../Plugins/GamePlay/Cutscene.dll",
-                           Application.dataPath + "/../Plugins/GamePlay/TagLibSharp.dll");
+                        Application.dataPath + "/../Packages/GamePlay/Scripts/Cutscene", Application.dataPath + "/../Plugins/GamePlay/Scripts/Framework/Cutscene.dll");
                     }
                     else
                         onCallback(false);
                 },
-                Application.dataPath + "/../Packages/GamePlay/Scripts/AgentTree", Application.dataPath + "/../Plugins/GamePlay/AgentTree.dll");
+                Application.dataPath + "/../Packages/GamePlay/Scripts/AgentTree", Application.dataPath + "/../Plugins/GamePlay/Scripts/Framework/AgentTree.dll");
             }
             else
                 onCallback(false);
-        }, Application.dataPath + "/../Packages/GamePlay/Scripts/GameFramework", Application.dataPath + "/../Plugins/GamePlay/GameFramework.dll");
+        }, Application.dataPath + "/../Packages/GamePlay/Scripts/GameFramework", Application.dataPath + "/../Plugins/GamePlay/Scripts/Framework/GameFramework.dll");
     }
     //--------------------------------------------------------
     public static void ComplierDll(System.Action<bool> onCallback, string sourceDir, string outputDll, string defineSymbols = "", params string[] referenceDlls)
@@ -141,7 +172,38 @@ public class AssemblyComplier
         };
         builder.compilerOptions.AllowUnsafeCode = true;
         builder.referencesOptions = ReferencesOptions.UseEngineModules;
-        builder.compilerOptions.ApiCompatibilityLevel = ApiCompatibilityLevel.NET_Standard;
+         builder.compilerOptions.ApiCompatibilityLevel = ApiCompatibilityLevel.NET_Standard;
+
+        List<string> excludeReferences = new List<string>();
+        if (referenceDlls != null && referenceDlls.Length>0)
+        {
+            Dictionary<string, string> vRefDlls = new Dictionary<string, string>();
+            for(int i =0; i < builder.defaultReferences.Length; ++i)
+            {
+                string name = Path.GetFileNameWithoutExtension(builder.defaultReferences[i]).ToLower();
+                vRefDlls[name] = builder.defaultReferences[i];
+              //  if(builder.defaultReferences[i].StartsWith("Library/ScriptAssemblies"))
+                if(ms_vPackageDlls.Contains(name))
+                {
+                    excludeReferences.Add(builder.defaultReferences[i]);
+                }
+            }
+            for(int i =0; i < referenceDlls.Length; ++i)
+            {
+                string name = Path.GetFileNameWithoutExtension(referenceDlls[i]);
+                if (!name.EndsWith("Editor"))
+                    continue;
+                name = name.Substring(0, name.Length - "Editor".Length).ToLower();
+                if (vRefDlls.TryGetValue(name, out var dllPath))
+                {
+                    if(!excludeReferences.Contains(dllPath))
+                        excludeReferences.Add(dllPath);
+                }
+            }
+        }
+        if(excludeReferences.Count>0)
+            builder.excludeReferences = excludeReferences.ToArray();
+
 
         string dllName = Path.GetFileNameWithoutExtension(outputDll);
 
