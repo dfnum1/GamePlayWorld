@@ -1,0 +1,161 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4bae697b1a35e54faf60bf0e7d03bac, type: 3}
+  m_Name: Projectiles
+  m_EditorClassIdentifier: 
+  projectiles:
+  - stuck_time_hit: 0
+    target_direction_postion: 0
+    target_action_hit: 0
+    hit_back_speed: {x: 0, y: 0, z: 0}
+    hit_back_fraction: -1
+    hit_back_gravity: -1
+    target_duration_hit: 0
+    target_effect_hit_scale: 1
+    target_effect_hit: 
+    target_effect_hit_offset: {x: 0, y: 0, z: 0}
+    effect_hit_slot: 
+    sound_hit: 
+    damage: 0
+    id: 1
+    type: 4
+    bornType: 0
+    effectSpeed: -1
+    effect: Assets/Sphere.prefab
+    sound_launch: 
+    speedLows:
+    - {x: 0, y: 10, z: 5}
+    speedUppers:
+    - {x: 0, y: 10, z: 5}
+    speedMaxs:
+    - {x: 0, y: 0, z: 0}
+    accelerations:
+    - {x: 0, y: 0, z: 0}
+    speedLerp: {x: 3, y: 0.8}
+    minRotate: {x: 0, y: 0, z: 0}
+    maxRotate: {x: 0, y: 0, z: 0}
+    collisionType: 1
+    aabb_min: {x: 0.5, y: -0.5, z: -0.5}
+    aabb_max: {x: 0.5, y: 0.5, z: 0.5}
+    life_time: 5
+    max_oneframe_hit: 1
+    hit_count: 1
+    hit_step: 0
+    penetrable: 0
+    counteract: 0
+    launch_flag: 7
+    explode_range: 0
+    launch_delay: 0
+    bound_flag: 0
+    bound_count: 0
+    bound_range: 0
+    bound_speed: {x: 1, y: 1, z: 1}
+    bound_lock_num: 0
+    bound_lock_param1: 
+    bound_lock_param2: 
+    bound_lock_param3: 
+    bound_lock_rode: 
+    bound_lockHeight: 0
+    bound_minLockHeight: 0
+    bound_maxLockHeight: 0
+    bound_effect: 
+    bound_effectSpeed: -1
+    bound_sound_launch: 
+    bound_hit_effect: 
+    bound_hit_sound: 
+    waring_effect: 
+    waring_duration: 0
+    track_target_slot: []
+    track_target_offset: {x: 0, y: 0, z: 0}
+    explode_effect: 
+    explode_effect_offset: {x: 0, y: 0, z: 0}
+    scale: 0.5
+    desc: "\u5F39\u8DF3\u5F39"
+    unSceneTest: 0
+    classify: 0
+  - stuck_time_hit: 0
+    target_direction_postion: 0
+    target_action_hit: 0
+    hit_back_speed: {x: 0, y: 2, z: 2}
+    hit_back_fraction: 3
+    hit_back_gravity: 9.8
+    target_duration_hit: 0
+    target_effect_hit_scale: 1
+    target_effect_hit: 
+    target_effect_hit_offset: {x: 0, y: 0, z: 0}
+    effect_hit_slot: 
+    sound_hit: 
+    damage: 0
+    id: 2
+    type: 0
+    bornType: 0
+    effectSpeed: -1
+    effect: Assets/Sphere.prefab
+    sound_launch: 
+    speedLows:
+    - {x: -2, y: 0, z: 10}
+    - {x: 0, y: 0, z: 10}
+    - {x: 2, y: 0, z: 10}
+    speedUppers:
+    - {x: -2, y: 0, z: 10}
+    - {x: 0, y: 0, z: 10}
+    - {x: 2, y: 0, z: 10}
+    speedMaxs:
+    - {x: 0, y: 0, z: 0}
+    - {x: 0, y: 0, z: 0}
+    - {x: 0, y: 0, z: 0}
+    accelerations:
+    - {x: 0, y: 0, z: 0}
+    - {x: 0, y: 0, z: 0}
+    - {x: 0, y: 0, z: 0}
+    speedLerp: {x: 0, y: 0}
+    minRotate: {x: 0, y: 0, z: 0}
+    maxRotate: {x: 0, y: 0, z: 0}
+    collisionType: 1
+    aabb_min: {x: 0.5, y: -0.5, z: -0.5}
+    aabb_max: {x: 0.5, y: 0.5, z: 0.5}
+    life_time: 5
+    max_oneframe_hit: 1
+    hit_count: 1
+    hit_step: 0
+    penetrable: 0
+    counteract: 0
+    launch_flag: 15
+    explode_range: 0
+    launch_delay: 0
+    bound_flag: 0
+    bound_count: 0
+    bound_range: 0
+    bound_speed: {x: 1, y: 1, z: 1}
+    bound_lock_num: 0
+    bound_lock_param1: 
+    bound_lock_param2: 
+    bound_lock_param3: 
+    bound_lock_rode: 
+    bound_lockHeight: 0
+    bound_minLockHeight: 0
+    bound_maxLockHeight: 0
+    bound_effect: 
+    bound_effectSpeed: -1
+    bound_sound_launch: 
+    bound_hit_effect: 
+    bound_hit_sound: 
+    waring_effect: 
+    waring_duration: 0
+    track_target_slot: []
+    track_target_offset: {x: 0, y: 0, z: 0}
+    explode_effect: 
+    explode_effect_offset: {x: 0, y: 0, z: 0}
+    scale: 0.5
+    desc: "\u6563\u5F39"
+    unSceneTest: 0
+    classify: 0

@@ -1,0 +1,170 @@
+﻿{
+    "stuck_time_hit": 0.0,
+    "target_direction_postion": false,
+    "target_action_hit": 0,
+    "hit_back_speed": {
+        "x": 0.0,
+        "y": 5.0,
+        "z": 5.0
+    },
+    "hit_back_fraction": 15.0,
+    "hit_back_gravity": 9.800000190734864,
+    "target_duration_hit": 0.0,
+    "target_effect_hit_scale": 1.0,
+    "target_effect_hit": "",
+    "target_effect_hit_offset": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+    },
+    "effect_hit_slot": "",
+    "sound_hit": "",
+    "damage": 0,
+    "id": 2,
+    "type": 0,
+    "bornType": 0,
+    "effectSpeed": -1.0,
+    "effect": "Assets/Sphere.prefab",
+    "sound_launch": "",
+    "speedLows": [
+        {
+            "x": -2.0,
+            "y": 0.0,
+            "z": 10.0
+        },
+        {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 10.0
+        },
+        {
+            "x": 2.0,
+            "y": 0.0,
+            "z": 10.0
+        }
+    ],
+    "speedUppers": [
+        {
+            "x": -2.0,
+            "y": 0.0,
+            "z": 10.0
+        },
+        {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 10.0
+        },
+        {
+            "x": 2.0,
+            "y": 0.0,
+            "z": 10.0
+        }
+    ],
+    "speedMaxs": [
+        {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+        },
+        {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+        },
+        {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+        }
+    ],
+    "accelerations": [
+        {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+        },
+        {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+        },
+        {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+        }
+    ],
+    "speedLerp": {
+        "x": 0.0,
+        "y": 0.0
+    },
+    "minRotate": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+    },
+    "maxRotate": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+    },
+    "collisionType": 1,
+    "aabb_min": {
+        "x": 0.5,
+        "y": -0.5,
+        "z": -0.5
+    },
+    "aabb_max": {
+        "x": 0.5,
+        "y": 0.5,
+        "z": 0.5
+    },
+    "life_time": 5.0,
+    "max_oneframe_hit": 1,
+    "hit_count": 1,
+    "hit_step": 0.0,
+    "penetrable": false,
+    "counteract": false,
+    "launch_flag": 15,
+    "explode_range": 0.0,
+    "launch_delay": 0.0,
+    "bound_flag": 0,
+    "bound_count": 0,
+    "bound_range": 0.0,
+    "bound_speed": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 1.0
+    },
+    "bound_lock_num": 0,
+    "bound_lock_param1": [],
+    "bound_lock_param2": [],
+    "bound_lock_param3": [],
+    "bound_lock_rode": [],
+    "bound_lockHeight": false,
+    "bound_minLockHeight": 0.0,
+    "bound_maxLockHeight": 0.0,
+    "bound_effect": "",
+    "bound_effectSpeed": -1.0,
+    "bound_sound_launch": "",
+    "bound_hit_effect": "",
+    "bound_hit_sound": "",
+    "waring_effect": "",
+    "waring_duration": 0.0,
+    "track_target_slot": [],
+    "track_target_offset": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+    },
+    "explode_effect": "",
+    "explode_effect_offset": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+    },
+    "scale": 0.5,
+    "desc": "散弹",
+    "unSceneTest": false,
+    "classify": 0
+}

@@ -105,6 +105,7 @@
     <Compile Include="Packages\GamePlay\Scripts\EditorFramework\Attributes\StateByTypeAttribute.cs" />
     <Compile Include="Packages\GamePlay\Scripts\EditorFramework\Preview\TreeAssetView.cs" />
     <Compile Include="Packages\GamePlay\Scripts\EditorFramework\Attributes\FormViewBinderAttribute.cs" />
+    <Compile Include="Packages\GamePlay\Scripts\EditorFramework\Utils\TransformSlotProvider.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Packages\GamePlay\Scripts\EditorFramework\EditorFramework.asmdef" />

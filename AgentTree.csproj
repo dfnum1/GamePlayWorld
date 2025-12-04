@@ -9,10 +9,10 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{FE4D3497-B0FE-8A21-6859-78DD878DA567}</ProjectGuid>
+    <ProjectGuid>{73E9CEA4-F5EA-B33C-12D3-0BEA1E149D40}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <AssemblyName>Cutscene</AssemblyName>
+    <AssemblyName>AgentTree</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <BaseDirectory>.</BaseDirectory>
@@ -56,95 +56,52 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\Runtime\Cutscene\Events\CutsceneExecuteAT.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\EditorRuntimes\Preference\PreferencesWindow.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\Runtime\Cutscene\Events\CutsceneSetATPort.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\Runtime\Cutscene\Clips\RotationClip.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\EditorRuntimes\EditorLogic\Draw\DragDropDraw.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\Runtime\Cutscene\Datas\CutsceneData.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\Runtime\Cutscene\Behaviors\CutsceneObjectBinder.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\Runtime\Cutscene\Clips\FollowToClip.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\Runtime\Cutscene\Clips\CameraPathClip.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\Runtime\Cutscene\CutsceneInstance.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\EditorRuntimes\Custom\CutsceneCustomAgentEditor.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\Runtime\Cutscene\Events\CutsceneStopCutsceneEvent.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\EditorRuntimes\Custom\CustomAgentUtil.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\EditorRuntimes\Utils\TimeUtils.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\EditorRuntimes\Utils\DataUtils.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\EditorRuntimes\ACutsceneLogic.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\Runtime\Cutscene\ICutsceneObject.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\Runtime\Cutscene\Events\CutsceneResumeCutsceneEvent.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\Runtime\Cutscene\Utils\ControllerRefUtil.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\EditorRuntimes\Utils\LockUtil.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\Runtime\Cutscene\Clips\ActiveClip.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\EditorRuntimes\EditorLogic\Draw\ClipDraw.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\EditorRuntimes\EditorLogic\UndoLogic.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\EditorRuntimes\Searcher\VideoSearchProvider.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\EditorRuntimes\EditorLogic\Draw\EventDraw.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\Runtime\Cutscene\Clips\TransformCurvePathClip.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\EditorRuntimes\Preference\EditorPreferences.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\Runtime\Cutscene\Clips\CutsceneAnimationClip.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\Runtime\Cutscene\Clips\CameraLerpGameClip.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\Runtime\Cutscene\Clips\TimeScaleClip.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\Runtime\Cutscene\Clips\CutsceneCustomClip.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\EditorRuntimes\EditorLogic\TimelineDrawLogic.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\EditorRuntimes\EditorLogic\InspectorDrawLogic.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\Runtime\Cutscene\Events\CutscenePauseCutsceneEvent.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\Runtime\Cutscene\Events\CutsceneSetCamera.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\EditorRuntimes\Utils\CutsceneObjUtil.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\Runtime\Cutscene\Clips\ParticleClip.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\EditorRuntimes\EditorLogic\Draw\TimeCursorDraw.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\EditorRuntimes\Searcher\SearchPathEditor.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\Runtime\Cutscene\Clips\ABaseClip.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\Runtime\Cutscene\Datas\CutsceneGraph.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\Runtime\Cutscene\Utils\CutsceneUtil.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\EditorRuntimes\Searcher\ShaderAssetInspector.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\EditorRuntimes\EditorLogic\AssetDrawLogic.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\EditorRuntimes\EditorLogic\Draw\IDraw.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\EditorRuntimes\CutsceneEditor.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\Runtime\Cutscene\Clips\CameraMoveClip.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\EditorRuntimes\ACutsceneEditor.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\Runtime\CutsceneManager.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\Runtime\Cutscene\Playable\ACutsceneDriver.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\Runtime\Cutscene\Events\ACutsceneStatusCutsceneEvent.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\EditorRuntimes\EditorLogic\Draw\ClipDrawUtil.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\EditorRuntimes\Utils\IconUtils.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\EditorRuntimes\Utils\EditorUtil.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\Runtime\Cutscene\Events\CutsceneCustomEvent.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\EditorRuntimes\Searcher\CurvePathEditor.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\Runtime\Cutscene\Clips\TransformMovePathClip.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\EditorRuntimes\Searcher\AnimatorActionSearchProvider.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\Runtime\Cutscene\Clips\AnimatorActionClip.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\EditorRuntimes\Searcher\CameraPathEditor.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\EditorRuntimes\ACutsceneCustomEditor.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\EditorRuntimes\Utils\TextUtil.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\Runtime\Cutscene\Datas\PathPoint.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\Runtime\Cutscene\Clips\CutsceneGroupBindObjectFollowTargetClip.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\Runtime\Cutscene\Datas\CutsceneCustomAgent.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\Runtime\Cutscene\Events\CutsceneCutsceneEventDriver.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\Runtime\Cutscene\Playable\CutsceneTrack.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\EditorRuntimes\Utils\BindIdInputPopup.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\AssemblyInfo.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\Runtime\Cutscene\Playable\CutscenePlayable.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\Runtime\Cutscene\Datas\CutsceneObject.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\EditorRuntimes\EditorLogic\PreviewLogic.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\EditorRuntimes\EditorLogic\ToolBarDrawLogic.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\Runtime\Cutscene\Clips\ProjecitleClip.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\Runtime\Cutscene\Events\ABaseEvent.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\Runtime\Cutscene\CutscenePool.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\Runtime\Cutscene\Clips\MaterialClip.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\Runtime\Cutscene\Events\CutscenePlayCutsceneEvent.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\Runtime\Cutscene\Clips\ScaleClip.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\Runtime\Cutscene\CutsceneAttributes.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\Runtime\Cutscene\Clips\PositionClip.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\Runtime\Cutscene\Clips\CutsceneInstanceClip.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\Runtime\Cutscene\Playable\FrameData.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\EditorRuntimes\EditorLogic\Draw\DragDraw.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\Runtime\Cutscene\Clips\CameraShakeClip.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\Cutscene\EditorRuntimes\Searcher\SearchTypeProvider.cs" />
+    <Compile Include="Packages\GamePlay\Scripts\AgentTree\EditorRuntimes\AgentTreeEditorInit.cs" />
+    <Compile Include="Packages\GamePlay\Scripts\AgentTree\EditorRuntimes\Nodes\VectorOpNode.cs" />
+    <Compile Include="Packages\GamePlay\Scripts\AgentTree\EditorRuntimes\Nodes\GraphNode.cs" />
+    <Compile Include="Packages\GamePlay\Scripts\AgentTree\Runtime\AgentTreePool.cs" />
+    <Compile Include="Packages\GamePlay\Scripts\AgentTree\EditorRuntimes\AgentTreeSearcher.cs" />
+    <Compile Include="Packages\GamePlay\Scripts\AgentTree\EditorRuntimes\NodeBindAttribute.cs" />
+    <Compile Include="Packages\GamePlay\Scripts\AgentTree\Runtime\Datas\Node\BaseNode.cs" />
+    <Compile Include="Packages\GamePlay\Scripts\AgentTree\EditorRuntimes\AgentTreeGraphContoller.cs" />
+    <Compile Include="Packages\GamePlay\Scripts\AgentTree\EditorRuntimes\Nodes\PlayCutsceneGraphNode.cs" />
+    <Compile Include="Packages\GamePlay\Scripts\AgentTree\Runtime\Datas\VariableStack.cs" />
+    <Compile Include="Packages\GamePlay\Scripts\AgentTree\EditorRuntimes\Nodes\GetVariableNode.cs" />
+    <Compile Include="Packages\GamePlay\Scripts\AgentTree\EditorRuntimes\Nodes\CommonOpNode.cs" />
+    <Compile Include="Packages\GamePlay\Scripts\AgentTree\EditorRuntimes\Logics\GraphViewLogic.cs" />
+    <Compile Include="Packages\GamePlay\Scripts\AgentTree\EditorRuntimes\Utils\AgentTreeUtil.cs" />
+    <Compile Include="Packages\GamePlay\Scripts\AgentTree\Runtime\AgentTreeManager.cs" />
+    <Compile Include="Packages\GamePlay\Scripts\AgentTree\Runtime\Executors\ConditionExecutor.cs" />
+    <Compile Include="Packages\GamePlay\Scripts\AgentTree\EditorRuntimes\Nodes\TrackBindCutsceneGraphNode.cs" />
+    <Compile Include="Packages\GamePlay\Scripts\AgentTree\EditorRuntimes\Logics\AAgentTreeLogic.cs" />
+    <Compile Include="Packages\GamePlay\Scripts\AgentTree\EditorRuntimes\Nodes\NewVariableNode.cs" />
+    <Compile Include="Packages\GamePlay\Scripts\AgentTree\EditorRuntimes\Nodes\TaskGraphNode.cs" />
+    <Compile Include="Packages\GamePlay\Scripts\AgentTree\EditorRuntimes\VariablesEditor.cs" />
+    <Compile Include="Packages\GamePlay\Scripts\AgentTree\EditorRuntimes\AgentTreeWindow.cs" />
+    <Compile Include="Packages\GamePlay\Scripts\AgentTree\Runtime\Executors\VariableOpExecutor.cs" />
+    <Compile Include="Packages\GamePlay\Scripts\AgentTree\EditorRuntimes\Logics\AgentTreeGraphView.cs" />
+    <Compile Include="Packages\GamePlay\Scripts\AgentTree\Runtime\Datas\VariablePool.cs" />
+    <Compile Include="Packages\GamePlay\Scripts\AgentTree\Runtime\Datas\Node\ActionNode.cs" />
+    <Compile Include="Packages\GamePlay\Scripts\AgentTree\Runtime\AgentTree.cs" />
+    <Compile Include="Packages\GamePlay\Scripts\AgentTree\EditorRuntimes\Provider\AgentTreeInputPortSearchProvider.cs" />
+    <Compile Include="Packages\GamePlay\Scripts\AgentTree\Runtime\Datas\Node\CutsceneEvent.cs" />
+    <Compile Include="Packages\GamePlay\Scripts\AgentTree\EditorRuntimes\Preference\EditorPreferences.cs" />
+    <Compile Include="Packages\GamePlay\Scripts\AgentTree\EditorRuntimes\Utils\IconUtils.cs" />
+    <Compile Include="Packages\GamePlay\Scripts\AgentTree\Runtime\EActionType.cs" />
+    <Compile Include="Packages\GamePlay\Scripts\AgentTree\Runtime\Datas\AgentTreeData.cs" />
+    <Compile Include="Packages\GamePlay\Scripts\AgentTree\Runtime\Datas\AgentTreeAttributes.cs" />
+    <Compile Include="Packages\GamePlay\Scripts\AgentTree\Runtime\Datas\Variables.cs" />
+    <Compile Include="Packages\GamePlay\Scripts\AgentTree\Runtime\Datas\Node\EnterTask.cs" />
+    <Compile Include="Packages\GamePlay\Scripts\AgentTree\EditorRuntimes\NodePort.cs" />
+    <Compile Include="Packages\GamePlay\Scripts\AgentTree\EditorRuntimes\EditorResources.cs" />
+    <Compile Include="Packages\GamePlay\Scripts\AgentTree\Runtime\IUserData.cs" />
+    <Compile Include="Packages\GamePlay\Scripts\AgentTree\Runtime\Datas\VariableList.cs" />
+    <Compile Include="Packages\GamePlay\Scripts\AgentTree\Runtime\Datas\VariableKV.cs" />
+    <Compile Include="Packages\GamePlay\Scripts\AgentTree\EditorRuntimes\Nodes\ConditionNode.cs" />
+    <Compile Include="Packages\GamePlay\Scripts\AgentTree\Runtime\Executors\VectorOpExecutor.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Packages\GamePlay\Scripts\Cutscene\Cutscene.asmdef" />
+    <None Include="Packages\GamePlay\Scripts\AgentTree\AgentTree.asmdef" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -830,10 +787,6 @@
     <ProjectReference Include="EditorFramework.csproj">
       <Project>{E05BCF8F-6BBB-3A26-C962-75C3D5577FA4}</Project>
       <Name>EditorFramework</Name>
-    </ProjectReference>
-    <ProjectReference Include="AgentTree.csproj">
-      <Project>{73E9CEA4-F5EA-B33C-12D3-0BEA1E149D40}</Project>
-      <Name>AgentTree</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

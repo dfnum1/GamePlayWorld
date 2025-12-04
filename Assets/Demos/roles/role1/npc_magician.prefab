@@ -468,6 +468,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c29f0a4604d72e742abaf49e98a28330, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slots:
+  - name: center
+    slot: {fileID: 3583411167752555116}
+    offset: {x: 0, y: 0, z: 0}
   commonActions:
   - actioName: Idle
     type: 1
