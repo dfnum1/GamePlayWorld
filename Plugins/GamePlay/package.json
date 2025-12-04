@@ -3,7 +3,7 @@
   "displayName": "GamePlay",
   "version": "1.0.0",
   "unity": "2020.1",
-  "description": "",
+  "description": "这是一个游戏的基础GamePlay框架，包含了过场动画(Cutscene)、引导系统(GuideSystem)、Actor系统、弹道系统、蓝图脚本等",
   "keywords": [
    "unity",
    "gameplay"
