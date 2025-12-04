@@ -42,5 +42,14 @@
 	-tag 表示git 仓库创建tag版本并提交
 	比如 4.Publish.ps1 patch -tag
 	
+13. unity 安装
+	Unity 端添加 Scoped Registry
+	Edit → Project Settings → Package Manager → Scoped Registries
+	新增：
+	Name: Private
+	URL: http://192.168.1.100:4873
+	Scope(s): com.company
+	打开 Package Manager → 左上角选择 My Registries，即可安装/更新你的私有包。	
+	
   
 
