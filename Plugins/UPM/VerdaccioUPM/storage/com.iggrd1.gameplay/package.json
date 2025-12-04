@@ -1,0 +1,53 @@
+{
+	"name": "com.iggrd1.gameplay",
+	"versions": {
+		"1.0.0": {
+			"name": "com.iggrd1.gameplay",
+			"displayName": "GamePlay",
+			"version": "1.0.0",
+			"unity": "2020.1",
+			"description": "这是一个游戏的基础GamePlay框架，包含了过场动画(Cutscene)、引导系统(GuideSystem)、Actor系统、弹道系统、蓝图脚本等",
+			"keywords": [
+				"unity",
+				"gameplay"
+			],
+			"author": {
+				"name": "RD1",
+				"email": "qigui.li@igg.com",
+				"url": "https://www.unity3d.com"
+			},
+			"category": "GamePlay",
+			"dependencies": {},
+			"_id": "com.iggrd1.gameplay@1.0.0",
+			"gitHead": "dda180c4193e64a44940262807fa2c91f5aee185",
+			"_nodeVersion": "20.19.6",
+			"_npmVersion": "10.8.2",
+			"dist": {
+				"integrity": "sha512-t06kRMNPtnpBTfxufureSDdAPafKBwROd5riyPXv/DI/IEoLZ+20AoBjVB6NWETuYz0RDGOMISXTeeATuGL7Rg==",
+				"shasum": "696e3859f4518e384de8608766091374380d4d7b",
+				"tarball": "http://10.0.16.124:4873/com.iggrd1.gameplay/-/com.iggrd1.gameplay-1.0.0.tgz"
+			},
+			"contributors": []
+		}
+	},
+	"time": {
+		"modified": "2025-12-04T10:33:29.214Z",
+		"created": "2025-12-04T10:33:29.214Z",
+		"1.0.0": "2025-12-04T10:33:29.214Z"
+	},
+	"users": {},
+	"dist-tags": {
+		"latest": "1.0.0"
+	},
+	"_uplinks": {},
+	"_distfiles": {},
+	"_attachments": {
+		"com.iggrd1.gameplay-1.0.0.tgz": {
+			"shasum": "696e3859f4518e384de8608766091374380d4d7b",
+			"version": "1.0.0"
+		}
+	},
+	"_rev": "3-38c204734f8f0951",
+	"_id": "com.iggrd1.gameplay",
+	"readme": "ERROR: No README data found!"
+}

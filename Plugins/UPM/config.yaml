@@ -1,0 +1,44 @@
+# 完整可运行配置 Verdaccio 6.2.4
+# 保存为 D:\VerdaccioUPM\config.yaml
+
+listen: 0.0.0.0:4873          # 内网监听 4873
+max_body_size: 100mb          # Unity 包常几十 MB
+
+auth:
+  htpasswd:
+    file: ./htpasswd            # 第一次 adduser 时自动生成
+    max_users: 100
+
+uplinks:
+  npmjs:
+    url: https://registry.npmjs.org/
+    timeout: 60s
+
+packages:
+  # 范围包
+  '@*/*':
+    access: $all
+    publish: $all # 允许覆盖
+   # publish: $authenticated
+    unpublish: $authenticated
+    proxy: npmjs
+
+  # 全局通配
+  '**':
+    access: $all
+    publish: $all # 允许覆盖
+   # publish: $authenticated
+    unpublish: $authenticated
+    proxy: npmjs
+
+# WebUI 开关
+web:
+  enable: true
+  title: Private UPM
+
+# 日志
+logs:
+  - { type: stdout, format: pretty, level: http }
+
+# 存储路径（默认当前目录 storage 文件夹）
+storage: ./storage
