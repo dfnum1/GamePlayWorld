@@ -469,9 +469,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slots: []
-  commonActions: []
+  commonActions:
+  - actioName: 
+    type: 1
+    actionTag: 0
+    priority: 0
+    layer: 0
+    clip: {fileID: 7400000, guid: e04262985add35c4ea6f2320b218169f, type: 2}
   avatarMasks: []
-  ActionGraphData: {fileID: 0}
+  ActionGraphData: {fileID: 4900000, guid: b644b7669de969e449d2598afa4440d8, type: 3}
   ATData:
     tasks: []
     actions: []

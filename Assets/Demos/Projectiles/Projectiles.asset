@@ -27,7 +27,8 @@ MonoBehaviour:
     sound_hit: 
     damage: 0
     id: 1
-    type: 4
+    desc: "\u5F39\u8DF3\u5F39"
+    type: 3
     bornType: 0
     effectSpeed: -1
     effect: Assets/Sphere.prefab
@@ -79,9 +80,10 @@ MonoBehaviour:
     explode_effect: 
     explode_effect_offset: {x: 0, y: 0, z: 0}
     scale: 0.5
-    desc: "\u5F39\u8DF3\u5F39"
     unSceneTest: 0
     classify: 0
+    specParams: {x: 0, y: 0, z: 0, w: 0}
+    externParams: {x: 0, y: 0, z: 0, w: 0}
   - stuck_time_hit: 0
     target_direction_postion: 0
     target_action_hit: 0
@@ -96,6 +98,7 @@ MonoBehaviour:
     sound_hit: 
     damage: 0
     id: 2
+    desc: "\u6563\u5F39"
     type: 0
     bornType: 0
     effectSpeed: -1
@@ -156,6 +159,7 @@ MonoBehaviour:
     explode_effect: 
     explode_effect_offset: {x: 0, y: 0, z: 0}
     scale: 0.5
-    desc: "\u6563\u5F39"
     unSceneTest: 0
     classify: 0
+    specParams: {x: 0, y: 0, z: 0, w: 0}
+    externParams: {x: 0, y: 0, z: 0, w: 0}

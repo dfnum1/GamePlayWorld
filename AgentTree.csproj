@@ -94,7 +94,6 @@
     <Compile Include="Packages\GamePlay\Scripts\AgentTree\Runtime\Datas\Node\EnterTask.cs" />
     <Compile Include="Packages\GamePlay\Scripts\AgentTree\EditorRuntimes\NodePort.cs" />
     <Compile Include="Packages\GamePlay\Scripts\AgentTree\EditorRuntimes\EditorResources.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\AgentTree\Runtime\IUserData.cs" />
     <Compile Include="Packages\GamePlay\Scripts\AgentTree\Runtime\Datas\VariableList.cs" />
     <Compile Include="Packages\GamePlay\Scripts\AgentTree\Runtime\Datas\VariableKV.cs" />
     <Compile Include="Packages\GamePlay\Scripts\AgentTree\EditorRuntimes\Nodes\ConditionNode.cs" />

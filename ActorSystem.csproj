@@ -110,7 +110,6 @@
     <Compile Include="Packages\GamePlay\Scripts\ActorSystem\Runtime\Actor.cs" />
     <Compile Include="Packages\GamePlay\Scripts\ActorSystem\Runtime\ActorManager.cs" />
     <Compile Include="Packages\GamePlay\Scripts\ActorSystem\EditorRuntimes\Projectile\Logics\ProjectilePreview.cs" />
-    <Compile Include="Packages\GamePlay\Scripts\ActorSystem\Runtime\Base\TypeInstancePool.cs" />
     <Compile Include="Packages\GamePlay\Scripts\ActorSystem\EditorRuntimes\ActorSystem\Logic\TimelineDrawLogic.cs" />
     <Compile Include="Packages\GamePlay\Scripts\ActorSystem\Runtime\Graph\Animation\AnimGraphVisualizer\Graph\Layouts\IGraphLayout.cs" />
     <Compile Include="Packages\GamePlay\Scripts\ActorSystem\Runtime\Projectile\ProjectileData.cs" />
@@ -122,6 +121,13 @@
     <Compile Include="Packages\GamePlay\Scripts\ActorSystem\Runtime\Graph\Animation\AnimGraphVisualizer\PlayableNodes\PlayableNode.cs" />
     <Compile Include="Packages\GamePlay\Scripts\ActorSystem\Runtime\Agents\ActorGraphicAgent.cs" />
     <Compile Include="Packages\GamePlay\Scripts\ActorSystem\EditorRuntimes\Utils\EditorUtil.cs" />
+    <Compile Include="Packages\GamePlay\Scripts\ActorSystem\Runtime\SpatialIndex\Quadtree.cs" />
+    <Compile Include="Packages\GamePlay\Scripts\ActorSystem\Runtime\SpatialIndex\SpatialIndexFactory.cs" />
+    <Compile Include="Packages\GamePlay\Scripts\ActorSystem\Runtime\SpatialIndex\KDTree.cs" />
+    <Compile Include="Packages\GamePlay\Scripts\ActorSystem\Runtime\SpatialIndex\Octree.cs" />
+    <Compile Include="Packages\GamePlay\Scripts\ActorSystem\Runtime\SpatialIndex\ISpatialWorld.cs" />
+    <Compile Include="Packages\GamePlay\Scripts\ActorSystem\Runtime\Data\ActorContext.cs" />
+    <Compile Include="Packages\GamePlay\Scripts\ActorSystem\Runtime\Base\TypeActor.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Packages\GamePlay\Scripts\ActorSystem\ActorSystem.asmdef" />
