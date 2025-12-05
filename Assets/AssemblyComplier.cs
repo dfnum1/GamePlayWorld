@@ -58,12 +58,14 @@ public class AssemblyComplier
                 ms_strProcessTile = "编译运行态dll";
                 BuildDll((resutl1) => {
                     CopyPackageDatas();
+                    OnEditorUpdate(100, true);
                     EditorUtility.DisplayDialog("提示", (result && resutl1) ? "DLL编译成功" : "DLL编译失败", "确定");
                 });
             }
             else
             {
                 EditorUtility.DisplayDialog("提示", "DLL编译失败", "确定");
+                OnEditorUpdate(100, true);
             }
         });
     }
@@ -303,7 +305,8 @@ public class AssemblyComplier
             }
             else
                 onCallback(false);
-        }, ms_InputDir+"Scripts/GameFramework", ms_OutputDir+"Scripts/Framework/GameFrameworkEditor.dll", "UNITY_EDITOR");
+        }, ms_InputDir+"Scripts/GameFramework", ms_OutputDir+"Scripts/Framework/GameFrameworkEditor.dll", "UNITY_EDITOR",
+        ms_OutputDir + "Scripts/Framework/ChnCharInfo.dll");
     }
     //--------------------------------------------------------
     static void BuildDll(System.Action<bool> onCallback)
