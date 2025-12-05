@@ -58,7 +58,7 @@ SubShader {
         {
             // Texture, apply lighting and premultiply with alpha
             fixed4 col = tex2D(_MainTex, i.uv);
-            col.rgb *= i.color.rgb;
+           // col.rgb *= i.color.rgb;
             col.a *= _Alphas.x;
             col.rgb *= col.a;
 
